@@ -21,3 +21,5 @@ RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=acc
 RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/latest/jre1.7.0_79/bin/java" 1
 RUN update-alternatives --set java /usr/java/latest/jre1.7.0_79/bin/java
 RUN update-alternatives --display java
+
+CMD echo "Java 7 Install Complete." 
