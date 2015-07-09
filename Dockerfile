@@ -35,6 +35,6 @@ ENV M2 $M2_HOME/bin
 ENV PATH $M2:$PATH
 
 RUN update-alternatives --install "/usr/bin/mvn" "mvn" "/usr/mvn/apache-maven-3.3.3/bin/mvn" 1
-RUN update-alternatives --set java /usr/mvn/apache-maven-3.3.3/bin/mvn
+RUN update-alternatives --set mvn /usr/mvn/apache-maven-3.3.3/bin/mvn
 
 ENTRYPOINT ["/bin/bash"]
