@@ -22,5 +22,5 @@ RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/latest/jre1.
 RUN update-alternatives --set java /usr/java/latest/jre1.7.0_79/bin/java
 RUN update-alternatives --display java
 
-RUN echo "Java 7 Install Complete." 
+RUN echo "Java 7 Install Complete. " 
 ENTRYPOINT [/bin/bash]
