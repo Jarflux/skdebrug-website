@@ -24,7 +24,7 @@ RUN update-alternatives --set java /usr/java/jre1.7.0_79/bin/java
 RUN update-alternatives --display java
 
 # Install apache maven
-WORKDIR /usr/maven/
+WORKDIR /usr/mvn/
 
 RUN wget http://apache.belnet.be/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz && \
 	tar zxvf apache-maven-3.3.3-bin.tar.gz && \
