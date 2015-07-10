@@ -10,7 +10,7 @@ RUN apt-get -yqq update && \
 	apt-get -y install git && \
 	apt-get -y install maven && \
 	apt-get install oracle-java7-installer && \
-	apt-get -y upgrade && 
+	apt-get -y upgrade
 
 # clone the git repository
 # RUN git clone https://bitbucket.org/elktalk/commerce-customer-api.git 
