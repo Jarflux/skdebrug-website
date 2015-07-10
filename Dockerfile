@@ -36,7 +36,7 @@ RUN cp ./target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar
 RUN cp ./dropwizard.yml /opt/skdebrug/dropwizard.yml
 
 WORKDIR /opt/skdebrug/ 
-RUN java -jar dropwizard.jar server dropwizard.yml
-RUN tail -f /tmp/log/dropwizard.log
+CMD java -jar dropwizard.jar server dropwizard.yml
 
+EXPOSE 8080
 
