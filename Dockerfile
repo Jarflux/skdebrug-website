@@ -4,9 +4,12 @@ MAINTAINER jarflux
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -yqq update && \
+	apt-get install -y wget && \
 	apt-get -y install git && \
 	apt-get -y install maven && \
-	apt-get -y upgrade
+	apt-get -y upgrade && \
+	apt-get clean && \
+	apt-get purge
 
 # Install oracle java
 WORKDIR /usr/java
