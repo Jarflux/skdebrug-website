@@ -27,8 +27,8 @@ RUN update-alternatives --set java /usr/java/jre1.7.0_79/bin/java
 RUN update-alternatives --display java
 
 # Build & Install Dropwizard
-WORKDIR /tmp 
-RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git 
+RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard-skdebrug
+WORKDIR /tmp/dropwizard-skdebrug
 RUN mvn -f pom.xml clean package  
 
 RUN mkdir -p /opt/skdebrug/ 
