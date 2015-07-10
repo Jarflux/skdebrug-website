@@ -17,7 +17,7 @@ RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=acc
 	rm jre-7u79-linux-x64.tar.gz
 
 ENV JAVA_VERSION 7
-ENV JAVA_HOME /usr/java
+ENV JAVA_HOME /usr/java/jre1.7.0_79
 ENV PATH $JAVA_HOME/bin:$PATH
 
 RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jre1.7.0_79/bin/java" 1
