@@ -33,6 +33,7 @@ RUN mvn -f pom.xml clean package
 
 RUN mkdir -p /opt/skdebrug/ 
 RUN cp ./target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar 
+RUN cp ./dropwizard.yml /opt/skdebrug/dropwizard.yml
 
 WORKDIR /opt/skdebrug/ 
 RUN java -jar dropwizard.jar server dropwizard.yml
