@@ -26,7 +26,19 @@ RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jre1.7.0_79/
 RUN update-alternatives --set java /usr/java/jre1.7.0_79/bin/java
 RUN update-alternatives --display java
 
-# clone the git repository
-# RUN git clone https://bitbucket.org/elktalk/commerce-customer-api.git 
+# Build & Install Dropwizard
+WORKDIR /tmp 
+RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git 
+RUN mvn -f pom.xml clean package  
 
-ENTRYPOINT ["/bin/bash"]
+RUN mkdir -p /opt/skdebrug/ 
+RUN cp ./target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar 
+
+WORKDIR /opt/skdebrug/ 
+RUN java -jar dropwizard.jar server dropwizard.yml
+RUN tail -f /tmp/log/dropwizard.log
+
+
+
+
+
