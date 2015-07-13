@@ -7,6 +7,7 @@ RUN apt-get -yqq update && \
 	apt-get install -y wget && \
 	apt-get -y install git && \
 	apt-get -y install maven && \
+	apt-get -y install nginx && \
 	apt-get -y upgrade && \
 	apt-get clean && \
 	apt-get purge
@@ -26,17 +27,22 @@ RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jdk1.7.0_79/
 RUN update-alternatives --set java /usr/java/jdk1.7.0_79/bin/java
 RUN update-alternatives --display java
 
+# Get Nginx configuration en start the Nginx service
+# RUN git clone https://github.com/Jarflux/nginx-skdebrug.git /tmp/nginx-skdebrug
+RUN service nginx start
+
 # Build & Install Dropwizard
 RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard-skdebrug
-WORKDIR /tmp/dropwizard-skdebrug
 RUN mvn -f pom.xml clean package  
 
 RUN mkdir -p /opt/skdebrug/ 
-RUN cp ./target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar 
-RUN cp ./dropwizard.yml /opt/skdebrug/dropwizard.yml
+RUN cp /tmp/dropwizard-skdebrug/target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar 
+RUN cp /tmp/dropwizard-skdebrug/dropwizard.yml /opt/skdebrug/dropwizard.yml
+RUN rm -rf /tmp/dropwizard-skdebrug
 
 WORKDIR /opt/skdebrug/ 
 CMD java -jar dropwizard.jar server dropwizard.yml
 
-EXPOSE 8080
+EXPOSE 8080 8080
+EXPOSE 8000 8000
 
