@@ -33,7 +33,7 @@ RUN service nginx start
 
 # Build & Install Dropwizard
 RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard-skdebrug
-RUN mvn -f pom.xml clean package  
+RUN mvn -f /tmp/dropwizard-skdebrug/pom.xml clean package  
 
 RUN mkdir -p /opt/skdebrug/ 
 RUN cp /tmp/dropwizard-skdebrug/target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar 
@@ -45,4 +45,6 @@ CMD java -jar dropwizard.jar server dropwizard.yml
 
 EXPOSE 8080 8080
 EXPOSE 8000 8000
+EXPOSE 9000 9000
+EXPOSE 9001 9001
 
