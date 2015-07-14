@@ -26,9 +26,6 @@ RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jdk1.7.0_79/
 RUN update-alternatives --set java /usr/java/jdk1.7.0_79/bin/java
 RUN update-alternatives --display java
 
-# Copy Nginx configuration to correct location
-# COPY nginx.conf /etc/nginx/nginx.conf
-
 # Build & Install Dropwizard
 RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard-skdebrug && \
  	mvn -f /tmp/dropwizard-skdebrug/pom.xml clean package && \
@@ -38,12 +35,15 @@ RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard
  	rm -rf /tmp/dropwizard-skdebrug && \
  	rm -rf ~/.m2
 
-# Place static content in correct location
-COPY index.html /usr/share/nginx/html
-
 # Copy Start script correct location
 COPY start.sh /opt/skdebrug/start.sh
 
-WORKDIR /opt/skdebrug/ 
+# Copy Nginx configuration to correct location
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Place static content in correct location
+COPY index.html /var/www/html/index.html
+
+WORKDIR /opt/skdebrug
 ENTRYPOINT ["sh", "start.sh"]
 
