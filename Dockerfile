@@ -11,6 +11,10 @@ RUN apt-get -yqq update && \
 	apt-get clean && \
 	apt-get purge
 
+# Set correct timezone and time
+RUN echo "Europe/Brussels" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
 # Install oracle java
 WORKDIR /usr/java
 
@@ -42,7 +46,7 @@ COPY start.sh /opt/skdebrug/start.sh
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Place static content in correct location
-COPY index.html /var/www/html/index.html
+COPY html /var/www/html
 
 WORKDIR /opt/skdebrug
 ENTRYPOINT ["sh", "start.sh"]
