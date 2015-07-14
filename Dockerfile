@@ -15,7 +15,7 @@ RUN apt-get -yqq update && \
 # Install oracle java
 WORKDIR /usr/java
 
-RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79- linux-x64.tar.gz && \
+RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz && \
 	tar zxvf jdk-7u79-linux-x64.tar.gz && \
 	rm jdk-7u79-linux-x64.tar.gz
 
@@ -36,7 +36,8 @@ RUN git clone https://github.com/Jarflux/dropwizard-skdebrug.git /tmp/dropwizard
  	mvn -f /tmp/dropwizard-skdebrug/pom.xml clean package && \
  	mkdir -p /opt/skdebrug/  && \
  	cp /tmp/dropwizard-skdebrug/target/dropwizard-1.0.jar /opt/skdebrug/dropwizard.jar && \
- 	cp /tmp/dropwizard-skdebrug/dropwizard.yml /opt/skdebrug/dropwizard.yml && \ 	rm -rf /tmp/dropwizard-skdebrug
+ 	cp /tmp/dropwizard-skdebrug/dropwizard.yml /opt/skdebrug/dropwizard.yml && \ 	
+ 	rm -rf /tmp/dropwizard-skdebrug
 
 # WORKDIR /opt/skdebrug/ 
 CMD java -jar dropwizard.jar server dropwizard.yml
