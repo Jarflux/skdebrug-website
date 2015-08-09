@@ -6,4 +6,4 @@ Build Image
 docker build -t skdebrug-docker .
 
 Run Image
-docker run -d -p 80:80 -p 8080:8080 -p 9000:9000 -p 9001:9001 skdebrug-docker
+docker run -d -p 80:80 -p 9000:9000 skdebrug-docker
