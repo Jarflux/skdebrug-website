@@ -33,6 +33,7 @@ COPY dropwizard /opt/skdebrug/
 
 # Copy Nginx configuration to correct location
 COPY nginx.conf /etc/nginx/nginx.conf
+COPY .htpasswd /etc/nginx/.htpasswd
 
 # Place static content in correct location
 COPY html /var/www/html
