@@ -1,18 +1,81 @@
 (function() {
     var app = angular.module('skdebrug.services', []);
 
-    app.factory('skdebrugServices', function ($http) {
+    var api = {
+        players: 'data/player.json',
+        news: 'data/news.json',
+        newsItem: 'data/news-item.json?id={0}',
+        nextMatch: 'data/next-match.json',
+        allMatches: 'data/all-matches.json',
+        prevMatch: 'data/prev-match.json',
+        league: 'data/league.json',
+    };
 
-        var api = {};
+    app.factory('apiServices', function ($http) {
 
-        api.getTeam = function () {
-            return $http({
-                url: 'data/player.json'
-            });
+        var services = {
+            getTeam : function () {
+                return $http({
+                    url: api.players
+                });
+            },
+            getNews : function(){
+                return $http({
+                    url: api.news
+                })
+            },
+            getNewsItem : function(x){
+                return $http({
+                    url: api.newsItem.replace("{0}",x)
+                })
+            },
+            getAllMatches : function(){
+                return $http({
+                    url: api.allMatches
+                })
+            },
+            getNextMatch : function(){
+                return $http({
+                    url: api.nextMatch.replace("{0}",1)
+                })
+            },
+            getNextXMatch : function(x){
+                return $http({
+                    url: api.nextMatch.replace("{0}",x)
+                })
+            },
+            getPrevMatch : function(){
+                return $http({
+                    url: api.prevMatch.replace("{0}",1)
+                })
+            },
+            getLeague : function(){
+                return $http({
+                    url: api.league
+                })
+            },
         };
 
-        return api;
+        return services;
     });
 
+    app.factory('utils', function($q) {
+        return {
+            isImage: function(src) {
+                var deferred = $q.defer();
+
+                var image = new Image();
+                image.onerror = function() {
+                    deferred.resolve(false);
+                };
+                image.onload = function() {
+                    deferred.resolve(true);
+                };
+                image.src = src;
+
+                return deferred.promise;
+            }
+        };
+    });
 
 })();
