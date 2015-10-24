@@ -44,9 +44,9 @@
                     url: api.nextMatch.replace("{0}",x)
                 })
             },
-            getPrevMatch : function(){
+            getPrevMatch : function(x){
                 return $http({
-                    url: api.prevMatch.replace("{0}",1)
+                    url: api.prevMatch.replace("{0}",x)
                 })
             },
             getLeague : function(){

@@ -64,11 +64,8 @@
 
     app.controller('matchWidgetController', function($scope, apiServices){
         var match = this;
-        apiServices.getPrevMatch().success(function (data) {
+        apiServices.getPrevMatch(3).success(function (data) {
             match.prev = data[0];
-        });
-        apiServices.getNextXMatch(2).success(function (data) {
-            match.next = data;
         });
     });
 
