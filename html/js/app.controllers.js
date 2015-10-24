@@ -63,9 +63,9 @@
     });
 
     app.controller('matchWidgetController', function($scope, apiServices){
-        var games = this;
+        var match = this;
         apiServices.getPrevMatch(3).success(function (data) {
-            games = data;
+            match.prev = data;
         });
     });
 

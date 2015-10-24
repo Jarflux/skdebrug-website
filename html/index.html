@@ -193,20 +193,20 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default panel-link" ng-controller="matchWidgetController as games">
+                <div class="panel panel-default panel-link" ng-controller="matchWidgetController as match">
                     <div class="panel-heading">
                         <h4>Wedstrijden</h4>
                     </div>
-                    <div class="panel-body" ng-repeat="game in games">
+                    <div class="panel-body" ng-repeat="club in match.prev">
                         <div class="panel-body-match-date">
-                            {{game.date | date:'EEEE dd/MM/yyyy - hh:mm'}}
+                            {{club.date | date:'EEEE dd/MM/yyyy - hh:mm'}}
                         </div>
-                        <h4>{{game.homeTeam.name}} - {{game.awayTeam.name}}</h4>
-                         <span class="panel-body-score">
-                                    <span class="in">{{game.homeScore}}</span>
-                                    <span class="divider">-</span>
-                                    <span class="out">{{game.awayScore}}</span>
-                                </span>
+                        <h4>{{club.homeTeam.name}} - {{club.awayTeam.name}}</h4>
+                        <span class="panel-body-score">
+                        <span class="in">{{club.homeScore}}</span>
+                        <span class="divider">-</span>
+                        <span class="out">{{club.awayScore}}</span>
+                        </span>
                     </div>
                     <div class="panel-body">
                         <a href="games.html">Meer matchen</a>
