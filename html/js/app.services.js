@@ -2,12 +2,19 @@
     var app = angular.module('skdebrug.services', []);
 
     var api = {
+        //players: 'data/player.json',
+        //news: 'data/news.json',
+        //newsItem: 'data/news-item.json?id={0}',
+        //nextMatch: 'data/next-match.json',
+        //allMatches: 'data/all-matches.json',
+        //prevMatch: 'data/prev-match.json',
+        //league: 'data/league.json',
         players: '/data/player',
         news: '/data/news',
         newsItem: '/data/news/{0}',
-        nextMatch: '/data/game/next/{0}/team/1',
+        nextMatch: '/data/game/next/{0}/team/{1}',
         allMatches: '/data/game',
-        prevMatch: '/data/game/prev/{0}/team/1',
+        prevMatch: '/data/game/prev/{0}/team/{1}',
         league: '/data/league',
     };
 
@@ -34,19 +41,14 @@
                     url: api.allMatches
                 })
             },
-            getNextMatch : function(){
+            getNextXMatch : function(x, y){
                 return $http({
-                    url: api.nextMatch.replace("{0}",1)
+                    url: api.nextMatch.replace("{0}",x).replace("{1}",y)
                 })
             },
-            getNextXMatch : function(x){
+            getPrevXMatch : function(x, y){
                 return $http({
-                    url: api.nextMatch.replace("{0}",x)
-                })
-            },
-            getPrevMatch : function(x){
-                return $http({
-                    url: api.prevMatch.replace("{0}",x)
+                    url: api.prevMatch.replace("{0}",x).replace("{1}",y)
                 })
             },
             getLeague : function(){

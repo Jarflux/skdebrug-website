@@ -57,14 +57,14 @@
 
     app.controller('nextMatchWidgetController', function($scope, apiServices){
         var match = this;
-        apiServices.getNextMatch().success(function (data) {
+        apiServices.getNextXMatch(1, 1).success(function (data) {
             match.next = data[0];
         });
     });
 
     app.controller('matchWidgetController', function($scope, apiServices){
         var match = this;
-        apiServices.getPrevMatch(3).success(function (data) {
+        apiServices.getPrevXMatch(3, 1).success(function (data) {
             match.prev = data;
         });
     });

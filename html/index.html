@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -36,24 +36,20 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="description"
-          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta name="description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta name="author" content="Ben Oeyen">
-    <meta name="keywords"
-          content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
+    <meta name="keywords" content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
 
     <meta property="og:url" content="http://www.skdebrug.be">
     <meta property="og:title" content="SK De Brug">
-    <meta property="og:description"
-          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta property="og:description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta property="og:image" content="images/logo.png">
 
     <title>SK De Brug | Home</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet'
-          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <!-- This will prefetch content from google web fonts website -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
 
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap.css" rel="stylesheet">
@@ -86,9 +82,7 @@
             <div class="container">
                 <div class="row">
                     <!--<div class="box-twitter box pull-right"><a href="http://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i>&nbsp;follow on twitter</a></div>-->
-                    <div class="box-facebook box pull-right"><a
-                            href="https://www.facebook.com/SK-De-Brug-145245795556832" target="_blank"><i
-                            class="fa fa-facebook"></i>&nbsp;like on facebook</a></div>
+                    <div class="box-facebook box pull-right"><a href="https://www.facebook.com/SK-De-Brug-145245795556832" target="_blank"><i class="fa fa-facebook"></i>&nbsp;like on facebook</a></div>
                 </div>
             </div>
         </div>
@@ -97,8 +91,7 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -141,8 +134,7 @@
     <div class="container page-border">
         <div class="row" ng-controller="bannerSliderController as banner">
             <div class="span12">
-                <div id="home-banner" class="owl-carousel"
-                     data-options="{loop: true, dotsSpeed : 400,dots: true, autoPlay: true, lazyLoad: true, items : 1, nav: true, autoplay : true, autoplayTimeout : 5000}">
+                <div id="home-banner" class="owl-carousel" data-options="{loop: true, dotsSpeed : 400,dots: true, autoPlay: true, lazyLoad: true, items : 1, nav: true, autoplay : true, autoplayTimeout : 5000}">
                 </div>
             </div>
         </div>
@@ -159,7 +151,6 @@
                                 <span class="month">{{item.date | date:'MMM' | uppercase}}</span>
                             </span>
                         <h4>{{item.title}}</h4>
-
                         <p>{{item.content | trim:true:300:' ...'}}</p>
                         <a href="news.html#/news/{{item.id}}" class="btn btn-default">Lees meer</a>
                     </div>
@@ -175,38 +166,30 @@
                     </div>
                     <div class="panel-body">
                         <h4 class="text-center">{{match.next.date | date:'EEEE dd/MM/yyyy - hh:mm'}}</h4>
-
                         <div class="panel-body-next-match">
                             <div class="in">
-                                <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png"
-                                     onerror="this.src = 'images/fallback/club.png';">
+                                <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
                                 <h5>{{match.next.homeTeam.name}}</h5>
                             </div>
                             <div class="divider">VS</div>
                             <div class="out">
-                                <img ng-src="images/clubs/{{match.next.awayTeam.name | lowercase | nospace:'_'}}.png"
-                                     onerror="this.src = 'images/fallback/club.png';">
+                                <img ng-src="images/clubs/{{match.next.awayTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
                                 <h5>{{match.next.awayTeam.name}}</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" >
                 <div class="panel panel-default panel-link" ng-controller="matchWidgetController as match">
                     <div class="panel-heading">
                         <h4>Wedstrijden</h4>
                     </div>
                     <div class="panel-body" ng-repeat="club in match.prev">
+                        <h4>{{club.homeTeam.name}} - {{club.awayTeam.name}}</h4>
                         <div class="panel-body-match-date">
                             {{club.date | date:'EEEE dd/MM/yyyy - hh:mm'}}
                         </div>
-                        <h4>{{club.homeTeam.name}} - {{club.awayTeam.name}}</h4>
-                        <span class="panel-body-score">
-                        <span class="in">{{club.homeScore}}</span>
-                        <span class="divider">-</span>
-                        <span class="out">{{club.awayScore}}</span>
-                        </span>
                     </div>
                     <div class="panel-body">
                         <a href="games.html">Meer matchen</a>
@@ -222,18 +205,13 @@
                 <h2 class="page-header">Spelers</h2>
             </div>
             <div class="col-lg-12">
-                <data-owl-carousel class="owl-carousel"
-                                   data-options="{dotsSpeed : 400, autoPlay: 3000, items : 6, margin: 10}">
+                <data-owl-carousel class="owl-carousel" data-options="{dotsSpeed : 400, autoPlay: 3000, items : 6, margin: 10}">
                     <div owl-carousel-item="" ng-repeat="player in team.players" class="item">
-                        <div class="home-player">
-                            <img class="img-responsive"
-                                 ng-src="images/players/thumbs/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg"
-                                 alt="{{player.firstName}} {{player.lastName}}"
-                                 onerror="this.src = 'images/fallback/player.jpg';">
-
-                            <div class="number">{{player.number}}</div>
-                            <h5>{{player.firstName}} {{player.lastName}}</h5>
-                        </div>
+                            <div class="home-player">
+                                <img class="img-responsive" ng-src="images/players/thumbs/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg" alt="{{player.firstName}} {{player.lastName}}" onerror="this.src = 'images/fallback/player.jpg';">
+                                <div class="number">{{player.number}}</div>
+                                <h5>{{player.firstName}} {{player.lastName}}</h5>
+                            </div>
                     </div>
                 </data-owl-carousel>
 
@@ -248,27 +226,18 @@
             </div>
             <div class="col-md-6">
                 <p>
-                    Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon
-                    overgedragen, een zeldzaam fenomeen in het mondiale voetbal.
-                    Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze
-                    het spel van hun zes zonen en jawel zelfs schoonzoon
+                    Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon overgedragen, een zeldzaam fenomeen in het mondiale voetbal.
+                    Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze het spel van hun zes zonen en jawel zelfs schoonzoon
                     van commentaar voorzien.
                 </p>
-
                 <p>
-                    Een aandoenlijk tafereel voor beide partijen. Een van de zonen bleek over een omvangrijke
-                    voetballende vriendenkring te beschikken en dit
-                    aangevuld met de ervaring van enkele ‘oude rotten’ maakt het zootje ongeregeld dat zich met trots SK
-                    de Brug noemt compleet. Sk de Brug: een ploeg waar de secretaris
-                    keeper is, de 45-jarige voorzitter over de beste zoolbeweging van de competitie beschikt en de
-                    speler met de meeste diploma’s prompt tot coach wordt gebombardeerd.
+                    Een aandoenlijk tafereel voor beide partijen. Een van de zonen bleek over een omvangrijke voetballende vriendenkring te beschikken en dit
+                    aangevuld met de ervaring van enkele ‘oude rotten’  maakt het zootje ongeregeld dat zich met trots SK de Brug noemt compleet. Sk de Brug: een ploeg waar de secretaris
+                    keeper is, de 45-jarige voorzitter over de beste zoolbeweging van de competitie beschikt en de speler met de meeste diploma’s prompt tot coach wordt gebombardeerd.
                 </p>
-
                 <p>
-                    Tactiek wordt er consequent pas na de match besproken, amateurisme tiert er welig, de kantine is
-                    eerder mistroostig, de spits scoort naar verluidt meer naast dan op
-                    het veld en de door supporters verkozen man van de match is meestal diegene die het minst fout heeft
-                    gedaan. Maar godverdoemme wat is het plezant, sjotten bij de Brug!
+                    Tactiek wordt er consequent pas na de match besproken, amateurisme tiert er welig, de kantine is eerder mistroostig, de spits scoort naar verluidt meer naast dan op
+                    het veld en de door supporters verkozen man van de match is meestal diegene die het minst fout heeft gedaan. Maar godverdoemme wat is het plezant, sjotten bij de Brug!
                 </p>
                 <a href="club.html" class="btn btn-default">Lees meer</a>
             </div>
