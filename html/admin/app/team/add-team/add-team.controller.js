@@ -24,6 +24,7 @@
         vm.addTeam = function () {
             TeamService.add(vm.team).then(function (result) {
                 console.log('successfully added', vm.team, result);
+                _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
             });
