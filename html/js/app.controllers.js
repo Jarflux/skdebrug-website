@@ -21,7 +21,7 @@
     app.controller('newsDetailController', function($scope, $routeParams, apiServices) {
         $scope.newsId = $routeParams.newsId;
         apiServices.getNewsItem($scope.newsId).success(function (data) {
-            $scope.item = data[0];
+            $scope.item = data;
         });
     });
 
