@@ -5,7 +5,7 @@
         .module('skdebrug.admin.teams')
         .controller('teamController', teamController);
 
-    teamController.$inject = [];
+    teamController.$inject = ['TeamService'];
 
     /* @ngInject */
     function teamController(TeamService) {
