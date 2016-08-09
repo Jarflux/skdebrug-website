@@ -1,0 +1,11 @@
+<form ng-submit="vm.addGame()">
+
+    <label for="gameName">
+        <!-- //TODO Add correct fields -->
+        Game name:
+        <input type="text" ng-model="vm.game.name" name="gameName" id="gameName">
+    </label>
+
+    <button type="submit">Toevoegen</button>
+    <button type="reset" ng-click="vm.reset()">reset</button>
+</form>

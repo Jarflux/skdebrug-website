@@ -1,0 +1,9 @@
+<p>Games overview</p>
+
+<ul>
+<div ng-repeat="game in vm.games">
+    <li>{{game.id}} {{game.date}} {{game.homeTeam.name}} {{game.awayTeam.name}} <a href="/data/game/{{game.id}}">show</a></li>
+</div>
+</ul>
+
+<a href="#/teams/add">Add a Game</a>

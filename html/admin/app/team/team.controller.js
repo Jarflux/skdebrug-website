@@ -10,7 +10,9 @@
     /* @ngInject */
     function teamController(TeamService) {
         var vm = this;
-        vm.teams = TeamService.all();
+        TeamService.all().success(function (data) {
+            vm.teams = data;
+        });
     }
 
 })();

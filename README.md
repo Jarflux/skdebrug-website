@@ -7,10 +7,10 @@ docker pull jarflux/docker-skdebrug
 docker ps
 
 # Stop the running container
-docker stop <ID>
+docker stop CONTAINER_ID
 
 # Run Image
 docker run -d -p 80:80 -p 9000:9000 jarflux/docker-skdebrug
 
-# Fill site with data agian
+# Fill site with data again
 curl /data/dev/fill

@@ -1,15 +1,8 @@
 <p>Teams overview</p>
-<ul>
-    <li>Some Team name</li>
-    <li>Some Team name</li>
-    <li>Some Team name</li>
-    <li>Some Team name</li>
-    <li>Some Team name</li>
-</ul>
 
 <ul>
 <div ng-repeat="team in vm.teams">
-    <li>{{team.name}} <a href="/data/team/{{team.id}}">delete</a></li>
+    <li>{{team.id}} {{team.name}} <a href="/data/team/{{team.id}}">show</a></li>
 </div>
 </ul>
 

@@ -1,0 +1,9 @@
+<p>Players overview</p>
+
+<ul>
+<div ng-repeat="player in vm.players">
+    <li>{{player.id}} {{player.firstName}} {{player.lastName}} <a href="/data/player/{{player.id}}">show</a></li>
+</div>
+</ul>
+
+<a href="#/players/add">Add a Player</a>
