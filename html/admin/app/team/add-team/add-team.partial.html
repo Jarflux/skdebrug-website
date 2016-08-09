@@ -1,0 +1,11 @@
+<form ng-submit="vm.addTeam()">
+
+    <label for="teamName">
+        Team name:
+        <input type="text" ng-model="vm.team.name" name="teamName" id="teamName">
+    </label>
+
+    <button type="submit">Toevoegen</button>
+    <button type="reset" ng-click="vm.reset()">reset</button>
+
+</form>
