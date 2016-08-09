@@ -8,14 +8,9 @@
     teamController.$inject = [];
 
     /* @ngInject */
-    function teamController() {
+    function teamController(TeamService) {
         var vm = this;
-        vm.teams = [
-            {
-                id: 1,
-                name: "Appel"
-            }
-        ];
+        vm.teams = TeamService.all();
     }
 
 })();

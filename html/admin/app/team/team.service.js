@@ -14,15 +14,24 @@
             var request = {
                 data: teamObj,
                 method: 'POST',
-                url: '/data/team',
-                withCredentials: true
+                url: '/data/team'
+            };
+
+            return $http(request);
+        }
+
+        function _all() {
+            var request = {
+                method: 'GET',
+                url: '/data/team'
             };
 
             return $http(request);
         }
 
         return {
-            add: _add
+            add: _add,
+            all: _all
         }
     }
 

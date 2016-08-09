@@ -7,4 +7,10 @@
     <li>Some Team name</li>
 </ul>
 
+<ul>
+<div ng-repeat="team in vm.teams">
+    <li>{{team.name}} <a href="/data/team/{{team.id}}">delete</a></li>
+</div>
+</ul>
+
 <a href="#/teams/add">Add a Team</a>
