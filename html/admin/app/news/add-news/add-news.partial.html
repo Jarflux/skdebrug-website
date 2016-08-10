@@ -1,10 +1,20 @@
 <form ng-submit="vm.addNews()">
 
-    <label for="newsName">
-        <!-- //TODO Add correct fields -->
-        News name:
-        <input type="text" ng-model="vm.news.name" name="newsName" id="newsName">
+    <label for="date">
+        Date:
+        <input type="date" ng-model="vm.news.date" name="date" id="date">
     </label>
+
+    <label for="title">
+        Title:
+        <input type="text" ng-model="vm.news.title" name="title" id="title">
+    </label>
+
+    <label for="content">
+        Content:
+        <input type="text" ng-model="vm.news.content" name="content" id="content">
+    </label>
+
 
     <button type="submit">Toevoegen</button>
     <button type="reset" ng-click="vm.reset()">reset</button>

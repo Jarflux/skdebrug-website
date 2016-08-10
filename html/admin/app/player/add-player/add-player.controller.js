@@ -16,9 +16,12 @@
         };
 
         function _reset() {
-            //TODO reset all fields
             vm.player = {
-                //name: undefined
+                firstName: undefined,
+                lastName: undefined,
+                number: undefined,
+                dateOfBirth: undefined,
+                playerType: undefined
             };
         }
 

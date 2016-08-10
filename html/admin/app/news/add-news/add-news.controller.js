@@ -16,9 +16,10 @@
         };
 
         function _reset() {
-            //TODO reset all fields
             vm.news = {
-                //name: undefined
+                date: undefined,
+                title: undefined,
+                content: undefined
             };
         }
 

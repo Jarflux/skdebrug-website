@@ -13,9 +13,6 @@
                 templateUrl: 'app/team/add-team/add-team.partial.html',
                 controller: 'addTeamController',
                 controllerAs: 'vm'
-            }).
-            otherwise({
-                redirectTo: '/teams'
             });
         }
     ]);
