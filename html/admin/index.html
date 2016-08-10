@@ -54,11 +54,6 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/lib/bootstrap.css" rel="stylesheet">
 
-    <!-- OWL Carousel CSS -->
-    <link href="css/lib/owl-carousel.css" rel="stylesheet">
-    <link href="css/lib/owl-theme.css" rel="stylesheet">
-    <link href="css/lib/owl-transitions.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="css/lib/modern-business.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
@@ -77,11 +72,12 @@
 
 <body>
 <div class="page">
-
-    <a href="#/news">Manage News</a>
-    <a href="#/teams">Manage Teams</a>
-    <a href="#/players">Manage Players</a>
-    <a href="#/games">Manage Games</a>
+    <ul>
+        <li><a href="#/news">Manage News</a></li>
+        <li><a href="#/teams">Manage Teams</a></li>
+        <li><a href="#/players">Manage Players</a></li>
+        <li><a href="#/games">Manage Games</a></li>
+    </ul>
 
 
     <!-- Angular -->
@@ -95,6 +91,21 @@
     <script src="../js/libs/bootstrap/bootstrap.min.js"></script>
 
     <script src="app/app.js"></script>
+    <script src="app/news/news.route.js"></script>
+    <script src="app/news/news.controller.js"></script>
+    <script src="app/news/news.service.js"></script>
+    <script src="app/news/news.controller.js"></script>
+    <script src="app/news/add-news/add-news.controller.js"></script>
+    <script src="app/player/player.route.js"></script>
+    <script src="app/player/player.controller.js"></script>
+    <script src="app/player/player.service.js"></script>
+    <script src="app/player/player.controller.js"></script>
+    <script src="app/player/add-player/add-player.controller.js"></script>
+    <script src="app/game/game.route.js"></script>
+    <script src="app/game/game.controller.js"></script>
+    <script src="app/game/game.service.js"></script>
+    <script src="app/game/game.controller.js"></script>
+    <script src="app/game/add-game/add-game.controller.js"></script>
     <script src="app/team/team.route.js"></script>
     <script src="app/team/team.controller.js"></script>
     <script src="app/team/team.service.js"></script>
