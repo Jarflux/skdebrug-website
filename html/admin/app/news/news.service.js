@@ -3,12 +3,12 @@
 
     angular
         .module('skdebrug.admin.news')
-        .service('Newservice', Newservice);
+        .service('NewsService', NewsService);
 
-    Newservice.$inject = ['$http'];
+    NewsService.$inject = ['$http'];
 
     /* @ngInject */
-    function Newservice($http) {
+    function NewsService($http) {
 
         function _add(newsObj) {
             var request = {

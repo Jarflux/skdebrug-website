@@ -5,10 +5,10 @@
         .module('skdebrug.admin.news')
         .controller('addNewsController', addNewsController);
 
-    addNewsController.$inject = ['Newservice'];
+    addNewsController.$inject = ['NewsService'];
 
     /* @ngInject */
-    function addNewsController(Newservice) {
+    function addNewsController(NewsService) {
         var vm = this;
 
         vm.$onInit = function () {
