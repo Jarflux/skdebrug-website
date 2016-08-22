@@ -13,9 +13,6 @@
                 templateUrl: 'app/game/add-game/add-game.partial.html',
                 controller: 'addGameController',
                 controllerAs: 'vm'
-            }).
-            otherwise({
-                redirectTo: '/games'
             });
         }
     ]);

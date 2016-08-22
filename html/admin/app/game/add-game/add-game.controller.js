@@ -16,9 +16,13 @@
         };
 
         function _reset() {
-            //TODO reset all fields
             vm.game = {
-                //name: undefined
+                gameType: undefined,
+                date: undefined,
+                homeTeam: undefined,
+                awayTeam: undefined,
+                homeScore: undefined,
+                awayScore: undefined
             };
         }
 

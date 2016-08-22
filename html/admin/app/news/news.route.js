@@ -13,9 +13,6 @@
                 templateUrl: 'app/news/add-news/add-news.partial.html',
                 controller: 'addNewsController',
                 controllerAs: 'vm'
-            }).
-            otherwise({
-                redirectTo: '/news'
             });
         }
     ]);

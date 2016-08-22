@@ -13,9 +13,6 @@
                 templateUrl: 'app/player/add-player/add-player.partial.html',
                 controller: 'addPlayerController',
                 controllerAs: 'vm'
-            }).
-            otherwise({
-                redirectTo: '/players'
             });
         }
     ]);

@@ -1,9 +1,36 @@
 <form ng-submit="vm.addGame()">
 
-    <label for="gameName">
-        <!-- //TODO Add correct fields -->
-        Game name:
-        <input type="text" ng-model="vm.game.name" name="gameName" id="gameName">
+    <!-- //TODO add dropdown -->
+    <label for="gameType">
+        Game Type:
+        <input type="text" ng-model="vm.game.gameType" name="gameType" id="gameType">
+    </label>
+
+    <label for="date">
+        Date:
+        <input type="date" ng-model="vm.game.date" name="date" id="date">
+    </label>
+
+    <!-- //TODO add dropdown -->
+    <label for="homeTeam">
+        Home team:
+        <input type="number" ng-model="vm.game.homeTeam" name="homeTeam" id="homeTeam">
+    </label>
+
+    <!-- //TODO add dropdown -->
+    <label for="awayTeam">
+        Away team:
+        <input type="number" ng-model="vm.game.awayTeam" name="awayTeam" id="awayTeam">
+    </label>
+
+    <label for="homeScore">
+        Home score:
+        <input type="number" ng-model="vm.game.homeScore" name="homeScore" id="homeScore">
+    </label>
+
+    <label for="awayScore">
+        Away score:
+        <input type="number" ng-model="vm.game.awayScore" name="awayScore" id="awayScore">
     </label>
 
     <button type="submit">Toevoegen</button>
