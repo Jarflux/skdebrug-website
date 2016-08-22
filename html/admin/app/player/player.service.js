@@ -29,9 +29,19 @@
             return $http(request);
         }
 
+        function _types() {
+            var request = {
+                method: 'GET',
+                url: '/data/player/type'
+            };
+
+            return $http(request);
+        }
+
         return {
             add: _add,
-            all: _all
+            all: _all,
+            types: _types()
         }
     }
 

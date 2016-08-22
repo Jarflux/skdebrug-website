@@ -13,6 +13,9 @@
         GameService.all().success(function (data) {
             vm.games = data;
         });
+        GameService.types().success(function (data) {
+            vm.types = data;
+        });
     }
 
 })();

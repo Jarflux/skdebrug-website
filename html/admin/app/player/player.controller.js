@@ -13,6 +13,9 @@
         PlayerService.all().success(function (data) {
             vm.players = data;
         });
+        PlayerService.types().success(function (data) {
+            vm.types = data;
+        });
     }
 
 })();
