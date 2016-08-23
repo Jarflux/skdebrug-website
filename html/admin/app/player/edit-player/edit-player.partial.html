@@ -1,0 +1,31 @@
+<form ng-submit="vm.editPlayer()">
+
+    <label for="firstName">
+        First name:
+        <input type="text" ng-model="vm.player.firstName" name="firstName" id="firstName">
+    </label>
+
+    <label for="lastName">
+        Last name:
+        <input type="text" ng-model="vm.player.lastName" name="lastName" id="lastName">
+    </label>
+
+    <label for="number">
+        Number:
+        <input type="number" ng-model="vm.player.number" name="number" id="number">
+    </label>
+
+    <label for="dateOfBirth">
+        Date of birth:
+        <input type="date" ng-model="vm.player.dateOfBirth" name="dateOfBirth" id="dateOfBirth">
+    </label>
+
+    <!-- // TODO Make dropdown -->
+    <label for="playerType">
+        Number:
+        <input type="text" ng-model="vm.player.playerType" name="playerType" id="playerType">
+    </label>
+
+    <button type="submit">Toevoegen</button>
+    <button type="reset" ng-click="vm.reset()">reset</button>
+</form>

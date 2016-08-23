@@ -1,19 +1,24 @@
-(function() {
+(function () {
     var app = angular.module('skdebrug.admin.teams', ['ngRoute']);
 
     app.config(['$routeProvider',
-        function($routeProvider) {
+        function ($routeProvider) {
             $routeProvider.
-            when('/teams', {
-                templateUrl: 'app/team/list-team/list-team.partial.html',
-                controller: 'teamController',
-                controllerAs: 'vm'
-            }).
-            when('/teams/add', {
-                templateUrl: 'app/team/add-team/add-team.partial.html',
-                controller: 'addTeamController',
-                controllerAs: 'vm'
-            });
+                when('/team', {
+                    templateUrl: 'app/team/list-team/list-team.partial.html',
+                    controller: 'listTeamController',
+                    controllerAs: 'vm'
+                }).
+                when('/player/:teamId', {
+                    templateUrl: 'app/team/edit-team/edit-team.partial.html',
+                    controller: 'editTeamController',
+                    controllerAs: 'vm'
+                }).
+                when('/team/add', {
+                    templateUrl: 'app/team/add-team/add-team.partial.html',
+                    controller: 'addTeamController',
+                    controllerAs: 'vm'
+                });
         }
     ]);
 

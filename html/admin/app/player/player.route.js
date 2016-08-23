@@ -1,19 +1,24 @@
-(function() {
+(function () {
     var app = angular.module('skdebrug.admin.players', ['ngRoute']);
 
     app.config(['$routeProvider',
-        function($routeProvider) {
+        function ($routeProvider) {
             $routeProvider.
-            when('/players', {
-                templateUrl: 'app/player/player.partial.html',
-                controller: 'playerController',
-                controllerAs: 'vm'
-            }).
-            when('/players/add', {
-                templateUrl: 'app/player/add-player/add-player.partial.html',
-                controller: 'addPlayerController',
-                controllerAs: 'vm'
-            });
+                when('/player', {
+                    templateUrl: 'app/player/list-player/list-player.partial.html',
+                    controller: 'listPlayerController',
+                    controllerAs: 'vm'
+                }).
+                when('/player/:playerId', {
+                    templateUrl: 'app/player/edit-player/edit-player.partial.html',
+                    controller: 'editPlayerController',
+                    controllerAs: 'vm'
+                }).
+                when('/player/add', {
+                    templateUrl: 'app/player/add-player/add-player.partial.html',
+                    controller: 'addPlayerController',
+                    controllerAs: 'vm'
+                });
         }
     ]);
 
