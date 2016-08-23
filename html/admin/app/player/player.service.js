@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('skdebrug.admin.players')
+        .module('skdebrug.admin.player')
         .service('PlayerService', PlayerService);
 
     PlayerService.$inject = ['$http'];
@@ -161,7 +161,6 @@
             });
 
             return deferred.promise;
-
 
             var request = {
                 method: 'GET',

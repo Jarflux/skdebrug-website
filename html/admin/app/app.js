@@ -1,8 +1,8 @@
 angular.module('skdebrug.admin', [
     'ngRoute',
 
-    'skdebrug.admin.teams',
-    'skdebrug.admin.players',
+    'skdebrug.admin.team',
+    'skdebrug.admin.player',
     'skdebrug.admin.news',
-    'skdebrug.admin.games'
+    'skdebrug.admin.game'
 ]);

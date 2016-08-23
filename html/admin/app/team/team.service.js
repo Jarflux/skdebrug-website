@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('skdebrug.admin.teams')
+        .module('skdebrug.admin.team')
         .service('TeamService', TeamService);
 
     TeamService.$inject = ['$http'];

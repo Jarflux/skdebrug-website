@@ -11,10 +11,10 @@
     function listGameController(GameService) {
         var vm = this;
         GameService.all().then(function (result) {
-            vm.games = data;
+            vm.games = result.data;
         });
         GameService.types().then(function (result) {
-            vm.types = data;
+            vm.types = result.data;
         });
     }
 

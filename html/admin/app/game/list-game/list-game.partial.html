@@ -1,9 +1,6 @@
-<p>Games overview</p>
+<h3>Games overview</h3>
 
-<ul>
-<div ng-repeat="game in vm.games">
-    <li>{{game.id}} {{game.date}} {{game.homeTeam.name}} {{game.awayTeam.name}} <a href="/data/game/{{game.id}}">show</a></li>
+<div class="list-group">
+    <a ng-repeat="game in vm.games" class="list-group-item" href="#/game/{{game.id}}">{{game.id}} {{game.homeTeam.name}} - {{game.awayTeam.name}}</a>
+    <a class="list-group-item list-group-item-info" href="#/game/add">Add Game</a>
 </div>
-</ul>
-
-<a href="#/teams/add">Add a Game</a>
