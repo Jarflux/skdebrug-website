@@ -5,10 +5,10 @@
         .module('skdebrug.admin.team')
         .service('TeamService', TeamService);
 
-    TeamService.$inject = ['$http'];
+    TeamService.$inject = ['$http', '$q'];
 
     /* @ngInject */
-    function TeamService($http) {
+    function TeamService($http, $q) {
 
         function _add(teamObj) {
             var request = {

@@ -1,5 +1,5 @@
 (function () {
-    var app = angular.module('skdebrug.admin.players', ['ngRoute']);
+    var app = angular.module('skdebrug.admin.player', ['ngRoute']);
 
     app.config(['$routeProvider',
         function ($routeProvider) {

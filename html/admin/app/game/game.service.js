@@ -5,10 +5,10 @@
         .module('skdebrug.admin.game')
         .service('GameService', GameService);
 
-    GameService.$inject = ['$http'];
+    GameService.$inject = ['$http', '$q'];
 
     /* @ngInject */
-    function GameService($http) {
+    function GameService($http, $q) {
 
         function _add(gameObj) {
             var request = {

@@ -5,10 +5,10 @@
         .module('skdebrug.admin.player')
         .service('PlayerService', PlayerService);
 
-    PlayerService.$inject = ['$http'];
+    PlayerService.$inject = ['$http', '$q'];
 
     /* @ngInject */
-    function PlayerService($http) {
+    function PlayerService($http, $q) {
 
         function _add(playerObj) {
             var request = {

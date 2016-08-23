@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('skdebrug.admin.players')
+        .module('skdebrug.admin.player')
         .controller('listPlayerController', listPlayerController);
 
     listPlayerController.$inject = ['PlayerService'];
