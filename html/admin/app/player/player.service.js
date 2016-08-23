@@ -41,7 +41,7 @@
         return {
             add: _add,
             all: _all,
-            types: _types()
+            types: _types
         }
     }
 

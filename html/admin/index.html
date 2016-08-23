@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -36,27 +36,30 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta name="description"
+          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta name="author" content="Ben Oeyen">
-    <meta name="keywords" content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
+    <meta name="keywords"
+          content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
 
     <meta property="og:url" content="http://www.skdebrug.be">
     <meta property="og:title" content="SK De Brug">
-    <meta property="og:description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta property="og:description"
+          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta property="og:image" content="images/logo.png">
 
     <title>SK De Brug | Home</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
     <!-- This will prefetch content from google web fonts website -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/css/lib/bootstrap.css" rel="stylesheet">
+    <link href="./../css/lib/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/css/lib/modern-business.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <!--<link href="./../css/lib/modern-business.css" rel="stylesheet">-->
 
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -72,14 +75,24 @@
 
 <body>
 <div class="page">
-    <ul>
-        <li><a href="#/news">Manage News</a></li>
-        <li><a href="#/teams">Manage Teams</a></li>
-        <li><a href="#/players">Manage Players</a></li>
-        <li><a href="#/games">Manage Games</a></li>
-    </ul>
 
-    <div ng-view></div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#/" class="navbar-brand">Admin</a>
+            </div>
+            <div class="">
+                <ul class="nav navbar-nav">
+                    <li><a href="#/news">News</a></li>
+                    <li><a href="#/teams">Teams</a></li>
+                    <li><a href="#/players">Players</a></li>
+                    <li><a href="#/games">Games</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" ng-view></div>
 
     <!-- Angular -->
     <script src="../js/libs/angular/angular.min.js"></script>
@@ -94,8 +107,9 @@
     <script src="app/app.js"></script>
     <script src="app/news/news.route.js"></script>
     <script src="app/news/news.service.js"></script>
-    <script src="app/news/news.controller.js"></script>
+    <script src="app/news/list-news/list-news.controller.js"></script>
     <script src="app/news/add-news/add-news.controller.js"></script>
+    <script src="app/news/edit-news/edit-news.controller.js"></script>
 
     <script src="app/player/player.route.js"></script>
     <script src="app/player/player.service.js"></script>
@@ -109,7 +123,7 @@
 
     <script src="app/team/team.route.js"></script>
     <script src="app/team/team.service.js"></script>
-    <script src="app/team/team.controller.js"></script>
+    <script src="app/team/list-team/team.controller.js"></script>
     <script src="app/team/add-team/add-team.controller.js"></script>
 </div>
 </body>

@@ -1,0 +1,21 @@
+<h3>Edit news item</h3>
+
+<form ng-submit="vm.editNews()">
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input type="date" ng-model="vm.news.date" class="form-control" name="date" id="date">
+    </div>
+
+    <div class="form-group">
+        <label for="title">Date:</label>
+        <input type="title" ng-model="vm.news.title" class="form-control" name="title" id="title" placeholder="Title">
+    </div>
+
+    <div class="form-group">
+        <label for="content">Content:</label>
+        <textarea class="form-control" rows="10" ng-model="vm.news.content" name="content" id="content" placeholder="Content"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-default">Reset</button>
+</form>

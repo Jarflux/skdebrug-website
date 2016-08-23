@@ -24,7 +24,7 @@
         }
 
         vm.addNews = function () {
-            Newservice.add(vm.news).then(function (result) {
+            NewsService.add(vm.news).then(function (result) {
                 console.log('successfully added', vm.news, result);
                 _reset();
             }, function (error) {
@@ -35,7 +35,6 @@
         vm.reset = function () {
             _reset();
         };
-
 
     }
 

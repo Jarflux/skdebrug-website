@@ -5,7 +5,7 @@
         function($routeProvider) {
             $routeProvider.
             when('/teams', {
-                templateUrl: 'app/team/team.partial.html',
+                templateUrl: 'app/team/list-team/list-team.partial.html',
                 controller: 'teamController',
                 controllerAs: 'vm'
             }).

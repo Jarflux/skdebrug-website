@@ -5,8 +5,13 @@
         function($routeProvider) {
             $routeProvider.
             when('/news', {
-                templateUrl: 'app/news/news.partial.html',
-                controller: 'newsController',
+                templateUrl: 'app/news/list-news/list-news.partial.html',
+                controller: 'listNewsController',
+                controllerAs: 'vm'
+            }).
+            when('/news/:newsId', {
+                templateUrl: 'app/news/edit-news/edit-news.partial.html',
+                controller: 'editNewsController',
                 controllerAs: 'vm'
             }).
             when('/news/add', {
