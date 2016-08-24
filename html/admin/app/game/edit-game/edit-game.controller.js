@@ -5,11 +5,20 @@
         .module('skdebrug.admin.game')
         .controller('editGameController', editGameController);
 
-    editGameController.$inject = ['GameService'];
+    editGameController.$inject = ['GameService', 'TeamService'];
 
     /* @ngInject */
-    function editGameController(GameService) {
+    function editGameController(GameService, TeamService) {
         var vm = this;
+
+        GameService.types().then(function (result) {
+            vm.types = result.data;
+        });
+
+        // TODO GET ALL TEAMS FROM TEAMSERVICE
+        GameService.allTeams().then(function (result) {
+            vm.teams = result.data;
+        });
 
         vm.$onInit = function () {
             _reset();
@@ -24,6 +33,7 @@
                 homeScore: undefined,
                 awayScore: undefined
             };
+
         }
 
         vm.editGame = function () {

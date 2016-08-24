@@ -13,9 +13,6 @@
         PlayerService.all().then(function (result) {
             vm.players = result.data;
         });
-        PlayerService.types().then(function (result) {
-            vm.types = result.data;
-        });
     }
 
 })();

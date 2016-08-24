@@ -1094,7 +1094,74 @@
             return $http(request);
         }
 
+        //TODO REMOVE THIS METHOD AFTER CONTROLLERS USE TEAMSERVICE
+        function _allTeams() {
+
+            //var deferred = $q.defer();
+            //
+            //deferred.resolve({
+            //    data: [{
+            //        "id": 1,
+            //        "name": "SK De Brug"
+            //    }, {
+            //        "id": 2,
+            //        "name": "Deurnese Turners B"
+            //    }, {
+            //        "id": 3,
+            //        "name": "KFC Brabo"
+            //    }, {
+            //        "id": 4,
+            //        "name": "Vidam"
+            //    }, {
+            //        "id": 5,
+            //        "name": "P.S.K."
+            //    }, {
+            //        "id": 6,
+            //        "name": "Amber E"
+            //    }, {
+            //        "id": 7,
+            //        "name": "Toreke"
+            //    }, {
+            //        "id": 8,
+            //        "name": "TC Brabo"
+            //    }, {
+            //        "id": 9,
+            //        "name": "Houtbeurs"
+            //    }, {
+            //        "id": 10,
+            //        "name": "Nonkel Jan"
+            //    }, {
+            //        "id": 11,
+            //        "name": "Umicore"
+            //    }, {
+            //        "id": 12,
+            //        "name": "AC De Heide"
+            //    }]
+            //});
+            //
+            //return deferred.promise;
+
+            var request = {
+                method: 'GET',
+                url: '/data/team'
+            };
+
+            return $http(request);
+        }
+
         function _types() {
+
+            //var deferred = $q.defer();
+            //
+            //deferred.resolve({
+            //    data: [
+            //        "CUP",
+            //        "LEAGUE"
+            //    ]
+            //});
+            //
+            //return deferred.promise;
+
             var request = {
                 method: 'GET',
                 url: '/data/game/type'
@@ -1106,7 +1173,8 @@
         return {
             add: _add,
             all: _all,
-            types: _types
+            types: _types,
+            allTeams: _allTeams
         }
     }
 

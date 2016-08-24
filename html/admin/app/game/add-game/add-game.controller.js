@@ -5,11 +5,21 @@
         .module('skdebrug.admin.game')
         .controller('addGameController', addGameController);
 
-    addGameController.$inject = ['GameService'];
+    addGameController.$inject = ['GameService', 'TeamService'];
 
     /* @ngInject */
-    function addGameController(GameService) {
+    function addGameController(GameService, TeamService) {
         var vm = this;
+
+        GameService.types().then(function (result) {
+            vm.types = result.data;
+        });
+
+        // TODO GET ALL TEAMS FROM TEAMSERVICE
+        GameService.allTeams().then(function (result) {
+            vm.teams = result.data;
+        });
+
 
         vm.$onInit = function () {
             _reset();
@@ -39,6 +49,8 @@
             _reset();
         };
 
+
+        //TODO PREVENT 2 OF THE SAME TEAMS SELECTED
 
     }
 

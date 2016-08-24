@@ -13,9 +13,6 @@
         GameService.all().then(function (result) {
             vm.games = result.data;
         });
-        GameService.types().then(function (result) {
-            vm.types = result.data;
-        });
     }
 
 })();

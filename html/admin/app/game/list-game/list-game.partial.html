@@ -1,6 +1,6 @@
 <h3>Games overview</h3>
 
 <div class="list-group">
-    <a ng-repeat="game in vm.games" class="list-group-item" href="#/game/{{game.id}}">{{game.id}} {{game.homeTeam.name}} - {{game.awayTeam.name}}</a>
     <a class="list-group-item list-group-item-info" href="#/game/add">Add Game</a>
+    <a ng-repeat="game in vm.games" class="list-group-item" href="#/game/{{game.id}}">{{game.id}} {{game.homeTeam.name}} - {{game.awayTeam.name}}</a>
 </div>

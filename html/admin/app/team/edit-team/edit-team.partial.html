@@ -1,10 +1,12 @@
+<h3>Update Team</h3>
+
 <form ng-submit="vm.addTeam()">
 
-    <label for="name">
-        Name:
-        <input type="text" ng-model="vm.team.name" name="name" id="name">
-    </label>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" ng-model="vm.team.name" class="form-control" name="name" id="name">
+    </div>
 
-    <button type="submit">Toevoegen</button>
-    <button type="reset" ng-click="vm.reset()">reset</button>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
 </form>

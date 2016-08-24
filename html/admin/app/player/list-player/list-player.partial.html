@@ -1,7 +1,8 @@
 <h3>Players overview</h3>
 
 <div class="list-group">
-    <a ng-repeat="player in vm.players" class="list-group-item" href="#/player/{{player.id}}">{{player.id}} {{player.lastName}} {{player.firstName}}</a>
     <a class="list-group-item list-group-item-info" href="#/player/add">Add Player</a>
+    <a ng-repeat="player in vm.players" class="list-group-item" href="#/player/{{player.id}}">{{player.id}}
+        {{player.lastName}} {{player.firstName}}</a>
 </div>
 

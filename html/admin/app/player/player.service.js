@@ -171,6 +171,20 @@
         }
 
         function _types() {
+
+            //var deferred = $q.defer();
+            //
+            //deferred.resolve({
+            //    data: [
+            //        "GOALKEEPER",
+            //        "DEFENDER",
+            //        "MIDFIELDER",
+            //        "STRIKER"
+            //    ]
+            //});
+            //
+            //return deferred.promise;
+
             var request = {
                 method: 'GET',
                 url: '/data/player/type'

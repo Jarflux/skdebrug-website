@@ -1,6 +1,6 @@
 <h3>News overview</h3>
 
 <div class="list-group">
-    <a ng-repeat="news in vm.news" class="list-group-item" href="#/news/{{news.id}}">{{news.id}} {{news.title}}</a>
     <a class="list-group-item list-group-item-info" href="#/news/add">Add News</a>
+    <a ng-repeat="news in vm.news" class="list-group-item" href="#/news/{{news.id}}">{{news.id}} {{news.title}}</a>
 </div>

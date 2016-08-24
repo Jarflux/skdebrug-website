@@ -9,14 +9,14 @@
                     controller: 'listNewsController',
                     controllerAs: 'vm'
                 }).
-                when('/news/:newsId', {
-                    templateUrl: 'app/news/edit-news/edit-news.partial.html',
-                    controller: 'editNewsController',
-                    controllerAs: 'vm'
-                }).
                 when('/news/add', {
                     templateUrl: 'app/news/add-news/add-news.partial.html',
                     controller: 'addNewsController',
+                    controllerAs: 'vm'
+                }).
+                when('/news/:newsId', {
+                    templateUrl: 'app/news/edit-news/edit-news.partial.html',
+                    controller: 'editNewsController',
                     controllerAs: 'vm'
                 });
         }

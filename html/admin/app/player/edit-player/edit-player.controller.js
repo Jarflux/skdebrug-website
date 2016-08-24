@@ -11,6 +11,10 @@
     function editPlayerController(PlayerService) {
         var vm = this;
 
+        PlayerService.types().then(function (result) {
+            vm.types = result.data;
+        });
+
         vm.$onInit = function () {
             _reset();
         };
