@@ -12,6 +12,9 @@
         var vm = this;
 
         vm.$onInit = function () {
+
+            $("[type='date']").datepicker({});
+
             _reset();
         };
 
@@ -26,10 +29,27 @@
         vm.addNews = function () {
             NewsService.add(vm.news).then(function (result) {
                 console.log('successfully added', vm.news, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully added the news article: ' + vm.news.title
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
+
+                vm.message = {
+                    success: true,
+                    text: 'Successfully added the news article: ' + vm.news.title
+                };
             });
+        };
+
+        vm.hideMessage = function () {
+            vm.message = undefined;
         };
 
         vm.reset = function () {

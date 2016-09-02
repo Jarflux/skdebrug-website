@@ -12,6 +12,9 @@
         var vm = this;
         NewsService.all().then(function (result) {
             vm.news = result.data;
+            vm.newsCount = result.data.length();
+        }, function () {
+            vm.newsCount = 0;
         });
     }
 
