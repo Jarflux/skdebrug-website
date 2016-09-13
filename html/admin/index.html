@@ -49,26 +49,17 @@
     <meta property="og:image" content="images/logo.png">
 
     <title>SK De Brug | Home</title>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet'
-          type='text/css'>
-    <!-- This will prefetch content from google web fonts website -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="./../css/lib/bootstrap.css" rel="stylesheet">
+    <link href="vendor/lumino/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/lumino/css/datepicker3.css" rel="stylesheet">
+    <link href="vendor/lumino/css/styles.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <!--<link href="./../css/lib/modern-business.css" rel="stylesheet">-->
+    <!--Icons-->
+    <script src="vendor/lumino/js/lumino.glyphs.js"></script>
 
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="vendor/lumino/js/html5shiv.js"></script>
+    <script src="vendor/lumino/js/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -76,33 +67,41 @@
 <body>
 <div class="page">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#/" class="navbar-brand">Admin</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span>SK De Brug </span>Admin</a>
+
             </div>
-            <div class="">
-                <ul class="nav navbar-nav">
-                    <li><a href="#/news">News</a></li>
-                    <li><a href="#/team">Teams</a></li>
-                    <li><a href="#/player">Players</a></li>
-                    <li><a href="#/game">Games</a></li>
-                </ul>
-            </div>
-        </div>
+
+        </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container" ng-view></div>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <ul class="nav menu">
+
+            <li><a href="#/news"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"/></svg> News</a></li>
+            <li><a href="#/team"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Teams</a></li>
+            <li><a href="#/player"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Players</a></li>
+            <li><a href="#/game"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Games</a></li>
+
+        </ul>
+
+    </div><!--/.sidebar-->
+
+
+
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-view></div>
 
     <!-- Angular -->
     <script src="../js/libs/angular/angular.min.js"></script>
     <script src="../js/libs/angular/angular.route.js"></script>
-
-    <!-- jQuery -->
-    <script src="../js/libs/jQuery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../js/libs/bootstrap/bootstrap.min.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/news/news.route.js"></script>
@@ -128,6 +127,16 @@
     <script src="app/team/list-team/list-team.controller.js"></script>
     <script src="app/team/add-team/add-team.controller.js"></script>
     <script src="app/team/edit-team/edit-team.controller.js"></script>
+
+
+    <!-- vendor lumino template -->
+    <script src="vendor/lumino/js/jquery-1.11.1.min.js"></script>
+    <script src="vendor/lumino/js/bootstrap.min.js"></script>
+    <script src="vendor/lumino/js/chart.min.js"></script>
+    <script src="vendor/lumino/js/chart-data.js"></script>
+    <script src="vendor/lumino/js/easypiechart.js"></script>
+    <script src="vendor/lumino/js/easypiechart-data.js"></script>
+    <script src="vendor/lumino/js/bootstrap-datepicker.js"></script>
 </div>
 </body>
 
