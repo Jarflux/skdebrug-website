@@ -4,8 +4,6 @@
     </div>
 </div>
 
-{{ vm.message }}
-
 <div class="row" data-ng-show="vm.message">
     <div class="col-lg-12">
         <div class="alert bg-success" role="alert" data-ng-show="vm.message.success">
@@ -25,7 +23,6 @@
                 <label for="date">Date:</label>
                 <input type="date" ng-model="vm.news.date" class="form-control" name="date" id="date">
             </div>
-            a {{ vm.news.date }}
 
             <div class="form-group">
                 <label for="title">Title:</label>
