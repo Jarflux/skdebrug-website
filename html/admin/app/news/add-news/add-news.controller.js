@@ -12,11 +12,21 @@
         var vm = this;
 
         vm.$onInit = function () {
-
-            $("[type='date']").datepicker({});
-
             _reset();
         };
+
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime();
+            }
+            return null;
+        }
+
+        function _mapToModel(news) {
+            var _output = angular.copy(news);
+            _output.date = _convertDateToMs(_output.date);
+            return _output;
+        }
 
         function _reset() {
             vm.news = {
@@ -27,7 +37,9 @@
         }
 
         vm.addNews = function () {
-            NewsService.add(vm.news).then(function (result) {
+            var model = _mapToModel(vm.news);
+
+            NewsService.add(model).then(function (result) {
                 console.log('successfully added', vm.news, result);
                 vm.message = {
                     success: true,
@@ -39,11 +51,6 @@
                 vm.message = {
                     error: true,
                     text: 'Something went wrong'
-                };
-
-                vm.message = {
-                    success: true,
-                    text: 'Successfully added the news article: ' + vm.news.title
                 };
             });
         };
