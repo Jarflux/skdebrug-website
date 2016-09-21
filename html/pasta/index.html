@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" ng-app="skdebrug.admin">
+<html lang="nl" ng-app="skdebrug.pasta">
 
 <head>
 
@@ -56,16 +56,17 @@
 <div class="page">
 
 
-    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-view></div>
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <reservation></reservation>
+    </div>
 
     <!-- Angular -->
     <script src="../js/libs/angular/angular.min.js"></script>
     <script src="../js/libs/angular/angular.route.js"></script>
 
     <script src="app/app.js"></script>
-    <script src="app/registration/registration.route.js"></script>
-    <script src="app/registration/registration.service.js"></script>
-    <script src="app/registration/registration.controller.js"></script>
+    <script src="app/reservation/reservation.service.js"></script>
+    <script src="app/reservation/reservation.component.js"></script>
 
 </div>
 </body>

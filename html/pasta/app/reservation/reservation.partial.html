@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Pasta avond</h2>
+    </div>
+    <div class="col-md-6">
+        <p>
+            Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon overgedragen, een
+            zeldzaam fenomeen in het mondiale voetbal.
+            Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze het spel
+            van hun zes zonen en jawel zelfs schoonzoon
+            van commentaar voorzien.
+        </p>
+
+        <hr ng-submit="vm.sendMail()">
+
+        <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" ng-model="vm.reservation.name" class="form-control" name="name" id="name">
+        </div>
+
+        <div class="form-group">
+            <label>Uur</label>
+            <label ng-repeat="option in vm.reservation.time.options">
+                <input type="radio" ng-model="vm.reservation.time.selected" name="time"
+                       value="{{option}}">{{option}}</input>
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="lookbrood">Lookbroodjes</label>
+            <input type="number" ng-model="vm.reservation.lookbrood.amount" class="form-control" name="lookbrood"
+                   id="lookbrood">
+            x {{ vm.reservation.lookbrood.price }} € = {{ vm.reservation.lookbrood.total }} €
+        </div>
+
+        <div class="form-group">
+            <label for="pasta">Spaghetti Bolognese à volonté</label>
+            <input type="number" ng-model="vm.reservation.pasta.amount" class="form-control" name="pasta" id="pasta">
+            x {{ vm.reservation.pasta.price }} € = {{ vm.reservation.pasta.total }} €
+        </div>
+
+        <div class="form-group">
+            <label for="veggie">Veggie</label>
+            <input type="number" ng-model="vm.reservation.veggie.amount" class="form-control" name="veggie" id="veggie">
+            x {{ vm.reservation.veggie.price }} € = {{ vm.reservation.veggie.total }} €
+        </div>
+
+        <div class="form-group">
+            <label for="child">Kinder spaghetti Bolognese</label>
+            <input type="number" ng-model="vm.reservation.child.amount" class="form-control" name="child" id="child">
+            x {{ vm.reservation.child.price }} € = {{ vm.reservation.child.total }} €
+        </div>
+
+        <div class="form-group">
+            <label for="dessert">Dessertenbuffet</label>
+            <input type="number" ng-model="vm.reservation.dessert.amount" class="form-control" name="dessert"
+                   id="dessert">
+            x {{ vm.reservation.dessert.price }} € = {{ vm.reservation.dessert.total }} €
+        </div>
+
+        <hr/>
+        totaal {{ vm.reservation.total }} €
+
+        <br/>
+        <button type="submit" class="btn btn-primary">Versturen</button>
+        <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
+
+        {{ vm.calc() }}
+        </form>
+    </div>
+</div>
+

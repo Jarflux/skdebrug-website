@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('skdebrug.pasta.registration')
-        .service('RegistrationService', RegistrationService);
+        .module('skdebrug.pasta')
+        .service('ReservationService', ReservationService);
 
-    RegistrationService.$inject = ['$http', '$q'];
+    ReservationService.$inject = ['$http', '$q'];
 
     /* @ngInject */
-    function RegistrationService($http, $q) {
+    function ReservationService($http, $q) {
 
         function _sendMail(registrationObj) {
             var request = {
