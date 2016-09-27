@@ -121,8 +121,8 @@ a {
 }
 
 .navbar-brand-img {
-    height: 78px;
-    top: -9px;
+    height: 80px;
+    top: -4px;
     position: absolute;
     /* margin-left: 10px; */
     -webkit-transition: all 0.3s;
@@ -145,7 +145,7 @@ a {
 }
 
 .scrollable .navbar-brand-img {
-    height: 100px;
+    /* height: 100px; */
     /* top: -42%; */
     margin-left: 0px;
 }
