@@ -112,7 +112,7 @@
                             <a href="ranking.html">Klassement</a>
                         </li>
                         <li>
-                            <a href="games.html">Wedstrijden</a>
+                            <a href="games.html">Kalender</a>
                         </li>
                         <li>
                             <a href="team.html">Spelers</a>
@@ -154,64 +154,46 @@
                             <th>
                                 <a href="#" ng-click="sortType = ''; sortReverse = !sortReverse">
                                     #
-                                    <span ng-show="sortType == '' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == '' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th title="ploeg">
                                 <a href="#" ng-click="sortType = 'team.name'; sortReverse = !sortReverse">
                                     Ploeg
-                                    <span ng-show="sortType == 'team.name' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'team.name' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th title="aantal wedstrijden" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'games'; sortReverse = !sortReverse">
                                     M
-                                    <span ng-show="sortType == 'games' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'games' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th title="gewonnen">
                                 <a href="#" ng-click="sortType = 'wins'; sortReverse = !sortReverse">
-                                    M+
-                                    <span ng-show="sortType == 'wins' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'wins' && !sortReverse" class="fa fa-caret-up"></span>
+                                    G
                                 </a>
                             </th>
                             <th title="verloren">
                                 <a href="#" ng-click="sortType = 'losses'; sortReverse = !sortReverse">
-                                    M-
-                                    <span ng-show="sortType == 'losses' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'losses' && !sortReverse" class="fa fa-caret-up"></span>
+                                    V
                                 </a>
                             </th>
                             <th title="gelijkspel">
                                 <a href="#" ng-click="sortType = 'ties'; sortReverse = !sortReverse">
-                                    M=
-                                    <span ng-show="sortType == 'ties' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'ties' && !sortReverse" class="fa fa-caret-up"></span>
+                                    G
                                 </a>
                             </th>
                             <th title="doelpunten gescoord" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'goalsFor'; sortReverse = !sortReverse">
-                                    D+
-                                    <span ng-show="sortType == 'goalsFor' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'goalsFor' && !sortReverse" class="fa fa-caret-up"></span>
+                                    DV
                                 </a>
                             </th>
                             <th title="doelpunten tegen" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'goalsAgainst'; sortReverse = !sortReverse">
-                                    D-
-                                    <span ng-show="sortType == 'goalsAgainst' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'goalsAgainst' && !sortReverse" class="fa fa-caret-up"></span>
+                                    DT
                                 </a>
                             </th>
                             <th title="doelsaldo" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'goalDifference'; sortReverse = !sortReverse">
-                                    D+/-
-                                    <span ng-show="sortType == 'goalDifference' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'goalDifference' && !sortReverse" class="fa fa-caret-up"></span>
+                                    DS
                                 </a>
                             </th>
                             <th title="punten">

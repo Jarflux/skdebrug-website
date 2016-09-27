@@ -112,7 +112,7 @@
                             <a href="ranking.html">Klassement</a>
                         </li>
                         <li class="current_page_item">
-                            <a href="games.html">Wedstrijden</a>
+                            <a href="games.html">Kalender</a>
                         </li>
                         <li>
                             <a href="team.html">Spelers</a>
@@ -136,11 +136,11 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Wedstrijden</h2>
+                <h2 class="page-header">Kalender</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">Wedstrijden</li>
+                    <li class="active">Kalender</li>
                 </ol>
             </div>
         </div>
@@ -154,8 +154,6 @@
                             <th title="Soort" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'gameType'; sortReverse = !sortReverse">
                                     Soort
-                                    <span ng-show="sortType == 'gameType' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'gameType' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th>
@@ -163,15 +161,11 @@
                             <th title="thuisploeg">
                                 <a href="#" ng-click="sortType = 'homeTeam.name'; sortReverse = !sortReverse">
                                     Thuisploeg
-                                    <span ng-show="sortType == 'homeTeam.name' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'homeTeam.name' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th title="score">
                                 <a href="#" ng-click="sortType = 'homeScore'; sortReverse = !sortReverse">
                                     Score
-                                    <span ng-show="sortType == 'homeScore' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'awayScore' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th>
@@ -179,15 +173,11 @@
                             <th title="bezoekers">
                                 <a href="#" ng-click="sortType = 'awayTeam.name'; sortReverse = !sortReverse">
                                     Bezoekers
-                                    <span ng-show="sortType == 'awayTeam.name' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'awayTeam.name' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                             <th title="datum & uur" class="hide-portrait-mobile">
                                 <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
                                     Datum & uur
-                                    <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-down"></span>
-                                    <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-up"></span>
                                 </a>
                             </th>
                         </tr>
