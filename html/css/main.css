@@ -251,12 +251,8 @@ table.table-skdebrug th {
     table.table-skdebrug th a:hover {
       color: rgba(255, 255, 255, 0.56); }
 
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-  table .table-skdebrug .hide-portrait-mobile
+@media only screen and (max-device-width: 568px) and (orientation:portrait){
+  .hide-portrait-mobile
   {
     display:none;
   }
