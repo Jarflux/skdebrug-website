@@ -165,7 +165,7 @@
                         <h4>Volgende Wedstrijd</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="text-center">{{match.next.date | date:'EEEE dd/MM/yyyy - hh:mm'}}</h4>
+                        <h4 class="text-center">{{match.next.date | date:'dd/MM/yyyy - HH:mm'}}</h4>
                         <div class="panel-body-next-match">
                             <div class="in">
                                 <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
@@ -188,11 +188,11 @@
                     <div class="panel-body" ng-repeat="club in match.prev">
                         <h4>{{club.homeTeam.name}} - {{club.awayTeam.name}}</h4>
                         <div class="panel-body-match-date">
-                            {{club.date | date:'EEEE dd/MM/yyyy - hh:mm'}}
+                            {{club.date | date:'dd/MM/yyyy - HH:mm'}}
                         </div>
                     </div>
                     <div class="panel-body">
-                        <a href="games.html">Meer matchen</a>
+                        <a href="games.html">Meer wedstrijden</a>
                     </div>
                 </div>
             </div>
