@@ -1,5 +1,6 @@
 body {
     padding: 0;
+    padding-top: 50px;
     font-family: "Istok Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: url(../images/bg.png);
     background-attachment: fixed;
@@ -139,18 +140,19 @@ a {
     }
 }
 
+/*
 .scrollable {
     position: relative;
     top: 0px;
 }
 
 .scrollable .navbar-brand-img {
-    /* height: 100px; */
-    /* top: -42%; */
+    height: 100px;
+    top: -42%;
     margin-left: 0px;
 }
 
-/*
+
 @media only screen and (min-width: 768px) {
     .scrollable .navbar-brand-img {
          height: 120px;
