@@ -6,6 +6,24 @@ body {
     background-attachment: fixed;
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: 30px;
+    }
+
+    .breadcrumb{
+        margin-bottom: 10px;
+    }
+
+    .page-header{
+        margin: 40px 0px 10px;
+    }
+
+    .owl-carousel img{
+        padding-top: 21px;
+    }
+}
+
 .page {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+99&amp;0+48,0.65+100 */
     background: -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 48%, rgba(0, 0, 0, 0.64) 99%, rgba(0, 0, 0, 0.65) 100%);
@@ -122,8 +140,8 @@ a {
 }
 
 .navbar-brand-img {
-    height: 80px;
-    top: -4px;
+    height: 90px;
+    top: -5px;
     position: absolute;
     /* margin-left: 10px; */
     -webkit-transition: all 0.3s;
@@ -133,10 +151,16 @@ a {
     transition: all 0.3s;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     .navbar-brand-img {
-        height: 90px;
-        top: -5px;
+        height: 72px;
+        top: -2px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index:1;
     }
 }
 
