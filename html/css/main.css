@@ -150,12 +150,14 @@ a {
     margin-left: 0px;
 }
 
+/*
 @media only screen and (min-width: 768px) {
     .scrollable .navbar-brand-img {
-        height: 120px;
-        /* top: -50%; } */
+         height: 120px;
+         top: -50%; }
     }
 }
+*/
 
 .socialbuttons {
     padding-top: 10px;
