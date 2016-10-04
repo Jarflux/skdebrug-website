@@ -237,6 +237,11 @@ header.carousel {
     position: relative;
 }
 
+.score-right {
+    float: right;
+}
+
+
 .owl-carousel {
     position: relative;
     margin-bottom: 40px;
@@ -504,5 +509,6 @@ h2.page-header {
 .navbar-toggle .icon-bar {
     background-color: white;
 }
+
 
 

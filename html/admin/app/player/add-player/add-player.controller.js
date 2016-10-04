@@ -11,6 +11,14 @@
     function addPlayerController(PlayerService) {
         var vm = this;
 
+        //TODO Move to shared service
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime();
+            }
+            return null;
+        }
+
         PlayerService.types().then(function (result) {
             vm.types = result.data;
         });
@@ -30,6 +38,8 @@
         }
 
         vm.addPlayer = function () {
+            vm.player.dateOfBirth = _convertDateToMs(vm.player.dateOfBirth);
+
             PlayerService.add(vm.player).then(function (result) {
                 console.log('successfully added', vm.player, result);
                 _reset();

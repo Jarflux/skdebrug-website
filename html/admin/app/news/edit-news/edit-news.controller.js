@@ -13,6 +13,14 @@
         var originalNewsItem = undefined;
         var id = undefined;
 
+        //TODO Move to shared service
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime();
+            }
+            return null;
+        }
+
         vm.$onInit = function () {
             id = 1;
 
@@ -29,6 +37,7 @@
 
         vm.editNews = function () {
             console.log('submitted', vm.news)
+            vm.news.date = _convertDateToMs(vm.news.date);
             NewsService.edit(id, vm.news).then(function (result) {
                 console.log('success');
             });

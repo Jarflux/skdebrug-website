@@ -177,8 +177,9 @@
                     <div class="panel-heading">
                         <h4>Wedstrijden</h4>
                     </div>
-                    <div class="panel-body" ng-repeat="club in match.prev">
-                        <h4>{{club.homeTeam.name}} - {{club.awayTeam.name}}</h4>
+                    <div class="panel-body" ng-repeat="game in match.prev">
+                        <h4>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></h4>
+
                         <div class="panel-body-match-date">
                             {{club.date | date:'dd/MM/yyyy - HH:mm'}}
                         </div>

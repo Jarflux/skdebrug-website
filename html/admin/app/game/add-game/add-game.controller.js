@@ -15,11 +15,17 @@
             vm.types = result.data;
         });
 
-        // TODO GET ALL TEAMS FROM TEAMSERVICE
         GameService.allTeams().then(function (result) {
             vm.teams = result.data;
         });
 
+        //TODO Move to shared service
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime();
+            }
+            return null;
+        }
 
         vm.$onInit = function () {
             _reset();
@@ -37,6 +43,8 @@
         }
 
         vm.addGame = function () {
+            vm.game.date = _convertDateToMs(vm.game.date);
+
             GameService.add(vm.game).then(function (result) {
                 console.log('successfully added', vm.game, result);
                 _reset();

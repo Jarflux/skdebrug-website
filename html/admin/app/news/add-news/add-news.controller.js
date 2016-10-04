@@ -15,6 +15,7 @@
             _reset();
         };
 
+        //TODO Move to shared service
         function _convertDateToMs(dateString) {
             if (dateString) {
                 return new Date(dateString).getTime();
@@ -37,9 +38,8 @@
         }
 
         vm.addNews = function () {
-            var model = _mapToModel(vm.news);
-
-            NewsService.add(model).then(function (result) {
+            vm.news.date = _convertDateToMs(vm.news.date);
+            NewsService.add(vm).then(function (result) {
                 console.log('successfully added', vm.news, result);
                 vm.message = {
                     success: true,
