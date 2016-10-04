@@ -39,7 +39,7 @@
 
         vm.addNews = function () {
             vm.news.date = _convertDateToMs(vm.news.date);
-            NewsService.add(vm).then(function (result) {
+            NewsService.add(vm.news).then(function (result) {
                 console.log('successfully added', vm.news, result);
                 vm.message = {
                     success: true,

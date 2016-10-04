@@ -45,6 +45,14 @@
         vm.addGame = function () {
             vm.game.date = _convertDateToMs(vm.game.date);
 
+            vm.game.date = _convertDateToMs(vm.game.date);
+            if(!vm.game.homeScore){
+                vm.game.homeScore = null;
+            }
+            if(!vm.game.awayScore){
+                vm.game.awayScore = null;
+            }
+
             GameService.add(vm.game).then(function (result) {
                 console.log('successfully added', vm.game, result);
                 _reset();
