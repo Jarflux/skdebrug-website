@@ -16,7 +16,7 @@
         //TODO Move to shared service
         function _convertDateToMs(dateString) {
             if (dateString) {
-                return new Date(dateString).getTime();
+                return new Date(dateString).getMilliseconds();
             }
             return null;
         }
