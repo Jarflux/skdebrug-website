@@ -2,7 +2,7 @@
     var app = angular.module('skdebrug.controllers', ['ngRoute']);
     var folder = {
         banners: "images/banners/##.jpg"
-    }
+    };
 
     app.controller('teamController', function(apiServices){
         var team = this;
@@ -102,7 +102,7 @@
                     if(foundImage){
                         banner.slides[index] = image;
                     }
-                    return ++counter
+                    return ++counter;
                 })
                 .then(function(counter){
                     if(counter==10) {
