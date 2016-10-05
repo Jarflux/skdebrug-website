@@ -137,6 +137,10 @@
                     <div class="panel-heading">
                         <h4>Laatste nieuws</h4>
                     </div>
+
+                    {{1475652492 | date:'EEEE dd MMMM yyyy - HHumm'}}
+
+
                     <div class="panel-body" ng-repeat="item in items | limitTo:3">
                             <span class="panel-body-date">
                                 <span class="day">{{item.date | date:'dd'}}</span>
@@ -157,7 +161,7 @@
                         <h4>Volgende Wedstrijd</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="text-center">{{match.next.date | date:'dd/MM/yyyy - HH:mm'}}</h4>
+                        <h4 class="text-center">{{match.next.date | date:'EEEE dd MMM yyyy - HHumm'}}</h4>
                         <div class="panel-body-next-match">
                             <div class="in">
                                 <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
@@ -181,7 +185,7 @@
                         <h4>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></h4>
 
                         <div class="panel-body-match-date">
-                            {{club.date | date:'dd/MM/yyyy - HH:mm'}}
+                            {{club.date | date:'EEEE dd MMM yyyy - HHumm'}}
                         </div>
                     </div>
                     <div class="panel-body">
@@ -263,6 +267,7 @@
     <!-- Angular -->
     <script src="js/libs/angular/angular.min.js"></script>
     <script src="js/libs/angular/angular.route.js"></script>
+    <script src="js/libs/angular/angular-locale_nl-be.js"></script>
 
     <!-- jQuery -->
     <script src="js/libs/jQuery/jquery.js"></script>
