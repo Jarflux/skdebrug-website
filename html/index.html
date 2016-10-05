@@ -36,9 +36,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta name="description" content="Nieuws, spelers, kalender, wedstrijden en contact van uw favoriete voetbalclub SK De Brug.">
     <meta name="author" content="Ben Oeyen">
-    <meta name="keywords" content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
 
     <meta property="og:url" content="http://www.skdebrug.be">
     <meta property="og:title" content="SK De Brug">
@@ -98,16 +97,16 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="news.html#/news">Nieuws</a>
+                            <a href="nieuws.html#/news">Nieuws</a>
                         </li>
                         <li>
-                            <a href="ranking.html">Klassement</a>
+                            <a href="klassement.html">Klassement</a>
                         </li>
                         <li>
-                            <a href="games.html">Kalender</a>
+                            <a href="kalender.html">Kalender</a>
                         </li>
                         <li>
-                            <a href="team.html">Spelers</a>
+                            <a href="spelers.html">Spelers</a>
                         </li>
                         <li>
                             <a href="club.html">Club</a>
@@ -138,9 +137,6 @@
                         <h4>Laatste nieuws</h4>
                     </div>
 
-                    {{1475652492 | date:'EEEE dd MMMM yyyy - HHumm'}}
-
-
                     <div class="panel-body" ng-repeat="item in items | limitTo:3">
                             <span class="panel-body-date">
                                 <span class="day">{{item.date | date:'dd'}}</span>
@@ -148,10 +144,10 @@
                             </span>
                         <h4>{{item.title}}</h4>
                         <p>{{item.content | trim:true:300:' ...'}}</p>
-                        <a href="news.html#/news/{{item.id}}" class="btn btn-default">Lees meer</a>
+                        <a href="nieuws.html#/news/{{item.id}}" class="btn btn-default">Lees meer</a>
                     </div>
                     <div class="panel-body">
-                        <a href="news.html#/news">Meer nieuws</a>
+                        <a href="nieuws.html#/news">Meer nieuws</a>
                     </div>
                 </div>
             </div>
@@ -179,17 +175,17 @@
             <div class="col-md-4" >
                 <div class="panel panel-default panel-link" ng-controller="matchWidgetController as match">
                     <div class="panel-heading">
-                        <h4>Wedstrijden</h4>
+                        <h4>Vorige Wedstrijden</h4>
                     </div>
                     <div class="panel-body" ng-repeat="game in match.prev">
-                        <h4>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></h4>
-
                         <div class="panel-body-match-date">
-                            {{club.date | date:'EEEE dd MMM yyyy - HHumm'}}
+                            {{game.date | date:'EEEE dd MMM yyyy - HHumm'}}
                         </div>
+
+                        <h4>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></h4>
                     </div>
                     <div class="panel-body">
-                        <a href="games.html">Meer wedstrijden</a>
+                        <a href="kalender.html">Meer wedstrijden</a>
                     </div>
                 </div>
             </div>

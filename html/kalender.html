@@ -36,16 +36,16 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="description" content="Intresse in de tussenstand in de competitie of gewoon op zoek naar wat het doelpuntensaldo van SK De Brug is, hier vind je alle cijfers terug.">
+    <meta name="description" content="Een volledig overzicht van alle wedstrijden binnen de competitie en de beker. Uitslagen van voorgaande wedstrijden en de aanvangsuren van nog te spelen matchen.">
     <meta name="author" content="Ben Oeyen">
     <meta name="keywords" content="SK De Burg, SK, de brug, club, viaduct, brug, voetbal, soccer, kavvv, vriendenclubs, antwerpen, wirlijk, moerelei, game, match, wedstrijd, bal, footbal, history, goals, points, goaldifference, defender, striker, midfielder, keeper, doelman, verdediger, aanvaller, middenvelder">
 
-    <meta property="og:url" content="http://www.skdebrug.be/ranking.html">
-    <meta property="og:title" content="Klassement | SK De Brug">
-    <meta property="og:description" content="Intresse in de tussenstand in de competitie of gewoon op zoek naar wat het doelpuntensaldo van SK De Brug is, hier vind je alle cijfers terug.">
+    <meta property="og:url" content="http://www.skdebrug.be/games.html">
+    <meta property="og:title" content="Kalender | SK De Brug">
+    <meta property="og:description" content="Een volledig overzicht van alle wedstrijden binnen de competitie en de beker. Uitslagen van voorgaande wedstrijden en de aanvangsuren van nog te spelen matchen.">
     <meta property="og:image" content="images/logo.png">
 
-    <title>Klassement | SK De Brug</title>
+    <title>Kalender | SK De Brug</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <!-- This will prefetch content from google web fonts website -->
@@ -98,16 +98,16 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li>
-                            <a href="news.html#/news">Nieuws</a>
+                            <a href="nieuws.html#/news">Nieuws</a>
+                        </li>
+                        <li>
+                            <a href="klassement.html">Klassement</a>
                         </li>
                         <li class="current_page_item">
-                            <a href="ranking.html">Klassement</a>
+                            <a href="kalender.html">Kalender</a>
                         </li>
                         <li>
-                            <a href="games.html">Kalender</a>
-                        </li>
-                        <li>
-                            <a href="team.html">Spelers</a>
+                            <a href="spelers.html">Spelers</a>
                         </li>
                         <li>
                             <a href="club.html">Club</a>
@@ -128,65 +128,59 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Klassement</h2>
+                <h2 class="page-header">Kalender</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">Klassement</li>
+                    <li class="active">Kalender</li>
                 </ol>
             </div>
         </div>
         <!-- /.row -->
 
         <div class="row">
-            <div class="col-lg-12" ng-controller="rankingController">
-                <table class="table table-striped table-hover table-bordered table-skdebrug table-responsive">
+            <div class="col-lg-12" ng-controller="matchesController">
+                <table class="table table-striped table-hover table-bordered table-skdebrug">
                     <thead>
                         <tr>
-                            <th>
-                                    #
+                            <th title="Soort" class="hide-portrait-mobile">
+                                    Soort
                             </th>
-                            <th title="ploeg">
-                                    Ploeg
+                            <th class="hide-portrait-mobile">
                             </th>
-                            <th title="aantal wedstrijden" class="hide-portrait-mobile">
-                                    M
+                            <th title="thuisploeg">
+                                    Thuisploeg
                             </th>
-                            <th title="gewonnen">
-                                    G
+                            <th title="score">
+                                    Score
                             </th>
-                            <th title="verloren">
-                                    V
+                            <th class="hide-portrait-mobile">
                             </th>
-                            <th title="gelijkspel">
-                                    G
+                            <th title="bezoekers">
+                                    Bezoekers
                             </th>
-                            <th title="doelpunten gescoord" class="hide-portrait-mobile">
-                                    DV
-                            </th>
-                            <th title="doelpunten tegen" class="hide-portrait-mobile">
-                                    DT
-                            </th>
-                            <th title="doelsaldo" class="hide-portrait-mobile">
-                                    DS
-                            </th>
-                            <th title="punten">
-                                    P
+                            <th title="datum & uur">
+                                    Datum & uur
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="team in ranking.standings | orderBy:sortType:sortReverse" ng-class="{highlight: team.team.id==1}">
-                            <td scope="row">{{ranking.standings.indexOf(team) + 1}}</td>
-                            <td>{{team.team.name}}</td>
-                            <td class="hide-portrait-mobile">{{team.games}}</td>
-                            <td>{{team.wins}}</td>
-                            <td>{{team.losses}}</td>
-                            <td>{{team.ties}}</td>
-                            <td class="hide-portrait-mobile">{{team.goalsFor}}</td>
-                            <td class="hide-portrait-mobile">{{team.goalsAgainst}}</td>
-                            <td class="hide-portrait-mobile">{{team.goalDifference}}</td>
-                            <td>{{team.points}}</td>
+                        <tr ng-repeat="match in matches | orderBy:sortType:sortReverse">
+                            <td class="hide-portrait-mobile">{{match.gameType}}</td>
+                            <td width="30px" class="hide-portrait-mobile">
+                                <img class="logo" ng-src="images/clubs/{{match.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
+                            </td>
+                            <td>
+                                {{match.homeTeam.name}}
+                            </td>
+                            <td>{{match.homeScore}} - {{match.awayScore}}</td>
+                            <td  width="30px" class="hide-portrait-mobile">
+                                <img class="logo" ng-src="images/clubs/{{match.awayTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
+                            </td>
+                            <td>
+                                {{match.awayTeam.name}}
+                            </td >
+                            <td>{{match.date | date:'EEEE dd MMM yyyy - HHumm'}}</td>
                         </tr>
 
                     </tbody>

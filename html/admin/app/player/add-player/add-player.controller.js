@@ -11,10 +11,9 @@
     function addPlayerController(PlayerService) {
         var vm = this;
 
-        //TODO Move to shared service
         function _convertDateToMs(dateString) {
             if (dateString) {
-                return new Date(dateString).getMilliseconds();
+                return new Date(dateString).getTime()/1000;
             }
             return null;
         }

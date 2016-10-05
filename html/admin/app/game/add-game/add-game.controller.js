@@ -19,10 +19,9 @@
             vm.teams = result.data;
         });
 
-        //TODO Move to shared service
         function _convertDateToMs(dateString) {
             if (dateString) {
-                return new Date(dateString).getMilliseconds();
+                return new Date(dateString).getTime()/1000;
             }
             return null;
         }
@@ -64,10 +63,6 @@
         vm.reset = function () {
             _reset();
         };
-
-
-        //TODO PREVENT 2 OF THE SAME TEAMS SELECTED
-
     }
 
 })();
