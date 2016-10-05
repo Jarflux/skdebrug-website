@@ -17,22 +17,22 @@ gulp.task('lint', function() {
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js')
+    return gulp.src('js/src/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('js'))
         .pipe(rename('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
+        .pipe(gulp.dest('js'));
 });
 
 // Concatenate & Minify CSS
 gulp.task('styling', function() {
-    return gulp.src('css/*.css')
+    return gulp.src('css/src/*.css')
         .pipe(concat('all.css'))
-        .pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('css'))
         .pipe(rename('all.min.css'))
         .pipe(cleanCSS())
-        .pipe(gulp.dest('dist/css'));
+        .pipe(gulp.dest('css'));
 });
 
 // Watch Files For Changes
