@@ -98,6 +98,7 @@ angular.module("ngLocale", [], ["$provide", function($provide) {
                 5,
                 6
             ],
+            "fullDateAndTime": "EEEE d MMMM y HHumm",
             "fullDate": "EEEE d MMMM y",
             "longDate": "d MMMM y",
             "medium": "d MMM y HH:mm:ss",
