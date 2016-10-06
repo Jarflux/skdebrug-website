@@ -4,9 +4,6 @@
         'skdebrug.directives',
         'skdebrug.services',
         'skdebrug.filters',
-        'skdebrug.config',
-
+        'skdebrug.config'
     ]);
-
-
 })();
