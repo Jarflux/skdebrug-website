@@ -31,8 +31,16 @@ gulp.task('concat-minify-scripts', function() {
 
 // Concatenate & Minify CSS
 gulp.task('concat-minify-styling', function() {
-    return gulp.src('src/css/**/*.css')
+    return gulp.src('src/css/*.css')
         .pipe(concat('skdebrug.min.css'))
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('css'));
+});
+
+// Concatenate & Minify CSS
+gulp.task('concat-minify-clientlib-styling', function() {
+    return gulp.src('src/css/libs/*.css')
+        .pipe(concat('clientlibs.min.css'))
         .pipe(cleanCSS())
         .pipe(gulp.dest('css'));
 });
@@ -41,8 +49,9 @@ gulp.task('concat-minify-styling', function() {
 gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['validate-scripts', 'concat-minify-scripts']);
     gulp.watch('src/js/libs/*.js', ['clientlibs']);
-    gulp.watch('src/css/**/*.css', ['concat-minify-styling']);
+    gulp.watch('src/css/*.css', ['concat-minify-styling']);
+    gulp.watch('src/css/libs/*.css', ['concat-minify-clientlib-styling']);
 });
 
 // Default Task
-gulp.task('default', ['validate-scripts', 'clientlibs', 'concat-minify-scripts', 'concat-minify-styling', 'watch']);
+gulp.task('default', ['validate-scripts', 'clientlibs', 'concat-minify-scripts', 'concat-minify-styling', 'concat-minify-clientlib-styling', 'watch']);
