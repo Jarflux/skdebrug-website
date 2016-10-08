@@ -52,15 +52,27 @@
             }
 
             GameService.add(vm.game).then(function (result) {
-                console.log('successfully added', vm.game, result);
+                console.log('successfully updated', vm.game, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully updated game: ' + game.homeTeam.name + ' ' + game.homeTeam.name
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
         };
 
         vm.reset = function () {
             _reset();
+        };
+
+        vm.hideMessage = function () {
+            vm.message = undefined;
         };
 
 

@@ -40,18 +40,28 @@
             vm.player.dateOfBirth = _convertDateToMs(vm.player.dateOfBirth);
 
             PlayerService.add(vm.player).then(function (result) {
-                console.log('successfully added', vm.player, result);
+                console.log('successfully updated', vm.player, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully updated player: ' + player.firstName + ' ' + player.lastName
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
+        };
+
+        vm.hideMessage = function () {
+            vm.message = undefined;
         };
 
         vm.reset = function () {
             _reset();
         };
-
-
     }
 
 })();

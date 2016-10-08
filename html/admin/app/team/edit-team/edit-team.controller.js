@@ -23,11 +23,23 @@
 
         vm.editTeam = function () {
             TeamService.add(vm.team).then(function (result) {
-                console.log('successfully added', vm.team, result);
+                console.log('successfully updated', vm.team, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully updated team: ' + team.name
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
+        };
+
+        vm.hideMessage = function () {
+            vm.message = undefined;
         };
 
         vm.reset = function () {

@@ -35,12 +35,27 @@
         };
 
         vm.editNews = function () {
-            console.log('submitted', vm.news)
             vm.news.date = _convertDateToMs(vm.news.date);
             NewsService.edit(id, vm.news).then(function (result) {
                 console.log('success');
+                vm.message = {
+                    success: true,
+                    text: 'Successfully updated news article: ' + news.title
+                };
+                _reset();
+            }, function (error) {
+                console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
         };
+
+        vm.hideMessage = function () {
+            vm.message = undefined;
+        };
+
 
         vm.$onInit();
 

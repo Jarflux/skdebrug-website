@@ -69,6 +69,10 @@
             });
         };
 
+        vm.hideMessage = function () {
+            vm.message = undefined;
+        };
+
         vm.reset = function () {
             _reset();
         };
