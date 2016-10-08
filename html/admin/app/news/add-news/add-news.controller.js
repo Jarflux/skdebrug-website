@@ -22,12 +22,6 @@
             return null;
         }
 
-        function _mapToModel(news) {
-            var _output = angular.copy(news);
-            _output.date = _convertDateToMs(_output.date);
-            return _output;
-        }
-
         function _reset() {
             vm.news = {
                 date: undefined,
@@ -37,12 +31,15 @@
         }
 
         vm.addNews = function () {
-            vm.news.date = _convertDateToMs(vm.news.date);
-            NewsService.add(vm.news).then(function (result) {
-                console.log('successfully added', vm.news, result);
+            var news = angular.copy(vm.news);
+
+            news.date = _convertDateToMs(news.date);
+
+            NewsService.add(news).then(function (result) {
+                console.log('successfully added', news, result);
                 vm.message = {
                     success: true,
-                    text: 'Successfully added the news article: ' + vm.news.title
+                    text: 'Successfully added the news article: ' + news.title
                 };
                 _reset();
             }, function (error) {

@@ -42,21 +42,30 @@
         }
 
         vm.addGame = function () {
-            vm.game.date = _convertDateToMs(vm.game.date);
+            var game = angular.copy(vm.game);
 
-            vm.game.date = _convertDateToMs(vm.game.date);
-            if(!vm.game.homeScore){
-                vm.game.homeScore = null;
+            game.date = _convertDateToMs(game.date);
+
+            if(!game.homeScore){
+                game.homeScore = null;
             }
-            if(!vm.game.awayScore){
-                vm.game.awayScore = null;
+            if(!game.awayScore){
+                game.awayScore = null;
             }
 
-            GameService.add(vm.game).then(function (result) {
-                console.log('successfully added', vm.game, result);
+            GameService.add(game).then(function (result) {
+                console.log('successfully added', news, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully added the game: ' + game.homeTeam.name + ' ' + game.homeTeam.name
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
         };
 

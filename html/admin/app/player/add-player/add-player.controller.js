@@ -37,13 +37,23 @@
         }
 
         vm.addPlayer = function () {
-            vm.player.dateOfBirth = _convertDateToMs(vm.player.dateOfBirth);
+            var player = angular.copy(vm.player);
 
-            PlayerService.add(vm.player).then(function (result) {
-                console.log('successfully added', vm.player, result);
+            player.dateOfBirth = _convertDateToMs(player.dateOfBirth);
+
+            PlayerService.add(player).then(function (result) {
+                console.log('successfully added', news, result);
+                vm.message = {
+                    success: true,
+                    text: 'Successfully added the player: ' + player.firstName + ' ' + player.lastName
+                };
                 _reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
+                vm.message = {
+                    error: true,
+                    text: 'Something went wrong'
+                };
             });
         };
 
