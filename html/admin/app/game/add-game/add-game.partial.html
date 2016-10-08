@@ -1,43 +1,70 @@
-<h3>Add Game</h3>
-
-<form ng-submit="vm.addGame()">
-
-    <div class="form-group">
-        <label for="gameType">Game Type:</label>
-        <select ng-model="vm.game.gameType" class="form-control" name="gameType" id="gameType">
-            <option ng-repeat="type in vm.types" value="{{type}}">{{type}}</option>
-        </select>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Add Game</h1>
     </div>
+</div>
 
-    <div class="form-group">
-        <label for="date">Date:</label>
-        <input type="datetime-local" ng-model="vm.game.date" class="form-control" name="date" id="date">
+<div class="row" data-ng-show="vm.message">
+    <div class="col-lg-12">
+        <div class="alert bg-success" role="alert" data-ng-show="vm.message.success">
+            <svg class="glyph stroked checkmark">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-checkmark"></use>
+            </svg>
+            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
+                class="glyphicon glyphicon-remove"></span></a>
+        </div>
+        <div class="alert bg-danger" role="alert" data-ng-show="vm.message.error">
+            <svg class="glyph stroked cancel">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-cancel"></use>
+            </svg>
+            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
+                class="glyphicon glyphicon-remove"></span></a>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label for="homeTeam">Home team:</label>
-        <select ng-model="vm.game.homeTeam" class="form-control" name="homeTeam" id="homeTeam">
-            <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
-        </select>
+<div class="row">
+    <div class="col-lg-12">
+        <form ng-submit="vm.addGame()">
+
+            <div class="form-group">
+                <label for="gameType">Game Type:</label>
+                <select ng-model="vm.game.gameType" class="form-control" name="gameType" id="gameType">
+                    <option ng-repeat="type in vm.types" value="{{type}}">{{type}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="datetime-local" ng-model="vm.game.date" class="form-control" name="date" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="homeTeam">Home team:</label>
+                <select ng-model="vm.game.homeTeam" class="form-control" name="homeTeam" id="homeTeam">
+                    <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="awayTeam">Away team:</label>
+                <select ng-model="vm.game.awayTeam" class="form-control" name="awayTeam" id="awayTeam">
+                    <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="homeScore">Home score:</label>
+                <input type="number" ng-model="vm.game.homeScore" class="form-control" name="homeScore" id="homeScore">
+            </div>
+
+            <div class="form-group">
+                <label for="awayScore">Away score:</label>
+                <input type="number" ng-model="vm.game.awayScore" class="form-control" name="awayScore" id="awayScore">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add</button>
+            <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="awayTeam">Away team:</label>
-        <select ng-model="vm.game.awayTeam" class="form-control" name="awayTeam" id="awayTeam">
-            <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="homeScore">Home score:</label>
-        <input type="number" ng-model="vm.game.homeScore" class="form-control" name="homeScore" id="homeScore">
-    </div>
-
-    <div class="form-group">
-        <label for="awayScore">Away score:</label>
-        <input type="number" ng-model="vm.game.awayScore" class="form-control" name="awayScore" id="awayScore">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Add</button>
-    <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
-</form>
+</div>
