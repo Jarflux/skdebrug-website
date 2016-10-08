@@ -37,10 +37,12 @@
         }
 
         vm.editPlayer = function () {
-            vm.player.dateOfBirth = _convertDateToMs(vm.player.dateOfBirth);
+            var player = angular.copy(vm.player);
 
-            PlayerService.add(vm.player).then(function (result) {
-                console.log('successfully updated', vm.player, result);
+            player.dateOfBirth = _convertDateToMs(player.dateOfBirth);
+
+            PlayerService.add(player).then(function (result) {
+                console.log('successfully updated', player, result);
                 vm.message = {
                     success: true,
                     text: 'Successfully updated player: ' + player.firstName + ' ' + player.lastName

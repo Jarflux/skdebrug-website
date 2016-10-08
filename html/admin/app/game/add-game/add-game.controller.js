@@ -54,7 +54,7 @@
             }
 
             GameService.add(game).then(function (result) {
-                console.log('successfully added', news, result);
+                console.log('successfully added', game, result);
                 vm.message = {
                     success: true,
                     text: 'Successfully added the game: ' + game.homeTeam.name + ' ' + game.homeTeam.name

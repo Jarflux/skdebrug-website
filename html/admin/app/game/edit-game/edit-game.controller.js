@@ -43,16 +43,19 @@
         }
 
         vm.editGame = function () {
-            vm.game.date = _convertDateToMs(vm.game.date);
-            if(!vm.game.homeScore){
-                vm.game.homeScore = null;
+            var game = angular.copy(vm.game);
+
+            game.date = _convertDateToMs(game.date);
+
+            if(!game.homeScore){
+                game.homeScore = null;
             }
-            if(!vm.game.awayScore){
-                vm.game.awayScore = null;
+            if(!game.awayScore){
+                game.awayScore = null;
             }
 
-            GameService.add(vm.game).then(function (result) {
-                console.log('successfully updated', vm.game, result);
+            GameService.add(game).then(function (result) {
+                console.log('successfully updated', game, result);
                 vm.message = {
                     success: true,
                     text: 'Successfully updated game: ' + game.homeTeam.name + ' ' + game.homeTeam.name

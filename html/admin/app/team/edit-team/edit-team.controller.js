@@ -26,7 +26,7 @@
                 console.log('successfully updated', vm.team, result);
                 vm.message = {
                     success: true,
-                    text: 'Successfully updated team: ' + team.name
+                    text: 'Successfully updated team: ' + vm.team.name
                 };
                 _reset();
             }, function (error) {

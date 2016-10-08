@@ -35,9 +35,12 @@
         };
 
         vm.editNews = function () {
-            vm.news.date = _convertDateToMs(vm.news.date);
-            NewsService.edit(id, vm.news).then(function (result) {
-                console.log('success');
+            var news = angular.copy(vm.news);
+
+            news.date = _convertDateToMs(news.date);
+
+            NewsService.edit(id, news).then(function (result) {
+                console.log('successfully updated', news, result);
                 vm.message = {
                     success: true,
                     text: 'Successfully updated news article: ' + news.title
