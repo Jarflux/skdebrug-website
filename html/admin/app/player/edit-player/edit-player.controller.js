@@ -5,11 +5,13 @@
         .module('skdebrug.admin.player')
         .controller('editPlayerController', editPlayerController);
 
-    editPlayerController.$inject = ['PlayerService'];
+    editPlayerController.$inject = ['PlayerService', '$routeParams'];
 
     /* @ngInject */
-    function editPlayerController(PlayerService) {
+    function editPlayerController(PlayerService, $routeParams) {
         var vm = this;
+        var originalPlayerItem = undefined;
+        var currentId = $routeParams.playerId;
 
         function _convertDateToMs(dateString) {
             if (dateString) {
@@ -64,6 +66,17 @@
         vm.reset = function () {
             _reset();
         };
+
+        vm.$onInit = function () {
+            NewsService.get(currentId).then(function (result) {
+                originalPlayerItem = result.data;
+                vm.player = originalPlayerItem;
+                console.log(originalPlayerItem)
+            });
+        };
+
+        vm.$onInit();
+
     }
 
 })();

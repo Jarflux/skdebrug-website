@@ -5,11 +5,13 @@
         .module('skdebrug.admin.team')
         .controller('editTeamController', editTeamController);
 
-    editTeamController.$inject = ['TeamService'];
+    editTeamController.$inject = ['TeamService', '$routeParams'];
 
     /* @ngInject */
-    function editTeamController(TeamService) {
+    function editTeamController(TeamService, $routeParams) {
         var vm = this;
+        var originalTeamItem = undefined;
+        var currentId = $routeParams.teamId;
 
         vm.$onInit = function () {
             _reset();
@@ -46,6 +48,15 @@
             _reset();
         };
 
+        vm.$onInit = function () {
+            NewsService.get(currentId).then(function (result) {
+                originalTeamItem = result.data;
+                vm.team = originalTeamItem;
+                console.log(originalTeamItem)
+            });
+        };
+
+        vm.$onInit();
 
     }
 

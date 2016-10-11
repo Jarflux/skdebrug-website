@@ -5,13 +5,13 @@
         .module('skdebrug.admin.news')
         .controller('editNewsController', editNewsController);
 
-    editNewsController.$inject = ['NewsService'];
+    editNewsController.$inject = ['NewsService', '$routeParams'];
 
     /* @ngInject */
-    function editNewsController(NewsService) {
+    function editNewsController(NewsService, $routeParams) {
         var vm = this;
         var originalNewsItem = undefined;
-        var id = undefined;
+        var currentId = $routeParams.newsId;
 
         function _convertDateToMs(dateString) {
             if (dateString) {
@@ -19,16 +19,6 @@
             }
             return null;
         }
-
-        vm.$onInit = function () {
-            id = 1;
-
-            NewsService.get(id).then(function (result) {
-                originalNewsItem = result.data;
-                vm.news = originalNewsItem;
-                console.log(originalNewsItem)
-            });
-        };
 
         vm.reset = function () {
             vm.news = result.data;
@@ -39,7 +29,7 @@
 
             news.date = _convertDateToMs(news.date);
 
-            NewsService.edit(id, news).then(function (result) {
+            NewsService.edit(currentId, news).then(function (result) {
                 console.log('successfully updated', news, result);
                 vm.message = {
                     success: true,
@@ -59,6 +49,13 @@
             vm.message = undefined;
         };
 
+        vm.$onInit = function () {
+            NewsService.get(currentId).then(function (result) {
+                originalNewsItem = result.data;
+                vm.news = originalNewsItem;
+                console.log(originalNewsItem)
+            });
+        };
 
         vm.$onInit();
 
