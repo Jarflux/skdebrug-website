@@ -33,7 +33,7 @@
                 game.awayScore = null;
             }
 
-            GameService.add(game).then(function (result) {
+            GameService.edit(currentId, game).then(function (result) {
                 console.log('successfully updated', game, result);
                 vm.message = {
                     success: true,
@@ -66,7 +66,8 @@
 
         vm.$onInit = function () {
             GameService.get(currentId).then(function (result) {
-                originalItem = result.data;;
+                originalItem = result.data;
+                originalItem.game.date = new Date(originalItem.game.date);
                 vm.game = originalItem;
                 console.log(originalItem)
             });

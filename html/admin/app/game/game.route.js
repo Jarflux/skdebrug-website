@@ -14,7 +14,7 @@
                     controller: 'addGameController',
                     controllerAs: 'vm'
                 }).
-                when('/game/:gamesId', {
+                when('/game/:gameId', {
                     templateUrl: 'app/game/edit-game/edit-game.partial.html',
                     controller: 'editGameController',
                     controllerAs: 'vm'

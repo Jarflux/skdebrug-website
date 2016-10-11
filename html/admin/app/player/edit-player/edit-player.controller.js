@@ -56,6 +56,7 @@
         vm.$onInit = function () {
             PlayerService.get(currentId).then(function (result) {
                 originalItem = result.data;
+                originalItem.player.dateOfBirth = new Date(originalItem.player.dateOfBirth);
                 vm.player = originalItem;
                 console.log(originalItem)
             });
