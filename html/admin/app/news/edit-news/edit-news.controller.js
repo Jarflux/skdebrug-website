@@ -47,13 +47,13 @@
 
         vm.reset = function () {
             vm.news = originalItem;
+            vm.news.date = new Date(vm.news.date);
         };
 
         vm.$onInit = function () {
             NewsService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                originalItem.news.date = new Date(originalItem.news.date);
-                vm.news = originalItem;
+                reset();
                 console.log(originalItem)
             });
         };

@@ -51,13 +51,13 @@
 
         vm.reset = function () {
             vm.player = originalItem;
+            vm.player.dateOfBirth = new Date(vm.player.dateOfBirth);
         };
 
         vm.$onInit = function () {
             PlayerService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                originalItem.player.dateOfBirth = new Date(originalItem.player.dateOfBirth);
-                vm.player = originalItem;
+                reset();
                 console.log(originalItem)
             });
         };

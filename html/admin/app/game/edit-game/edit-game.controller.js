@@ -62,13 +62,13 @@
 
         vm.reset = function () {
             vm.game = originalItem;
+            vm.game.date = new Date(vm.game.date);
         };
 
         vm.$onInit = function () {
             GameService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                originalItem.game.date = new Date(originalItem.game.date);
-                vm.game = originalItem;
+                reset();
                 console.log(originalItem)
             });
         };

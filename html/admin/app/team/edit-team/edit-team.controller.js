@@ -41,7 +41,7 @@
         vm.$onInit = function () {
             TeamService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                vm.team = originalItem;
+                reset();
                 console.log(originalItem)
             });
         };
