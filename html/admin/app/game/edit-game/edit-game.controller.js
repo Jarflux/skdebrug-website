@@ -10,7 +10,7 @@
     /* @ngInject */
     function editGameController(GameService, TeamService, $routeParams) {
         var vm = this;
-        var originalGameItem = undefined;
+        var originalItem = undefined;
         var currentId = $routeParams.gameId;
 
         GameService.types().then(function (result) {
@@ -20,29 +20,6 @@
         GameService.allTeams().then(function (result) {
             vm.teams = result.data;
         });
-
-        function _convertDateToMs(dateString) {
-            if (dateString) {
-                return new Date(dateString).getTime()/1000;
-            }
-            return null;
-        }
-
-        vm.$onInit = function () {
-            _reset();
-        };
-
-        function _reset() {
-            vm.game = {
-                gameType: undefined,
-                date: undefined,
-                homeTeam: undefined,
-                awayTeam: undefined,
-                homeScore: undefined,
-                awayScore: undefined
-            };
-
-        }
 
         vm.editGame = function () {
             var game = angular.copy(vm.game);
@@ -72,8 +49,15 @@
             });
         };
 
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime()/1000;
+            }
+            return null;
+        }
+
         vm.reset = function () {
-            _reset();
+            vm.game = originalItem;
         };
 
         vm.hideMessage = function () {
@@ -81,10 +65,11 @@
         };
 
         vm.$onInit = function () {
-            NewsService.get(currentId).then(function (result) {
-                originalGameItem = result.data;
-                vm.game = originalGameItem;
-                console.log(originalGameItem)
+            GameService.get(currentId).then(function (result) {
+                originalItem = result.data;
+                originalItem.game.date = originalItem.game.date*1000;
+                vm.game = originalItem;
+                console.log(originalItem)
             });
         };
 

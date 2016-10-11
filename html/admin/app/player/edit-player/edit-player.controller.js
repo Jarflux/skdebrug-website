@@ -10,33 +10,12 @@
     /* @ngInject */
     function editPlayerController(PlayerService, $routeParams) {
         var vm = this;
-        var originalPlayerItem = undefined;
+        var originalItem = undefined;
         var currentId = $routeParams.playerId;
-
-        function _convertDateToMs(dateString) {
-            if (dateString) {
-                return new Date(dateString).getTime()/1000;
-            }
-            return null;
-        }
 
         PlayerService.types().then(function (result) {
             vm.types = result.data;
         });
-
-        vm.$onInit = function () {
-            _reset();
-        };
-
-        function _reset() {
-            vm.player = {
-                firstName: undefined,
-                lastName: undefined,
-                number: undefined,
-                dateOfBirth: undefined,
-                playerType: undefined
-            };
-        }
 
         vm.editPlayer = function () {
             var player = angular.copy(vm.player);
@@ -59,19 +38,27 @@
             });
         };
 
+        function _convertDateToMs(dateString) {
+            if (dateString) {
+                return new Date(dateString).getTime()/1000;
+            }
+            return null;
+        }
+
         vm.hideMessage = function () {
             vm.message = undefined;
         };
 
         vm.reset = function () {
-            _reset();
+            vm.player = originalItem;
         };
 
         vm.$onInit = function () {
-            NewsService.get(currentId).then(function (result) {
-                originalPlayerItem = result.data;
-                vm.player = originalPlayerItem;
-                console.log(originalPlayerItem)
+            PlayerService.get(currentId).then(function (result) {
+                originalItem = result.data;
+                originalItem.player.dateOfBirth = originalItem.player.dateOfBirth*1000;
+                vm.player = originalItem;
+                console.log(originalItem)
             });
         };
 

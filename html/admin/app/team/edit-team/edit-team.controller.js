@@ -10,18 +10,8 @@
     /* @ngInject */
     function editTeamController(TeamService, $routeParams) {
         var vm = this;
-        var originalTeamItem = undefined;
+        var originalItem = undefined;
         var currentId = $routeParams.teamId;
-
-        vm.$onInit = function () {
-            _reset();
-        };
-
-        function _reset() {
-            vm.team = {
-                name: undefined
-            };
-        }
 
         vm.editTeam = function () {
             TeamService.add(vm.team).then(function (result) {
@@ -40,19 +30,23 @@
             });
         };
 
+        vm.reset = function () {
+            vm.team = originalItem;
+        };
+
         vm.hideMessage = function () {
             vm.message = undefined;
         };
 
         vm.reset = function () {
-            _reset();
+            vm.team = originalItem;
         };
 
         vm.$onInit = function () {
-            NewsService.get(currentId).then(function (result) {
-                originalTeamItem = result.data;
-                vm.team = originalTeamItem;
-                console.log(originalTeamItem)
+            TeamService.get(currentId).then(function (result) {
+                originalItem = result.data;
+                vm.team = originalItem;
+                console.log(originalItem)
             });
         };
 
