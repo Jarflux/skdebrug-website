@@ -5,10 +5,10 @@
         .module('skdebrug.admin.game')
         .controller('editGameController', editGameController);
 
-    editGameController.$inject = ['GameService', 'TeamService', '$routeParams'];
+    editGameController.$inject = ['GameService', '$routeParams'];
 
     /* @ngInject */
-    function editGameController(GameService, TeamService, $routeParams) {
+    function editGameController(GameService, $routeParams) {
         var vm = this;
         var originalItem = undefined;
         var currentId = $routeParams.gameId;
@@ -56,18 +56,17 @@
             return null;
         }
 
-        vm.reset = function () {
-            vm.game = originalItem;
-        };
-
         vm.hideMessage = function () {
             vm.message = undefined;
         };
 
+        vm.reset = function () {
+            vm.game = originalItem;
+        };
+
         vm.$onInit = function () {
             GameService.get(currentId).then(function (result) {
-                originalItem = result.data;
-                originalItem.game.date = originalItem.game.date*1000;
+                originalItem = result.data;;
                 vm.game = originalItem;
                 console.log(originalItem)
             });

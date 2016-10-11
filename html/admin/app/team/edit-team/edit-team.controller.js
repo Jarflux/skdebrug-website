@@ -14,7 +14,7 @@
         var currentId = $routeParams.teamId;
 
         vm.editTeam = function () {
-            TeamService.add(vm.team).then(function (result) {
+            TeamService.edit(currentId, vm.team).then(function (result) {
                 console.log('successfully updated', vm.team, result);
                 vm.message = {
                     success: true,
@@ -28,10 +28,6 @@
                     text: 'Something went wrong'
                 };
             });
-        };
-
-        vm.reset = function () {
-            vm.team = originalItem;
         };
 
         vm.hideMessage = function () {

@@ -22,7 +22,7 @@
 
             player.dateOfBirth = _convertDateToMs(player.dateOfBirth);
 
-            PlayerService.add(player).then(function (result) {
+            PlayerService.edit(currentId, player).then(function (result) {
                 console.log('successfully updated', player, result);
                 vm.message = {
                     success: true,
@@ -56,7 +56,6 @@
         vm.$onInit = function () {
             PlayerService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                originalItem.player.dateOfBirth = originalItem.player.dateOfBirth*1000;
                 vm.player = originalItem;
                 console.log(originalItem)
             });

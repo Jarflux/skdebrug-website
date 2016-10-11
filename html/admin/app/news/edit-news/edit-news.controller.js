@@ -52,7 +52,6 @@
         vm.$onInit = function () {
             NewsService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                originalItem.news.date = originalItem.news.date*1000;
                 vm.news = originalItem;
                 console.log(originalItem)
             });
