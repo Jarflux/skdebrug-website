@@ -68,7 +68,7 @@
         vm.$onInit = function () {
             GameService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                reset();
+                vm.reset();
                 console.log(originalItem)
             });
         };

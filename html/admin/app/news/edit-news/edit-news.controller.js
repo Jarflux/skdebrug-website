@@ -53,7 +53,7 @@
         vm.$onInit = function () {
             NewsService.get(currentId).then(function (result) {
                 originalItem = result.data;
-                reset();
+                vm.reset();
                 console.log(originalItem)
             });
         };
