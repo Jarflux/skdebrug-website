@@ -47,15 +47,15 @@
         $scope.sortReverse = false;  // set the default sort order
 
         apiServices.getAllMatches().success(function (data) {
-            $scope.matches = data;
+            $scope.temp = data;
 
-            $scope.new = {};
-            angular.forEach($scope.matches, function (value, key) {
+            $scope.games = {};
+            angular.forEach($scope.temp, function (value, key) {
                 var date = new Date(value.date);
                 var key = new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
                 console.log("key = " + date);
-                $scope.new[key] = $scope.new[key] || []; // ensure node in the new object
-                $scope.new[key].push(value); // push obj to node
+                $scope.games[key] = $scope.games[key] || []; // ensure node in the new object
+                $scope.games[key].push(value); // push obj to node
             });
         });
     });
