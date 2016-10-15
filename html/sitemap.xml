@@ -6,42 +6,42 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
-        <loc>http://www.skdebrug.be/</loc>
+        <loc>http://skdebrug.be/</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/index.html</loc>
+        <loc>http://skdebrug.be/index.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/nieuws.html</loc>
+        <loc>http://skdebrug.be/nieuws.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/klassement.html</loc>
+        <loc>http://skdebrug.be/klassement.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/kalender.html</loc>
+        <loc>http://skdebrug.be/kalender.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/spelers.html</loc>
+        <loc>http://skdebrug.be/spelers.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/club.html</loc>
+        <loc>http://skdebrug.be/club.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
     <url>
-        <loc>http://www.skdebrug.be/contact.html</loc>
+        <loc>http://skdebrug.be/contact.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
     </url>
