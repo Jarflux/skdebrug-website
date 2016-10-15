@@ -11,15 +11,15 @@ body {
         padding-top: 30px;
     }
 
-    .breadcrumb{
+    .breadcrumb {
         margin-bottom: 10px;
     }
 
-    .page-header{
+    .page-header {
         margin: 40px 0px 10px;
     }
 
-    .owl-carousel img{
+    .owl-carousel img {
         padding-top: 21px;
     }
 }
@@ -160,7 +160,7 @@ a {
         left: 0;
         right: 0;
         position: absolute;
-        z-index:1;
+        z-index: 1;
     }
 }
 
@@ -241,7 +241,6 @@ header.carousel {
 .score-right {
     float: right;
 }
-
 
 .owl-carousel {
     position: relative;
@@ -382,6 +381,7 @@ table.table-skdebrug tr.highlight td {
 table.table-skdebrug th {
     font-family: "Oswald";
     background: #0089d0;
+    color: white;
     font-size: 1.3em;
     font-weight: 600;
 }
@@ -393,6 +393,13 @@ table.table-skdebrug th a {
 
 table.table-skdebrug th a:hover {
     color: rgba(255, 255, 255, 0.56);
+}
+
+
+@media only screen and (min-width: 568px){
+    .only-show-portrait-mobile {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 568px) and (orientation: portrait) {

@@ -46,8 +46,146 @@
         $scope.sortType     = 'date'; // set the default sort type
         $scope.sortReverse  = false;  // set the default sort order
 
-        apiServices.getAllMatches().success(function (data) {
-            $scope.matches = data;
+       // apiServices.getAllMatches().success(function (data) {
+       //     $scope.matches = data;
+            $scope.matches = [{
+                "id": 1,
+                "gameType": "LEAGUE",
+                "date": 1442667600000,
+                "homeTeam": {"id": 2, "name": "Deurnese Turners B"},
+                "awayTeam": {"id": 3, "name": "KFC Brabo"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 2,
+                "gameType": "LEAGUE",
+                "date": 1442665800000,
+                "homeTeam": {"id": 4, "name": "Vidam"},
+                "awayTeam": {"id": 5, "name": "P.S.K."},
+                "homeScore": 1,
+                "awayScore": 5
+            }, {
+                "id": 3,
+                "gameType": "LEAGUE",
+                "date": 1442669400000,
+                "homeTeam": {"id": 6, "name": "Amber E"},
+                "awayTeam": {"id": 7, "name": "Toreke"},
+                "homeScore": 3,
+                "awayScore": 2
+            }, {
+                "id": 4,
+                "gameType": "LEAGUE",
+                "date": 1442667600000,
+                "homeTeam": {"id": 8, "name": "TC Brabo"},
+                "awayTeam": {"id": 9, "name": "Houtbeurs"},
+                "homeScore": 12,
+                "awayScore": 1
+            }, {
+                "id": 5,
+                "gameType": "LEAGUE",
+                "date": 1442667600000,
+                "homeTeam": {"id": 10, "name": "Nonkel Jan"},
+                "awayTeam": {"id": 11, "name": "Umicore"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 6,
+                "gameType": "LEAGUE",
+                "date": 1442667600000,
+                "homeTeam": {"id": 12, "name": "AC De Heide"},
+                "awayTeam": {"id": 1, "name": "SK De Brug"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 7,
+                "gameType": "LEAGUE",
+                "date": 1443272400000,
+                "homeTeam": {"id": 1, "name": "SK De Brug"},
+                "awayTeam": {"id": 2, "name": "Deurnese Turners B"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 8,
+                "gameType": "LEAGUE",
+                "date": 1443265200000,
+                "homeTeam": {"id": 5, "name": "P.S.K."},
+                "awayTeam": {"id": 6, "name": "Amber E"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 9,
+                "gameType": "LEAGUE",
+                "date": 1443272400000,
+                "homeTeam": {"id": 3, "name": "KFC Brabo"},
+                "awayTeam": {"id": 10, "name": "Nonkel Jan"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 10,
+                "gameType": "LEAGUE",
+                "date": 1443274200000,
+                "homeTeam": {"id": 9, "name": "Houtbeurs"},
+                "awayTeam": {"id": 4, "name": "Vidam"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 11,
+                "gameType": "LEAGUE",
+                "date": 1443272400000,
+                "homeTeam": {"id": 11, "name": "Umicore"},
+                "awayTeam": {"id": 8, "name": "TC Brabo"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 12,
+                "gameType": "LEAGUE",
+                "date": 1443265200000,
+                "homeTeam": {"id": 7, "name": "Toreke"},
+                "awayTeam": {"id": 12, "name": "AC De Heide"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 13,
+                "gameType": "LEAGUE",
+                "date": 1443877200000,
+                "homeTeam": {"id": 2, "name": "Deurnese Turners B"},
+                "awayTeam": {"id": 11, "name": "Umicore"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 14,
+                "gameType": "LEAGUE",
+                "date": 1443877200000,
+                "homeTeam": {"id": 8, "name": "TC Brabo"},
+                "awayTeam": {"id": 5, "name": "P.S.K."},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 15,
+                "gameType": "LEAGUE",
+                "date": 1443877200000,
+                "homeTeam": {"id": 10, "name": "Nonkel Jan"},
+                "awayTeam": {"id": 6, "name": "Amber E"},
+                "homeScore": null,
+                "awayScore": null
+            }, {
+                "id": 16,
+                "gameType": "LEAGUE",
+                "date": 1443877200000,
+                "homeTeam": {"id": 3, "name": "KFC Brabo"},
+                "awayTeam": {"id": 1, "name": "SK De Brug"},
+                "homeScore": null,
+                "awayScore": null
+            }];
+
+            $scope.new = {};
+            angular.forEach($scope.matches, function(value, key){
+                var date = new Date(value.date);
+                var key = new Date(date.getFullYear(), date.getMonth(), date.getDate()).getTime();
+                console.log("key = " + date);
+                $scope.new[key] = $scope.new[key] || []; // ensure node in the new object
+                $scope.new[key].push(value); // push obj to node
+          //  });
         });
     });
 

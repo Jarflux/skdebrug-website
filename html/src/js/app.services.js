@@ -2,13 +2,6 @@
     var app = angular.module('skdebrug.services', []);
 
     var api = {
-        //players: 'data/player.json',
-        //news: 'data/news.json',
-        //newsItem: 'data/news-item.json?id={0}',
-        //nextMatch: 'data/next-match.json',
-        //allMatches: 'data/all-matches.json',
-        //prevMatch: 'data/prev-match.json',
-        //league: 'data/league.json',
         players: '/data/player',
         news: '/data/news',
         newsItem: '/data/news/{0}',
