@@ -114,122 +114,27 @@
     </header>
     <!-- Page Content -->
     <div class="container page-border">
-        <div class="row" ng-controller="bannerSliderController as banner">
-            <div class="span12">
-                <div id="home-banner" class="owl-carousel" data-options="{loop: true, dotsSpeed : 400,dots: true, autoPlay: true, lazyLoad: true, items : 1, nav: true, autoplay : true, autoplayTimeout : 5000}">
-                </div>
-            </div>
-        </div>
-        <!-- Marketing Icons Section -->
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel panel-default" ng-controller="newsController">
-                    <div class="panel-heading">
-                        <h4>Laatste nieuws</h4>
-                    </div>
 
-                    <div class="panel-body" ng-repeat="item in items | limitTo:3">
-                            <span class="panel-body-date">
-                                <span class="day">{{item.date | date:'dd'}}</span>
-                                <span class="month">{{item.date | date:'MMM' | uppercase}}</span>
-                            </span>
-                        <h4>{{item.title}}</h4>
-                        <p>{{item.content | trim:true:300:' ...'}}</p>
-                        <a href="nieuws.html#/news/{{item.id}}" class="btn btn-default">Lees meer</a>
-                    </div>
-                    <div class="panel-body">
-                        <a href="nieuws.html#/news">Meer nieuws</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default panel-link" ng-controller="nextMatchWidgetController as match">
-                    <div class="panel-heading">
-                        <h4>Volgende Wedstrijd</h4>
-                    </div>
-                    <div class="panel-body">
-                        <h4 class="text-center">{{match.next.date | date:'fullDateAndTime'}}</h4>
-                        <div class="panel-body-next-match">
-                            <div class="in">
-                                <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
-                                <h5>{{match.next.homeTeam.name}}</h5>
-                            </div>
-                            <div class="divider">VS</div>
-                            <div class="out">
-                                <img ng-src="images/clubs/{{match.next.awayTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
-                                <h5>{{match.next.awayTeam.name}}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" >
-                <div class="panel panel-default panel-link" ng-controller="matchWidgetController as match">
-                    <div class="panel-heading">
-                        <h4>Vorige Wedstrijden</h4>
-                    </div>
-                    <div class="panel-body" ng-repeat="game in match.prev">
-                        <div class="panel-body-match-date">
-                            {{game.date | date:'fullDate'}}
-                        </div>
-
-                        <div>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></div>
-                    </div>
-                    <div class="panel-body">
-                        <a href="kalender.html">Meer wedstrijden</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Section -->
-        <div class="row" ng-controller="teamSliderController as team">
-            <div class="col-lg-12">
-                <h2 class="page-header">Spelers</h2>
-            </div>
-            <div class="col-lg-12">
-                <data-owl-carousel class="owl-carousel" data-options="{dotsSpeed : 400, autoPlay: 3000, items : 6, margin: 10}">
-                    <div owl-carousel-item="" ng-repeat="player in team.players" class="item">
-                            <div class="home-player">
-                                <img class="img-responsive" ng-src="images/players/thumbs/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg" alt="{{player.firstName}} {{player.lastName}}" onerror="this.src = 'images/fallback/player.jpg';">
-                                <div class="number">{{player.number}}</div>
-                                <h5>{{player.firstName}} {{player.lastName}}</h5>
-                            </div>
-                    </div>
-                </data-owl-carousel>
-
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Features Section -->
+        <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">De Club</h2>
-            </div>
-            <div class="col-md-6">
-                <p>
-                    Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon overgedragen, een zeldzaam fenomeen in het mondiale voetbal.
-                    Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze het spel van hun zes zonen en jawel zelfs schoonzoon
-                    van commentaar voorzien.
-                </p>
-                <p>
-                    Een aandoenlijk tafereel voor beide partijen. Een van de zonen bleek over een omvangrijke voetballende vriendenkring te beschikken en dit
-                    aangevuld met de ervaring van enkele ‘oude rotten’  maakt het zootje ongeregeld dat zich met trots SK de Brug noemt compleet. Sk de Brug: een ploeg waar de secretaris
-                    keeper is, de 45-jarige voorzitter over de beste zoolbeweging van de competitie beschikt en de speler met de meeste diploma’s prompt tot coach wordt gebombardeerd.
-                </p>
-                <p>
-                    Tactiek wordt er consequent pas na de match besproken, amateurisme tiert er welig, de kantine is eerder mistroostig, de spits scoort naar verluidt meer naast dan op
-                    het veld en de door supporters verkozen man van de match is meestal diegene die het minst fout heeft gedaan. Maar godverdoemme wat is het plezant, sjotten bij de Brug!
-                </p>
-                <a href="club.html" class="btn btn-default">Lees meer</a>
-            </div>
-            <div class="col-md-6">
-                <img class="img-responsive" src="images/team/team-pic.jpg" alt="">
+                <h2 class="page-header">404 Pagina niet gevonden</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">404</li>
+                </ol>
             </div>
         </div>
-        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default text-center">
+                        <h3>De pagina die u zocht kan niet worden gevonden.</h3>
+                </div>
+            </div>
+
+        </div>
 
         <hr>
 
