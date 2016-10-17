@@ -170,8 +170,8 @@
                         <td width="28%">
                             {{match.awayTeam.name}}
                         </td>
-                        <td class="only-show-portrait-mobile" ng-hide="match.homeScore == null" width="15%">{{match.date | date:'HHumm'}}</td>
-                        <td class="only-show-portrait-mobile" ng-show="match.homeScore == null" width="15%">{{match.homeScore}} - {{match.awayScore}}</td>
+                        <td class="only-show-portrait-mobile" ng-show="match.homeScore == null" width="15%">{{match.date | date:'HHumm'}}</td>
+                        <td class="only-show-portrait-mobile" ng-hide="match.homeScore == null" width="15%">{{match.homeScore}} - {{match.awayScore}}</td>
                         <td class="hide-portrait-mobile" width="10%">{{match.date | date:'HHumm'}}</td>
                         <td class="hide-portrait-mobile" width="10%">{{match.homeScore}} - {{match.awayScore}}</td>
                     </tr>
