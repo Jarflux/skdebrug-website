@@ -518,5 +518,9 @@ h2.page-header {
     background-color: white;
 }
 
+.capitalize-first-letter:first-letter {
+    text-transform: uppercase;
+}
+
 
 
