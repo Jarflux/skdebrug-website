@@ -158,7 +158,7 @@
                         <h4>Volgende Wedstrijd</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="text-center">{{match.next.date | date:'fullDateAndTime'}}</h4>
+                        <h4 class="text-center capitalize-first-letter">{{match.next.date | date:'fullDateAndTime'}}</h4>
                         <div class="panel-body-next-match">
                             <div class="in">
                                 <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
@@ -179,7 +179,7 @@
                         <h4>Vorige Wedstrijden</h4>
                     </div>
                     <div class="panel-body" ng-repeat="game in match.prev">
-                        <div class="panel-body-match-date">
+                        <div class="panel-body-match-date capitalize-first-letter">
                             {{game.date | date:'fullDate'}}
                         </div>
 
