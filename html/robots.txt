@@ -2,7 +2,7 @@ User-agent: *
 
 Disallow: /admin*
 
-Sitemap: http://www.skdebrug.be/sitemap.xml
+Sitemap: http://skdebrug.be/sitemap.xml
 
 User-agent: Baiduspider
 Disallow: /
