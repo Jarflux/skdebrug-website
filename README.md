@@ -17,3 +17,6 @@ docker run --name skdebrug -d -p 80:80 -p 9000:9000 -v /tmp/volume:/opt/website 
 
 ## Remove all unused images
 docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+
+## Single line deploy
+docker pull jarflux/docker-skdebrug && docker rm -f $(docker ps -a -q) && docker run --name skdebrug -d -p 80:80 -p 9000:9000 -v /tmp/volume:/opt/website jarflux/docker-skdebrug && docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
