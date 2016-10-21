@@ -526,5 +526,17 @@ h2.page-header {
     text-transform: uppercase;
 }
 
+.flyer{
+    width: 100%;
+}
 
+.pasta{
+    width: 100%;
+    border: 0;
+}
+
+.pasta td:not(:first-child){
+    text-align: right;
+    width:18%;
+}
 

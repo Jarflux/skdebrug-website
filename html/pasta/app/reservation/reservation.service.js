@@ -11,10 +11,11 @@
     function ReservationService($http, $q) {
 
         function _sendMail(registrationObj) {
+            console.log(registrationObj);
             var request = {
-                //data: teamObj,
+                //data: registrationObj,
                 //method: 'POST',
-                //url: '/data/private/team'
+               // url: '/data/registration'
             };
 
             return $http(request);

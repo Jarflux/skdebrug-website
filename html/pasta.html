@@ -36,22 +36,23 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="description"
-          content="Een volledig overzicht van alle wedstrijden binnen de competitie en de beker. Uitslagen van voorgaande wedstrijden en de aanvangsuren van nog te spelen matchen.">
+          content="Schrijf hier in voor het jaarlijkse pasta eetfestijn ten voordelen van de clukbkas">
     <meta name="author" content="Ben Oeyen">
 
     <!-- Open Graph card -->
-    <meta property="og:url" content="http://www.skdebrug.be/games.html">
-    <meta property="og:title" content="Kalender | SK De Brug">
+    <meta property="og:url" content="http://www.skdebrug.be/pasta.html">
+    <meta property="og:title" content="Pasta | SK De Brug">
     <meta property="og:type" content="website">
     <meta property="og:description"
-          content="Een volledig overzicht van alle wedstrijden binnen de competitie en de beker. Uitslagen van voorgaande wedstrijden en de aanvangsuren van nog te spelen matchen.">
+          content="Schrijf hier in voor het jaarlijkse pasta eetfestijn ten voordelen van de clukbkas">
     <meta property="og:image" content="images/logo.png">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SkDeBrug">
-    <meta name="twitter:title" content="Kalender | SK De Brug">
-    <meta name="twitter:description" content="Een volledig overzicht van alle wedstrijden binnen de competitie en de beker. Uitslagen van voorgaande wedstrijden en de aanvangsuren van nog te spelen matchen.">
+    <meta name="twitter:title" content="Pasta | SK De Brug">
+    <meta name="twitter:description"
+          content="Schrijf hier in voor het jaarlijkse pasta eetfestijn ten voordelen van de clukbkas">
     <meta name="twitter:image" content="images/logo.png">
     <meta name="twitter:image:alt" content="sk de brug logo">
 
@@ -93,7 +94,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img class="navbar-brand-img"  alt="skdebrug logo" src="images/logo.png"></a>
+                    <a class="navbar-brand" href="index.html"><img class="navbar-brand-img" alt="skdebrug logo"
+                                                                   src="images/logo.png"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -132,17 +134,17 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Pasta</h2>
+                <h2 class="page-header">Pasta Catenaccio</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">Pasta</li>
+                    <li class="active">Pasta Catenaccio</li>
                 </ol>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4>Pasta Catenaccio</h4>
@@ -155,22 +157,26 @@
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <img src="images/pasta/pasta-flyer-2015.jpg" alt="pasta catenaccio flyer">
-            </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>Reservatie</h4>
+                        <h4>Online Reserveren</h4>
                     </div>
                     <div class="panel-body">
+
+                        <div class="form-group">
+                            <label for="name">Email</label>
+                            <input type="text" ng-model="vm.reservation.email" class="form-control" name="email"
+                                   id="email">
+                        </div>
+
                         <div class="form-group">
                             <label for="name">Naam</label>
-                            <input type="text" ng-model="vm.reservation.name" class="form-control" name="name" id="name">
+                            <input type="text" ng-model="vm.reservation.name" class="form-control" name="name"
+                                   id="name">
                         </div>
 
                         <div class="form-group">
@@ -181,64 +187,64 @@
                             </label>
                         </div>
 
-                        <div class="form-group">
-                            <label for="lookbrood">Lookbroodjes</label>
-                            <input type="number" ng-model="vm.reservation.lookbrood.amount" class="form-control" name="lookbrood"
-                                   id="lookbrood">
-                            x {{ vm.reservation.lookbrood.price }} € = {{ vm.reservation.lookbrood.total }} €
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pasta">Spaghetti Bolognese à volonté</label>
-                            <input type="number" ng-model="vm.reservation.pasta.amount" class="form-control" name="pasta" id="pasta">
-                            x {{ vm.reservation.pasta.price }} € = {{ vm.reservation.pasta.total }} €
-                        </div>
-
-                        <div class="form-group">
-                            <label for="veggie">Veggie</label>
-                            <input type="number" ng-model="vm.reservation.veggie.amount" class="form-control" name="veggie" id="veggie">
-                            x {{ vm.reservation.veggie.price }} € = {{ vm.reservation.veggie.total }} €
-                        </div>
-
-                        <div class="form-group">
-                            <label for="child">Kinder spaghetti Bolognese</label>
-                            <input type="number" ng-model="vm.reservation.child.amount" class="form-control" name="child" id="child">
-                            x {{ vm.reservation.child.price }} € = {{ vm.reservation.child.total }} €
-                        </div>
-
-                        <div class="form-group">
-                            <label for="dessert">Dessertenbuffet</label>
-                            <input type="number" ng-model="vm.reservation.dessert.amount" class="form-control" name="dessert"
-                                   id="dessert">
-                            x {{ vm.reservation.dessert.price }} € = {{ vm.reservation.dessert.total }} €
-                        </div>
-
-                        <hr/>
-                        totaal {{ vm.reservation.total }} €
+                        <table class="pasta" style="border:1px;width:100%">
+                            <tr>
+                                <td width="50%"><label for="lookbrood">Lookbroodjes</label></td>
+                                <td width="20%" style="text-align:right;"><input type="number" ng-model="vm.reservation.lookbrood.amount" class="form-control"
+                                           name="lookbrood" style="width: 50px" id="lookbrood"></td>
+                                <td width="15%" style="text-align:right;">x {{ vm.reservation.lookbrood.price }} €</td>
+                                <td width="15%" style="text-align:right;"> {{ vm.reservation.lookbrood.total }} €</td>
+                            </tr>
+                            <tr>
+                                <td><label for="pasta">Spaghetti Bolognese à volonté</label></td>
+                                <td><input type="number" ng-model="vm.reservation.pasta.amount" class="form-control"
+                                           name="pasta" style="width: 50px" id="pasta"></td>
+                                <td>x {{ vm.reservation.pasta.price }} €</td>
+                                <td> {{ vm.reservation.pasta.total }} €</td>
+                            </tr>
+                            <tr>
+                                <td><label for="veggie">Spaghetti Veggie à volonté</label></td>
+                                <td><input type="number" ng-model="vm.reservation.veggie.amount" class="form-control"
+                                           name="veggie" style="width: 50px" id="veggie"></td>
+                                <td>x {{ vm.reservation.veggie.price }} €</td>
+                                <td> {{ vm.reservation.veggie.total }} €</td>
+                            </tr>
+                            <tr>
+                                <td><label for="child">Kinder Spaghetti Bolognese</label></td>
+                                <td><input type="number" ng-model="vm.reservation.child.amount" class="form-control"
+                                           name="child" style="width: 50px" id="child"></td>
+                                <td>x {{ vm.reservation.child.price }} €</td>
+                                <td> {{ vm.reservation.child.total }} €</td>
+                            </tr>
+                            <tr>
+                                <td><label for="dessert">Dessertenbuffet</label></td>
+                                <td><input type="number" ng-model="vm.reservation.dessert.amount" class="form-control"
+                                           name="dessert" style="width: 50px" id="dessert"></td>
+                                <td>x {{ vm.reservation.dessert.price }} €</td>
+                                <td> {{ vm.reservation.dessert.total }} €</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>totaal</td>
+                                <td> {{ vm.reservation.total }} €</td>
+                            </tr>
+                        </table>
 
                         <br/>
                         <button type="submit" class="btn btn-primary">Versturen</button>
                         <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
 
                         {{ vm.calc() }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Stuur onderstaande reservatie naar pasta.debrug[at]hotmail.com</h4>
-                    </div>
-                    <div class="panel-body">
 
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <img class="flyer" src="images/pasta/pasta-flyer-2015.jpg" alt="pasta catenaccio flyer"/>
+            </div>
         </div>
-        <hr>
 
         <!-- Footer -->
         <footer>
@@ -268,10 +274,17 @@
 
     <!-- Google Analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-85730495-1', 'auto');
         ga('send', 'pageview');
