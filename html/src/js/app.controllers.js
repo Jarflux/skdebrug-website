@@ -228,6 +228,7 @@
         for (var key in customOptions) {
             defaultOptions[key] = customOptions[key];
         }
+
         // init carousel
         owl.owlCarousel(defaultOptions);
 
