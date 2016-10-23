@@ -97,8 +97,9 @@
             }, function (error) {
                 // error handler
                 //vm.isSending = false;
-                vm.messages.error = response.data.errors.toString();
-                if(response.status == 500){
+                //vm.messages.error = response.data.errors.toString();
+                console.log(error);
+                if(error.status == 500){
                     vm.message = {
                         error: true,
                         text: 'Fout op de server, probeer het later opnieuw.'
@@ -106,7 +107,7 @@
                 }else{
                     vm.message = {
                         error: true,
-                        text: 'Formulier bevat nog fouten' + response.data
+                        text: 'Formulier bevat nog fouten' + error.data
                     };
                 }
             });
