@@ -8,7 +8,7 @@
     function reservation() {
         var directive = {
             bindToController: true,
-            templateUrl: "app/reservation/reservation.partial.html",
+            templateUrl: "pasta/app/reservation/reservation.partial.html",
             controller: reservationController,
             controllerAs: 'vm',
             restrict: 'EA',
@@ -24,12 +24,13 @@
         var vm = this;
 
         vm.reset = function () {
+            vm.hideMessage();
             vm.reservation = {
                 name: "",
                 email: "",
                 time: {
-                    selected : "",
-                    options : ["18u - 19u", "19u - 20u","20u - 21u"]
+                    selected: "",
+                    options: ["18u - 19u", "19u - 20u", "20u - 21u"]
                 },
                 pasta: {
                     amount: 0,
@@ -59,6 +60,10 @@
             };
         };
 
+        vm.hideMessage = function () {
+            vm.message = undefined;
+        };
+
         vm.calc = function () {
             vm.reservation.total = 0;
             angular.forEach(vm.reservation, function (foodType) {
@@ -71,6 +76,7 @@
 
 
         vm.sendMail = function () {
+            vm.isSending = true;
             var reservation = {};
             reservation.recipient = vm.reservation.email;
             reservation.name = vm.reservation.name;
@@ -80,7 +86,30 @@
             reservation.child = vm.reservation.child.amount;
             reservation.dessert = vm.reservation.dessert.amount;
             reservation.lookbrood = vm.reservation.lookbrood.amount;
-            ReservationService.sendMail(reservation);
+            ReservationService.sendMail(reservation).then(function (response) {
+                // success handler
+                // vm.isSending = false;
+                vm.reset();
+                vm.message = {
+                    success: true,
+                    text: 'De reservatie is succesvol verstuurd!'
+                };
+            }, function (error) {
+                // error handler
+                //vm.isSending = false;
+                vm.messages.error = response.data.errors.toString();
+                if(response.status == 500){
+                    vm.message = {
+                        error: true,
+                        text: 'Fout op de server, probeer het later opnieuw.'
+                    };
+                }else{
+                    vm.message = {
+                        error: true,
+                        text: 'Formulier bevat nog fouten' + response.data
+                    };
+                }
+            });
         };
 
         vm.reset();

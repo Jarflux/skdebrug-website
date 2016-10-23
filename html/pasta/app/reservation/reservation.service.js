@@ -9,7 +9,6 @@
 
     /* @ngInject */
     function ReservationService($http, $q) {
-
         function _sendMail(registrationObj) {
             console.log("Sending Reservation");
             console.log(registrationObj);
@@ -19,8 +18,7 @@
                 url: '/data/registration'
             };
 
-
-            return $http(request).success();
+            return $http(request);
         }
 
         return {

@@ -1,3 +1,3 @@
 #!/bin/bash
 nginx # start Nginx dispatcher
-java -jar dropwizard-1.17.jar server dropwizard.yml  # start dropwizard backend
+java -jar dropwizard-1.18.jar server dropwizard.yml  # start dropwizard backend

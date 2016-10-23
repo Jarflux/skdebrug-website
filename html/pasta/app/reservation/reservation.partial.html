@@ -1,18 +1,18 @@
+<div id="spinner"></div>
+<div id="pano"></div> <!-- THIS IS THE TRICK -->
+<div ng-class="{'sending': vm.isSending}">
+
 <div class="row" data-ng-show="vm.message">
     <div class="col-lg-12">
-        <div class="alert bg-success" role="alert" data-ng-show="vm.message.success">
-            <svg class="glyph stroked checkmark">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-checkmark"></use>
-            </svg>
-            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
-                class="glyphicon glyphicon-remove"></span></a>
+        <div class="alert bg-success text-success" role="alert" data-ng-show="vm.message.success">
+            <i class="fa fa-check" aria-hidden="true"></i> {{ vm.message.text | unsafe }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right">
+            <i class="fa fa-close text-success" aria-hidden="true"></i>
+        </a>
         </div>
-        <div class="alert bg-danger" role="alert" data-ng-show="vm.message.error">
-            <svg class="glyph stroked cancel">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-cancel"></use>
-            </svg>
-            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
-                class="glyphicon glyphicon-remove"></span></a>
+        <div class="alert bg-danger text-danger" role="alert" data-ng-show="vm.message.error">
+            <i class="fa fa-exclamation" aria-hidden="true"></i> {{ vm.message.text | unsafe }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right">
+            <i class="fa fa-close text-danger" aria-hidden="true"></i>
+        </a>
         </div>
     </div>
 </div>
@@ -37,55 +37,59 @@
     </label>
 </div>
 
-
 <table class="pasta">
     <tr>
         <td><label for="lookbrood">Lookbroodjes</label></td>
         <td><input type="number" ng-model="vm.reservation.lookbrood.amount"
-                                                         class="form-control" name="lookbrood" style="width: 60px" value="0" id="lookbrood">
+                   class="form-control" name="lookbrood" style="width: 60px" value="0" id="lookbrood">
         </td>
-        <td>x {{ vm.reservation.lookbrood.price | number: 2}} €</td>
-        <td> {{ vm.reservation.lookbrood.total | number: 2}} €</td>
+        <td>x € {{ vm.reservation.lookbrood.price | number: 2}}</td>
+        <td> € {{ vm.reservation.lookbrood.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="pasta">Spaghetti Bolognese à volonté</label></td>
         <td><input type="number" ng-model="vm.reservation.pasta.amount" value="0" class="form-control"
                    name="pasta" style="width: 60px" id="pasta"></td>
-        <td>x {{ vm.reservation.pasta.price | number: 2}} €</td>
-        <td> {{ vm.reservation.pasta.total | number: 2}} €</td>
+        <td>x € {{ vm.reservation.pasta.price | number: 2}}</td>
+        <td> € {{ vm.reservation.pasta.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="veggie">Spaghetti Veggie à volonté</label></td>
         <td><input type="number" ng-model="vm.reservation.veggie.amount" value="0" class="form-control"
                    name="veggie" style="width: 60px" id="veggie"></td>
-        <td>x {{ vm.reservation.veggie.price | number: 2}} €</td>
-        <td> {{ vm.reservation.veggie.total | number: 2}} €</td>
+        <td>x € {{ vm.reservation.veggie.price | number: 2}}</td>
+        <td> € {{ vm.reservation.veggie.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="child">Kinder Spaghetti Bolognese</label></td>
         <td><input type="number" ng-model="vm.reservation.child.amount" value="0" class="form-control"
                    name="child" style="width: 60px" id="child"></td>
-        <td>x {{ vm.reservation.child.price | number: 2}} €</td>
-        <td> {{ vm.reservation.child.total | number: 2}} €</td>
+        <td>x € {{ vm.reservation.child.price | number: 2}}</td>
+        <td> € {{ vm.reservation.child.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="dessert">Dessertenbuffet</label></td>
         <td><input type="number" ng-model="vm.reservation.dessert.amount" class="form-control" value="0"
                    name="dessert" style="width: 60px" id="dessert"></td>
-        <td>x {{ vm.reservation.dessert.price | number: 2}} €</td>
-        <td> {{ vm.reservation.dessert.total | number: 2}} €</td>
+        <td>x € {{ vm.reservation.dessert.price | number: 2}}</td>
+        <td> € {{ vm.reservation.dessert.total | number: 2}}</td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td>totaal</td>
-        <td> {{ vm.reservation.total | number: 2}} €</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td> </td>
+        <td> </td>
+        <td><b>Totaal</b></td>
+        <td><b> € {{ vm.reservation.total | number: 2}}</b></td>
     </tr>
 
 </table>
 
 <br/>
-<button type="submit" class="btn btn-primary" ng-click="vm.sendMail()" >Versturen</button>
+<button type="submit" class="btn btn-primary" ng-click="vm.sendMail()">Versturen</button>
 <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
 {{ vm.calc() }}
+
+</div>
 
