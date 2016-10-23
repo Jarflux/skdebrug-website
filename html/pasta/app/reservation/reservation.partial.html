@@ -1,3 +1,22 @@
+<div class="row" data-ng-show="vm.message">
+    <div class="col-lg-12">
+        <div class="alert bg-success" role="alert" data-ng-show="vm.message.success">
+            <svg class="glyph stroked checkmark">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-checkmark"></use>
+            </svg>
+            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
+                class="glyphicon glyphicon-remove"></span></a>
+        </div>
+        <div class="alert bg-danger" role="alert" data-ng-show="vm.message.error">
+            <svg class="glyph stroked cancel">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stroked-cancel"></use>
+            </svg>
+            {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right"><span
+                class="glyphicon glyphicon-remove"></span></a>
+        </div>
+    </div>
+</div>
+
 <div class="form-group">
     <label for="email">Email</label>
     <input type="text" ng-model="vm.reservation.email" class="form-control" name="email"
@@ -18,7 +37,7 @@
     </label>
 </div>
 
-<form>
+
 <table class="pasta">
     <tr>
         <td><label for="lookbrood">Lookbroodjes</label></td>
@@ -66,7 +85,7 @@
 </table>
 
 <br/>
-<button type="submit" class="btn btn-primary">Versturen</button>
+<button type="submit" class="btn btn-primary" ng-click="vm.sendMail()" >Versturen</button>
 <button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
-    {{ vm.calc() }}
-</form>
+{{ vm.calc() }}
+

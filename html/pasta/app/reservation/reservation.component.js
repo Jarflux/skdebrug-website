@@ -61,7 +61,6 @@
 
         vm.calc = function () {
             vm.reservation.total = 0;
-            console.log(vm.reservation);
             angular.forEach(vm.reservation, function (foodType) {
                 if (foodType.price) {
                     foodType.total = foodType.amount * foodType.price;
@@ -75,12 +74,12 @@
             var reservation = {};
             reservation.recipient = vm.reservation.email;
             reservation.name = vm.reservation.name;
-            reservation.time = vm.reservation.time;
-            reservation.pasta = vm.reservation.pasta;
-            reservation.veggie = vm.reservation.veggie;
-            reservation.child = vm.reservation.child;
-            reservation.dessert = vm.reservation.dessert;
-            reservation.lookbrood = vm.reservation.lookbrood;
+            reservation.time = vm.reservation.time.selected;
+            reservation.pasta = vm.reservation.pasta.amount;
+            reservation.veggie = vm.reservation.veggie.amount;
+            reservation.child = vm.reservation.child.amount;
+            reservation.dessert = vm.reservation.dessert.amount;
+            reservation.lookbrood = vm.reservation.lookbrood.amount;
             ReservationService.sendMail(reservation);
         };
 

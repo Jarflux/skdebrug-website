@@ -11,18 +11,20 @@
     function ReservationService($http, $q) {
 
         function _sendMail(registrationObj) {
+            console.log("Sending Reservation");
             console.log(registrationObj);
             var request = {
-                //data: registrationObj,
-                //method: 'POST',
-               // url: '/data/registration'
+                data: registrationObj,
+                method: 'POST',
+                url: '/data/registration'
             };
 
-            return $http(request);
+
+            return $http(request).success();
         }
 
         return {
-            add: _sendMail
+            sendMail: _sendMail
         }
     }
 
