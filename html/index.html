@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
@@ -35,29 +35,33 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <meta name="description" content="Nieuws, spelers, kalender, wedstrijden en contact van uw favoriete voetbalclub SK De Brug.">
+    <meta name="description"
+          content="Nieuws, spelers, kalender, wedstrijden en contact van uw favoriete voetbalclub SK De Brug.">
     <meta name="author" content="Ben Oeyen">
 
     <!-- Open Graph card -->
     <meta property="og:url" content="http://www.skdebrug.be">
     <meta property="og:title" content="SK De Brug">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta property="og:description"
+          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta property="og:image" content="images/logo.png">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SkDeBrug">
     <meta name="twitter:title" content="SK De Brug">
-    <meta name="twitter:description" content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
+    <meta name="twitter:description"
+          content="Welkom op de homepagina van uw favoriete voetbalclub SK De Brug. Dit is een portaal naar het laatste nieuws, info over evenementen, wedstrijden en veel meer.">
     <meta name="twitter:image" content="images/logo.png">
     <meta name="twitter:image:alt" content="sk de brug logo">
 
     <title>SK De Brug</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
     <!-- This will prefetch content from google web fonts website -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
     <!-- Minified CSS -->
     <link href="css/clientlibs.min.css" rel="stylesheet">
@@ -83,13 +87,15 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img class="navbar-brand-img" alt="skdebrug logo" src="images/logo.png"></a>
+                    <a class="navbar-brand" href="index.html"><img class="navbar-brand-img" alt="skdebrug logo"
+                                                                   src="images/logo.png"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -129,8 +135,11 @@
     <div class="container page-border">
         <div class="row" ng-controller="bannerSliderController as banner">
             <div class="span12">
-                <div id="home-banner" class="owl-carousel" data-options="{loop: true, dotsSpeed : 400,dots: true, autoPlay: true, lazyLoad: true, items : 1, nav: true, autoplay : true, autoplayTimeout : 5000, singleItem: true}">
-                </div>
+                <a href="pasta.html">
+                    <div id="home-banner" class="owl-carousel"
+                         data-options="{loop: true, dotsSpeed : 400,dots: true, autoPlay: true, lazyLoad: true, items : 1, nav: true, autoplay : true, autoplayTimeout : 5000, singleItem: true}">
+                    </div>
+                </a>
             </div>
         </div>
         <!-- Marketing Icons Section -->
@@ -161,22 +170,25 @@
                         <h4>Volgende Wedstrijd</h4>
                     </div>
                     <div class="panel-body">
-                        <h4 class="text-center capitalize-first-letter">{{match.next.date | date:'fullDateAndTime'}}</h4>
+                        <h4 class="text-center capitalize-first-letter">{{match.next.date |
+                            date:'fullDateAndTime'}}</h4>
                         <div class="panel-body-next-match">
                             <div class="in">
-                                <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
+                                <img ng-src="images/clubs/{{match.next.homeTeam.name | lowercase | nospace:'_'}}.png"
+                                     onerror="this.src = 'images/fallback/club.png';">
                                 <h5>{{match.next.homeTeam.name}}</h5>
                             </div>
                             <div class="divider">VS</div>
                             <div class="out">
-                                <img ng-src="images/clubs/{{match.next.awayTeam.name | lowercase | nospace:'_'}}.png" onerror="this.src = 'images/fallback/club.png';">
+                                <img ng-src="images/clubs/{{match.next.awayTeam.name | lowercase | nospace:'_'}}.png"
+                                     onerror="this.src = 'images/fallback/club.png';">
                                 <h5>{{match.next.awayTeam.name}}</h5>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" >
+            <div class="col-md-4">
                 <div class="panel panel-default panel-link" ng-controller="matchWidgetController as match">
                     <div class="panel-heading">
                         <h4>Vorige Wedstrijden</h4>
@@ -186,7 +198,8 @@
                             {{game.date | date:'fullDate'}}
                         </div>
 
-                        <div>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span></div>
+                        <div>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <a href="kalender.html">Meer wedstrijden</a>
@@ -202,13 +215,17 @@
                 <h2 class="page-header">Spelers</h2>
             </div>
             <div class="col-lg-12">
-                <data-owl-carousel class="owl-carousel" data-options="{dotsSpeed : 400, autoPlay: 3000, items : 6, margin: 10}">
+                <data-owl-carousel class="owl-carousel"
+                                   data-options="{dotsSpeed : 400, autoPlay: 3000, items : 6, margin: 10}">
                     <div owl-carousel-item="" ng-repeat="player in team.players" class="item">
-                            <div class="home-player">
-                                <img class="img-responsive" ng-src="images/players/thumbs/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg" alt="{{player.firstName}} {{player.lastName}}" onerror="this.src = 'images/fallback/player.jpg';">
-                                <div class="number">{{player.number}}</div>
-                                <h5>{{player.firstName}} {{player.lastName}}</h5>
-                            </div>
+                        <div class="home-player">
+                            <img class="img-responsive"
+                                 ng-src="images/players/thumbs/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg"
+                                 alt="{{player.firstName}} {{player.lastName}}"
+                                 onerror="this.src = 'images/fallback/player.jpg';">
+                            <div class="number">{{player.number}}</div>
+                            <h5>{{player.firstName}} {{player.lastName}}</h5>
+                        </div>
                     </div>
                 </data-owl-carousel>
 
@@ -223,18 +240,25 @@
             </div>
             <div class="col-md-6">
                 <p>
-                    Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon overgedragen, een zeldzaam fenomeen in het mondiale voetbal.
-                    Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze het spel van hun zes zonen en jawel zelfs schoonzoon
+                    Sk de Brug is een bijzondere club, de clubliefde wordt er nog ouderwets van vader op zoon
+                    overgedragen, een zeldzaam fenomeen in het mondiale voetbal.
+                    Zo komt het dat op goede dagen een vijftal maten en ex-spelers van weleer op hun geheel eigen wijze
+                    het spel van hun zes zonen en jawel zelfs schoonzoon
                     van commentaar voorzien.
                 </p>
                 <p>
-                    Een aandoenlijk tafereel voor beide partijen. Een van de zonen bleek over een omvangrijke voetballende vriendenkring te beschikken en dit
-                    aangevuld met de ervaring van enkele ‘oude rotten’  maakt het zootje ongeregeld dat zich met trots SK de Brug noemt compleet. Sk de Brug: een ploeg waar de secretaris
-                    keeper is, de 45-jarige voorzitter over de beste zoolbeweging van de competitie beschikt en de speler met de meeste diploma’s prompt tot coach wordt gebombardeerd.
+                    Een aandoenlijk tafereel voor beide partijen. Een van de zonen bleek over een omvangrijke
+                    voetballende vriendenkring te beschikken en dit
+                    aangevuld met de ervaring van enkele ‘oude rotten’ maakt het zootje ongeregeld dat zich met trots SK
+                    de Brug noemt compleet. Sk de Brug: een ploeg waar de secretaris
+                    keeper is, de 45-jarige voorzitter over de beste zoolbeweging van de competitie beschikt en de
+                    speler met de meeste diploma’s prompt tot coach wordt gebombardeerd.
                 </p>
                 <p>
-                    Tactiek wordt er consequent pas na de match besproken, amateurisme tiert er welig, de kantine is eerder mistroostig, de spits scoort naar verluidt meer naast dan op
-                    het veld en de door supporters verkozen man van de match is meestal diegene die het minst fout heeft gedaan. Maar godverdoemme wat is het plezant, sjotten bij de Brug!
+                    Tactiek wordt er consequent pas na de match besproken, amateurisme tiert er welig, de kantine is
+                    eerder mistroostig, de spits scoort naar verluidt meer naast dan op
+                    het veld en de door supporters verkozen man van de match is meestal diegene die het minst fout heeft
+                    gedaan. Maar godverdoemme wat is het plezant, sjotten bij de Brug!
                 </p>
                 <a href="club.html" class="btn btn-default">Lees meer</a>
             </div>
@@ -274,10 +298,17 @@
 
     <!-- Google Analytics -->
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-85730495-1', 'auto');
         ga('send', 'pageview');

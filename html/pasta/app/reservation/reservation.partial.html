@@ -7,8 +7,13 @@
         </div>
         <div class="alert bg-danger text-danger" role="alert" data-ng-show="vm.message.error">
             <i class="fa fa-exclamation" aria-hidden="true"></i> {{ vm.message.text }} <a href="#0" data-ng-click="vm.hideMessage()" class="pull-right">
-            <i class="fa fa-close text-danger" aria-hidden="true"></i>
-        </a>
+            <i class="fa fa-close text-danger" aria-hidden="true"></i></a>
+            <ul data-ng-show="vm.message.errors">
+                <li ng-repeat="error in vm.message.errors">
+                    {{error}}
+                </li>
+            </ul>
+
         </div>
     </div>
 </div>

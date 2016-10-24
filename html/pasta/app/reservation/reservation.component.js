@@ -97,15 +97,17 @@
             }, function (error) {
                 // error handler
                 vm.isSending = false;
-                if(error.status == 500){
+                if(error.status == 500 ||  error.status == 504){
                     vm.message = {
                         error: true,
+                        errors: undefined,
                         text: 'Fout op de server, probeer het later opnieuw.'
                     };
                 }else{
                     vm.message = {
                         error: true,
-                        text: 'Formulier bevat nog fouten: ' + error.data
+                        errors: error.data,
+                        text: 'Formulier bevat nog fouten:'
                     };
                 }
             });
