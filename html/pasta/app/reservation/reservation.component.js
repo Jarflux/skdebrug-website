@@ -24,6 +24,7 @@
         var vm = this;
 
         vm.reset = function () {
+            vm.isSending = false;
             vm.hideMessage();
             vm.reservation = {
                 name: "",
@@ -88,7 +89,6 @@
             reservation.lookbrood = vm.reservation.lookbrood.amount;
             ReservationService.sendMail(reservation).then(function (response) {
                 // success handler
-                // vm.isSending = false;
                 vm.reset();
                 vm.message = {
                     success: true,
@@ -96,9 +96,7 @@
                 };
             }, function (error) {
                 // error handler
-                //vm.isSending = false;
-                //vm.messages.error = response.data.errors.toString();
-                console.log(error);
+                vm.isSending = false;
                 if(error.status == 500){
                     vm.message = {
                         error: true,
@@ -107,7 +105,7 @@
                 }else{
                     vm.message = {
                         error: true,
-                        text: 'Formulier bevat nog fouten' + error.data
+                        text: 'Formulier bevat nog fouten: ' + error.data
                     };
                 }
             });

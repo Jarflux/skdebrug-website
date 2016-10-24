@@ -83,7 +83,12 @@
 </table>
 
 <br/>
-<button type="submit" class="btn btn-primary" ng-click="vm.sendMail()">Versturen</button>
-<button type="reset" class="btn btn-default" ng-click="vm.reset()">Reset</button>
+<button type="submit" class="btn btn-primary" ng-click="vm.sendMail()" data-ng-hide="vm.isSending">
+    Versturen
+</button>
+<button type="submit" class="btn btn-primary" data-ng-show="vm.isSending" disabled>
+    Even geduld <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>
+</button>
+<button type="reset" class="btn btn-default" ng-click="vm.reset()" data-ng-hide="vm.isSending">Reset</button>
 {{ vm.calc() }}
 
