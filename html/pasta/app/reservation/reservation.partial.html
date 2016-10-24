@@ -36,7 +36,7 @@
 <table class="pasta">
     <tr>
         <td><label for="lookbrood">Lookbroodjes</label></td>
-        <td><input type="number" ng-model="vm.reservation.lookbrood.amount"
+        <td><input min="0" data-ng-change="vm.calc()" type="number" ng-model="vm.reservation.lookbrood.amount"
                    class="form-control" name="lookbrood" style="width: 60px" value="0" id="lookbrood">
         </td>
         <td>x € {{ vm.reservation.lookbrood.price | number: 2}}</td>
@@ -44,28 +44,28 @@
     </tr>
     <tr>
         <td><label for="pasta">Spaghetti Bolognese à volonté</label></td>
-        <td><input type="number" ng-model="vm.reservation.pasta.amount" value="0" class="form-control"
+        <td><input min="0" data-ng-change="vm.calc()" type="number" ng-model="vm.reservation.pasta.amount" value="0" class="form-control"
                    name="pasta" style="width: 60px" id="pasta"></td>
         <td>x € {{ vm.reservation.pasta.price | number: 2}}</td>
         <td> € {{ vm.reservation.pasta.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="veggie">Spaghetti Veggie à volonté</label></td>
-        <td><input type="number" ng-model="vm.reservation.veggie.amount" value="0" class="form-control"
+        <td><input min="0" data-ng-change="vm.calc()" type="number" ng-model="vm.reservation.veggie.amount" value="0" class="form-control"
                    name="veggie" style="width: 60px" id="veggie"></td>
         <td>x € {{ vm.reservation.veggie.price | number: 2}}</td>
         <td> € {{ vm.reservation.veggie.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="child">Kinder Spaghetti</label></td>
-        <td><input type="number" ng-model="vm.reservation.child.amount" value="0" class="form-control"
+        <td><input min="0" data-ng-change="vm.calc()" type="number" ng-model="vm.reservation.child.amount" value="0" class="form-control"
                    name="child" style="width: 60px" id="child"></td>
         <td>x € {{ vm.reservation.child.price | number: 2}}</td>
         <td> € {{ vm.reservation.child.total | number: 2}}</td>
     </tr>
     <tr>
         <td><label for="dessert">Dessertenbuffet</label></td>
-        <td><input type="number" ng-model="vm.reservation.dessert.amount" class="form-control" value="0"
+        <td><input min="0" data-ng-change="vm.calc()" type="number" ng-model="vm.reservation.dessert.amount" class="form-control" value="0"
                    name="dessert" style="width: 60px" id="dessert"></td>
         <td>x € {{ vm.reservation.dessert.price | number: 2}}</td>
         <td> € {{ vm.reservation.dessert.total | number: 2}}</td>
@@ -90,5 +90,3 @@
     Even geduld <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>
 </button>
 <button type="reset" class="btn btn-default" ng-click="vm.reset()" data-ng-hide="vm.isSending">Reset</button>
-{{ vm.calc() }}
-
