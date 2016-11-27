@@ -63,6 +63,9 @@
         vm.reset = function () {
             vm.game = originalItem;
             vm.game.date = new Date(vm.game.date);
+            vm.game.awayTeam = originalItem.awayTeam;
+            console.log(vm.game);
+            console.log(originalItem);
         };
 
         vm.$onInit = function () {
