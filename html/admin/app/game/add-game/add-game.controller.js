@@ -42,7 +42,7 @@
                 console.log('successfully added', game, result);
                 vm.message = {
                     success: true,
-                    text: 'Successfully added the game: ' + game.homeTeam.name + ' ' + game.homeTeam.name
+                    text: 'Successfully added the game: ' + game.homeTeam.name + ' ' + game.awayTeam.name
                 };
                 vm.reset();
             }, function (error) {

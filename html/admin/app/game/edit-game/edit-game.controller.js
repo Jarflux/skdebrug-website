@@ -37,7 +37,7 @@
                 console.log('successfully updated', game, result);
                 vm.message = {
                     success: true,
-                    text: 'Successfully updated game: ' + game.homeTeam.name + ' ' + game.homeTeam.name
+                    text: 'Successfully updated game: ' + game.homeTeam.name + ' ' + game.awayTeam.name
                 };
                 vm.reset();
             }, function (error) {
