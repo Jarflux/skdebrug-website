@@ -23,7 +23,7 @@
     <div class="col-lg-12">
         <div class="list-group">
             <a class="list-group-item list-group-item-info" href="#/news/add">Add News</a>
-            <a ng-repeat="news in vm.news" class="list-group-item" href="#/news/{{news.id}}">{{news.id}} {{news.title}}</a>
+            <a ng-repeat="news in vm.news" class="list-group-item" href="#/news/{{news.id}}">{{news.id}} {{news.date | date:'dd MMMM yyyy'}} {{news.title}}</a>
         </div>
     </div>
 </div>

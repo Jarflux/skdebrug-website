@@ -2,5 +2,5 @@
 
 <div class="list-group">
     <a class="list-group-item list-group-item-info" href="#/game/add">Add Game</a>
-    <a ng-repeat="game in vm.games" class="list-group-item" href="#/game/{{game.id}}">{{game.id}} {{game.homeTeam.name}} - {{game.awayTeam.name}}</a>
+    <a ng-repeat="game in vm.games" class="list-group-item" href="#/game/{{game.id}}">{{game.id}} {{game.date | date:'dd MMMM yyyy hh:mm'}} {{game.homeTeam.name}} - {{game.awayTeam.name}} {{game.homeScore}} - {{game.awayScore}}</a>
 </div>

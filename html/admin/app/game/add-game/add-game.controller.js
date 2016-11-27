@@ -26,8 +26,6 @@
             return null;
         }
 
-
-
         vm.addGame = function () {
             var game = angular.copy(vm.game);
 
