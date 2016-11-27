@@ -28,7 +28,7 @@
             player.dateOfBirth = _convertDateToMs(player.dateOfBirth);
 
             PlayerService.add(player).then(function (result) {
-                console.log('successfully added', news, result);
+                console.log('successfully added', player, result);
                 vm.message = {
                     success: true,
                     text: 'Successfully added the player: ' + player.firstName + ' ' + player.lastName
