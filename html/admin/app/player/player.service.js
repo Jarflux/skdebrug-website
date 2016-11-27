@@ -23,7 +23,7 @@
         function _edit(id, playerObj) {
             var request = {
                 data: playerObj,
-                method: 'POST',
+                method: 'PUT',
                 url: '/data/private/player'
             };
 

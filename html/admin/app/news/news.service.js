@@ -23,7 +23,7 @@
         function _edit(id, newsObj) {
             var request = {
                 data: newsObj,
-                method: 'POST',
+                method: 'PUT',
                 url: '/data/private/news'
             };
 
