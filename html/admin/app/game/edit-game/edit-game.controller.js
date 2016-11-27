@@ -39,7 +39,7 @@
                     success: true,
                     text: 'Successfully updated game: ' + game.homeTeam.name + ' ' + game.homeTeam.name
                 };
-                _reset();
+                vm.reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
                 vm.message = {
