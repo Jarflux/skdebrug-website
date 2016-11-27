@@ -41,14 +41,14 @@
 
             <div class="form-group">
                 <label for="homeTeam">Home team:</label>
-                <select ng-model="vm.game.homeTeam" class="form-control" name="homeTeam" id="homeTeam">
+                <select ng-model="vm.game.homeTeam" ng-selected="vm.game.homeTeam.id == team.id" class="form-control" name="homeTeam" id="homeTeam">
                     <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="awayTeam">Away team:</label>
-                <select ng-model="vm.game.awayTeam" class="form-control" name="awayTeam" id="awayTeam">
+                <select ng-model="vm.game.awayTeam" ng-selected="vm.game.awayTeam == team" class="form-control" name="awayTeam" id="awayTeam">
                     <option ng-repeat="team in vm.teams" value="{{team}}">{{team.name}}</option>
                 </select>
             </div>
