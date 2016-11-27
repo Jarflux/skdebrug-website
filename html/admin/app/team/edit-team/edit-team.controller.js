@@ -20,7 +20,7 @@
                     success: true,
                     text: 'Successfully updated team: ' + vm.team.name
                 };
-                _reset();
+                vm.reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
                 vm.message = {

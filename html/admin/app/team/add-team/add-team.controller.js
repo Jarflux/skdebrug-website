@@ -28,7 +28,7 @@
                     success: true,
                     text: 'Successfully added team: ' + vm.team.name
                 };
-                _reset();
+                vm.reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
                 vm.message = {

@@ -47,7 +47,7 @@
                     success: true,
                     text: 'Successfully added the player: ' + player.firstName + ' ' + player.lastName
                 };
-                _reset();
+                vm.reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
                 vm.message = {

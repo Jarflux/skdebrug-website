@@ -41,7 +41,7 @@
                     success: true,
                     text: 'Successfully added the news article: ' + news.title
                 };
-                _reset();
+                vm.reset();
             }, function (error) {
                 console.log('something went wrong!!', error);
                 vm.message = {
