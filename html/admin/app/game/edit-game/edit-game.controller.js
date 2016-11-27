@@ -51,7 +51,7 @@
 
         function _convertDateToMs(dateString) {
             if (dateString) {
-                return new Date(dateString).getTime()/1000;
+                return new Date(dateString).getTime();
             }
             return null;
         }
