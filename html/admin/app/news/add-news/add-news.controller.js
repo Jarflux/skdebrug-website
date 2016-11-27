@@ -11,23 +11,13 @@
     function addNewsController(NewsService) {
         var vm = this;
 
-        vm.$onInit = function () {
-            _reset();
-        };
+
 
         function _convertDateToMs(dateString) {
             if (dateString) {
                 return new Date(dateString).getTime()/1000;
             }
             return null;
-        }
-
-        function _reset() {
-            vm.news = {
-                date: undefined,
-                title: undefined,
-                content: undefined
-            };
         }
 
         vm.addNews = function () {
@@ -56,8 +46,18 @@
         };
 
         vm.reset = function () {
-            _reset();
+            vm.news = {
+                date: undefined,
+                title: undefined,
+                content: undefined
+            };
         };
+
+        vm.$onInit = function () {
+            vm.reset();
+        };
+
+        vm.$onInit();
 
     }
 

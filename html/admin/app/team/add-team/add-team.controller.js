@@ -11,16 +11,6 @@
     function addTeamController(TeamService) {
         var vm = this;
 
-        vm.$onInit = function () {
-            _reset();
-        };
-
-        function _reset() {
-            vm.team = {
-                name: undefined
-            };
-        }
-
         vm.addTeam = function () {
             TeamService.add(vm.team).then(function (result) {
                 console.log('successfully added', vm.team, result);
@@ -43,9 +33,16 @@
         };
 
         vm.reset = function () {
-            _reset();
+            vm.team = {
+                name: undefined
+            };
         };
 
+        vm.$onInit = function () {
+            vm.reset();
+        };
+
+        vm.$onInit();
 
     }
 

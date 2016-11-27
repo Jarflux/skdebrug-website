@@ -26,20 +26,7 @@
             return null;
         }
 
-        vm.$onInit = function () {
-            _reset();
-        };
 
-        function _reset() {
-            vm.game = {
-                gameType: undefined,
-                date: undefined,
-                homeTeam: undefined,
-                awayTeam: undefined,
-                homeScore: undefined,
-                awayScore: undefined
-            };
-        }
 
         vm.addGame = function () {
             var game = angular.copy(vm.game);
@@ -74,8 +61,21 @@
         };
 
         vm.reset = function () {
-            _reset();
+            vm.game = {
+                gameType: undefined,
+                date: undefined,
+                homeTeam: undefined,
+                awayTeam: undefined,
+                homeScore: undefined,
+                awayScore: undefined
+            };
         };
+
+        vm.$onInit = function () {
+            vm.reset();
+        };
+
+        vm.$onInit();
     }
 
 })();

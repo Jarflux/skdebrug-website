@@ -22,20 +22,6 @@
             vm.types = result.data;
         });
 
-        vm.$onInit = function () {
-            _reset();
-        };
-
-        function _reset() {
-            vm.player = {
-                firstName: undefined,
-                lastName: undefined,
-                number: undefined,
-                dateOfBirth: undefined,
-                playerType: undefined
-            };
-        }
-
         vm.addPlayer = function () {
             var player = angular.copy(vm.player);
 
@@ -61,11 +47,21 @@
             vm.message = undefined;
         };
 
-
         vm.reset = function () {
-            _reset();
+            vm.player = {
+                firstName: undefined,
+                lastName: undefined,
+                number: undefined,
+                dateOfBirth: undefined,
+                playerType: undefined
+            };
         };
 
+        vm.$onInit = function () {
+            vm.reset();
+        };
+
+        vm.$onInit();
 
     }
 
