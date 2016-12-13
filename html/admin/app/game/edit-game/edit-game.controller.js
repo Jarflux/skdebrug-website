@@ -26,10 +26,10 @@
 
             game.date = _convertDateToMs(game.date);
 
-            if(!game.homeScore){
+            if(game.homeScore == undefined){
                 game.homeScore = null;
             }
-            if(!game.awayScore){
+            if(game.awayScore == undefined){
                 game.awayScore = null;
             }
 
