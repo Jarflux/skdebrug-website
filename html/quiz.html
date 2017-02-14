@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" ng-app="skdebrug">
+<html lang="nl" ng-app="skdebrug.quiz">
 
 <head>
 
@@ -36,27 +36,27 @@
     <meta name="MobileOptimized" content="320">
 
     <meta name="description"
-          content="Wil je weten welke spelers het collectief SK De Brug omvatten. Hier vind je alle vrijgegeven informatie over deze halfgoden.">
+          content="Schrijf hier in voor het jaarlijkse quiz ten voordelen van de clukbkas">
     <meta name="author" content="Ben Oeyen">
 
     <!-- Open Graph card -->
-    <meta property="og:url" content="http://www.skdebrug.be/spelers.html">
-    <meta property="og:title" content="Spelers | SK De Brug">
+    <meta property="og:url" content="http://www.skdebrug.be/quiz.html">
+    <meta property="og:title" content="Quiz | SK De Brug">
     <meta property="og:type" content="website">
     <meta property="og:description"
-          content="Wil je weten welke spelers het collectief SK De Brug omvatten. Hier vind je alle vrijgegeven informatie over deze halfgoden.">
+          content="Schrijf hier in voor het jaarlijkse quiz ten voordelen van de clukbkas">
     <meta property="og:image" content="images/logo.png">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SkDeBrug">
-    <meta name="twitter:title" content="Spelers | SK De Brug">
+    <meta name="twitter:title" content="Quiz | SK De Brug">
     <meta name="twitter:description"
-          content="Wil je weten welke spelers het collectief SK De Brug omvatten. Hier vind je alle vrijgegeven informatie over deze halfgoden.">
+          content="Schrijf hier in voor het jaarlijkse quiz ten voordelen van de clukbkas">
     <meta name="twitter:image" content="images/logo.png">
     <meta name="twitter:image:alt" content="sk de brug logo">
 
-    <title>Spelers | SK De Brug</title>
+    <title>Pasta | SK De Brug</title>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'>
@@ -112,13 +112,13 @@
                         <li>
                             <a href="kalender.html">Kalender</a>
                         </li>
-                        <!--<li>-->
+                        <!--<li class="current_page_item">-->
                             <!--<a href="pasta.html">Pasta <span class="italy">&nbsp;&nbsp;&nbsp;&nbsp;</span></a>-->
                         <!--</li>-->
-                        <li>
+                        <li class="current_page_item">
                             <a href="quiz.html">Quiz</a>
                         </li>
-                        <li class="current_page_item">
+                        <li>
                             <a href="spelers.html">Spelers</a>
                         </li>
                         <li>
@@ -134,76 +134,52 @@
             <!-- /.container -->
         </nav>
     </header>
-
     <!-- Page Content -->
     <div class="container page-border">
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Spelers</h2>
+                <h2 class="page-header">Quiz SK De Brug</h2>
                 <ol class="breadcrumb">
                     <li><a href="index.html">Home</a>
                     </li>
-                    <li class="active">Spelers</li>
+                    <li class="active">Quiz SK De Brug</li>
                 </ol>
             </div>
         </div>
-        <!-- /.row -->
 
-        <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6">
-                <img class="img-responsive" src="images/team/team-players.jpg" alt="">
-            </div>
-            <div class="col-md-6">
-                <h2>Onze spelers</h2>
-                <p>
-                    Hier ziet u ze afzonderlijk afgebeeld, de protagonisten van het zichzelf relativerende
-                    sterrenensemble genaamd SK de Brug, de halfgoden van het speelveld in het
-                    diepst van hun gedachten.
-                </p>
-                <p>
-                    Allen hebben ze twee eigenschappen gemeen. Vooreerst mankeren ze meestal één en soms meerdere
-                    eigenschappen om een echt goede voetballer te zijn.
-                    De ene is technisch sterk, maar bijzonder traag, terwijl de andere dan weer razendsnel is, maar
-                    technisch minder begaafd en als er een enkeling dan weer beide capaciteiten
-                    lijkt te hebben ontbreekt hem de wil om het provinciale niveau te overstijgen.
-                    De tweede eigenschap is dat geen enkele van deze heren SK de Brug zou willen ruilen voor een
-                    plaatsje bij pakweg Barcelona, AA Gent, Real Madrid of zelfs de Rode Duivels.
-                </p>
-                <p>
-                    De reden is evenwel simpel: wij hebben geen vol koning Boudewijnstadion en gastoptreden van Dimitri
-                    Vegas en Like Mike nodig voor een spetterende 3de helft.
-                    Een kantine met ploegfoto’s uit lang vervlogen tijden, luttele liters gerstenat en in het beste
-                    geval een schaal partysnacks zijn immers al meer dan genoeg.
-                </p>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Team Members -->
-        <div class="row" ng-controller="teamController as team">
-            <div class="col-lg-12">
-                <h2 class="page-header">Onze Spelers</h2>
-            </div>
-            <div class="col-xs-6 col-sm-4 col-md-3 text-center" ng-repeat="player in team.players">
-                <div class="thumbnail player">
-                    <div class="player-image">
-                        <div class="player-image--img img-responsive"
-                             style="background-image: url(images/players/{{player.firstName | lowercase | nospace:'_'}}_{{player.lastName | lowercase | nospace:'_'}}.jpg), url('images/fallback/player.jpg');"></div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Quiz SK De Brug</h4>
                     </div>
-                    <div class="caption">
-                        <h3>{{player.firstName}} {{player.lastName}}<br>
-                            <small>#{{player.number}} - {{player.playerType}}</small>
-                        </h3>
 
+                    <div class="panel-body">
+                        <p>
+                            Quizliefhebber,
+                        </p>
+                        <p>
+                            Pasta met een voetbalsausje - het kan! Ook dit jaar tracht SK de Brug zijn culinaire talent van onder het stof te halen en het beste uit zichzelf naar boven te toveren naast het veld. Met liefde gereed gemaakte lookbroodjes gevolgd door pasta met ambachtelijke saus! Wij heten u in ieder geval van harte welkom op onze Pasta Catenaccio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Online Reserveren</h4>
+                    </div>
+                    <div class="panel-body">
+                        <registration></registration>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- /.row -->
 
+            <div class="col-md-6">
+                <img class="flyer" src="images/quiz/quiz-flyer-2017.jpg" alt="Quiz SK De Brug flyer"/>
+            </div>
+        </div>
 
         <hr>
 
@@ -221,31 +197,37 @@
                 </div>
             </div>
         </footer>
-
     </div>
-
-    <!-- Minified JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-route.min.js"></script>
-    <script src="js/angular-locale_nl-be.js"></script>
-    <script src="js/skdebrug.min.js"></script>
-
-    <!-- Google Analytics -->
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-85730495-1', 'auto');
-        ga('send', 'pageview');
-    </script>
 </div>
 
+<!-- Minified JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-locale_nl-be.js"></script>
+<script src="js/skdebrug.min.js"></script>
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-85730495-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</div>
 </body>
 
 </html>
