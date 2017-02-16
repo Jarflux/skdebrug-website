@@ -43,7 +43,7 @@
             registration.recipient = vm.registration.email;
             registration.name = vm.registration.name;
             registration.team = vm.registration.team;
-            ReservationService.sendMail(registration).then(function (response) {
+            RegistrationService.sendMail(registration).then(function (response) {
                 // success handler
                 vm.reset();
                 vm.message = {

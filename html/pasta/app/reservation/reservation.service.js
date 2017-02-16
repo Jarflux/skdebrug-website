@@ -9,9 +9,9 @@
 
     /* @ngInject */
     function ReservationService($http, $q) {
-        function _sendMail(registrationObj) {
+        function _sendMail(reservationObj) {
             var request = {
-                data: registrationObj,
+                data: reservationObj,
                 method: 'POST',
                 url: '/data/reservation'
             };
