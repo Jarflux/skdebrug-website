@@ -30,6 +30,12 @@
            id="name">
 </div>
 
+<div class="form-group">
+    <label for="team">Ploegnaam</label>
+    <input type="text" ng-model="vm.registration.team" class="form-control" name="team"
+           id="team">
+</div>
+
 <br/>
 <button type="submit" class="btn btn-primary" ng-click="vm.sendMail()" data-ng-hide="vm.isSending">
     Versturen

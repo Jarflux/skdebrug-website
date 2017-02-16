@@ -28,7 +28,8 @@
             vm.hideMessage();
             vm.registration = {
                 name: "",
-                email: ""
+                email: "",
+                team: ""
             };
         };
 
@@ -42,6 +43,7 @@
             var registration = {};
             registration.recipient = vm.registration.email;
             registration.name = vm.registration.name;
+            registration.team = vm.registration.team;
             ReservationService.sendMail(registration).then(function (response) {
                 // success handler
                 vm.reset();
