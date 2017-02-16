@@ -53,7 +53,7 @@
             }, function (error) {
                 // error handler
                 vm.isSending = false;
-                if(error.status == 500 ||  error.status == 504){
+                if(error.status == 500 ||  error.status == 504 ||  error.status == 404){
                     vm.message = {
                         error: true,
                         errors: undefined,
