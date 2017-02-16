@@ -37,7 +37,6 @@
             vm.message = undefined;
         };
 
-
         vm.sendMail = function () {
             vm.isSending = true;
             var registration = {};

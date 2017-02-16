@@ -16,7 +16,7 @@ gulp.task('clientlibs', function () {
 
 // Concatenate & Uglify JS
 gulp.task('concat-minify-scripts', function () {
-    return gulp.src(['src/js/*.js', 'pasta/app/*.js', 'pasta/app/reservation/*.js'])
+    return gulp.src(['src/js/*.js', 'pasta/**/*.js' , 'quiz/**/*.js'])
         .pipe(concat('skdebrug.min.js'))
         .pipe(uglify({mangle: false}))
         .pipe(gulp.dest('js'));
@@ -40,7 +40,7 @@ gulp.task('concat-minify-clientlib-styling', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-    gulp.watch(['src/js/*.js', 'pasta/app/*.js', 'pasta/app/reservation/*.js'], ['concat-minify-scripts']);
+    gulp.watch(['src/js/*.js', 'pasta/**/*.js', 'quiz/**/*.js' ], ['concat-minify-scripts']);
     gulp.watch('src/js/libs/*.js', ['clientlibs']);
     gulp.watch('src/css/*.css', ['concat-minify-styling']);
     gulp.watch('src/css/libs/*.css', ['concat-minify-clientlib-styling']);
