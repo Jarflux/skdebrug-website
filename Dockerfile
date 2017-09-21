@@ -10,16 +10,13 @@ RUN apk update \
  && apk --no-cache add glibc-2.25-r0.apk \
  && rm -rf /var/cache/apk/*
 
-# Change TimeZone
-ENV
-
 # Install oracle java
 RUN wget --quiet --no-cookies --no-check-certificate --header "Cookie:oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz \
  && mkdir -p /opt/java \
  && tar zxf jre-8u144-linux-x64.tar.gz -C /opt/java \
  && rm jre-8u144-linux-x64.tar.gz
 
-ENV JAVA_VERSION="8" JAVA_HOME="/opt/java" PATH="$PATH:$JAVA_HOME/bin" TZ="Europe/Brussels"
+ENV JAVA_VERSION=8 JAVA_HOME=/opt/java PATH=$PATH:$JAVA_HOME/bin TZ=Europe/Brussels
 RUN java -version
 
 #RUN update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1 \
