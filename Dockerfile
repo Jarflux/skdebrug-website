@@ -13,6 +13,7 @@ ENV TZ=Europe/Brussels
 
 # Install oracle java
 RUN wget --quiet --no-cookies --no-check-certificate --header "Cookie:oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz \
+ && mkdir /opt/java \
  && tar zxf jre-8u144-linux-x64.tar.gz -C /opt/java \
  && rm jre-8u144-linux-x64.tar.gz \
  && rm -rf /opt/java/*src.zip \
