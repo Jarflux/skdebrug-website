@@ -3,8 +3,9 @@ MAINTAINER jarflux
 
 RUN apk update \
  && apk upgrade \
- && apk add --update ca-certificates openssl tzdata
+ && apk add ca-certificates openssl \
  && update-ca-certificates \
+ && apk add --update tzdata \
  && rm -rf /var/cache/apk/* \
 
 # Change TimeZone
