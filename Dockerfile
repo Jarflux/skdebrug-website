@@ -14,35 +14,35 @@ ENV TZ=Europe/Brussels
 
 # Install oracle java
 RUN wget --no-cookies --no-check-certificate --header "Cookie:oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz \
- && tar zxf jre-8u144-linux-x64.tar.gz -C /usr/java/ \
+ && tar zxf jre-8u144-linux-x64.tar.gz -C /opt/java \
  && rm jre-8u144-linux-x64.tar.gz \
- && rm -rf /usr/java/*src.zip \
-            /usr/java/lib/missioncontrol \
-            /usr/java/lib/visualvm \
-            /usr/java/lib/*javafx* \
-            /usr/java/jre/lib/plugin.jar \
-            /usr/java/jre/lib/ext/jfxrt.jar \
-            /usr/java/jre/bin/javaws \
-            /usr/java/jre/lib/javaws.jar \
-            /usr/java/jre/lib/desktop \
-            /usr/java/jre/plugin \
-            /usr/java/jre/lib/deploy* \
-            /usr/java/jre/lib/*javafx* \
-            /usr/java/jre/lib/*jfx* \
-            /usr/java/jre/lib/amd64/libdecora_sse.so \
-            /usr/java/jre/lib/amd64/libprism_*.so \
-            /usr/java/jre/lib/amd64/libfxplugins.so \
-            /usr/java/jre/lib/amd64/libglass.so \
-            /usr/java/jre/lib/amd64/libgstreamer-lite.so \
-            /usr/java/jre/lib/amd64/libjavafx*.so \
-            /usr/java/jre/lib/amd64/libjfx*.so
+ && rm -rf /opt/java/*src.zip \
+            /opt/java/lib/missioncontrol \
+            /opt/java/lib/visualvm \
+            /opt/java/lib/*javafx* \
+            /opt/java/jre/lib/plugin.jar \
+            /opt/java/jre/lib/ext/jfxrt.jar \
+            /opt/java/jre/bin/javaws \
+            /opt/java/jre/lib/javaws.jar \
+            /opt/java/jre/lib/desktop \
+            /opt/java/jre/plugin \
+            /opt/java/jre/lib/deploy* \
+            /opt/java/jre/lib/*javafx* \
+            /opt/java/jre/lib/*jfx* \
+            /opt/java/jre/lib/amd64/libdecora_sse.so \
+            /opt/java/jre/lib/amd64/libprism_*.so \
+            /opt/java/jre/lib/amd64/libfxplugins.so \
+            /opt/java/jre/lib/amd64/libglass.so \
+            /opt/java/jre/lib/amd64/libgstreamer-lite.so \
+            /opt/java/jre/lib/amd64/libjavafx*.so \
+            /opt/java/jre/lib/amd64/libjfx*.so
 
 ENV JAVA_VERSION 8
-ENV JAVA_HOME /usr/java
+ENV JAVA_HOME /opt/java
 ENV PATH $PATH:${JAVA_HOME}/bin:
 
-#RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/bin/java" 1 \
-# && update-alternatives --set java /usr/java/bin/java \
+#RUN update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1 \
+# && update-alternatives --set java /opt/java/bin/java \
 # && update-alternatives --display java
 
 # Copy dropwizard content en start script to the correct location
