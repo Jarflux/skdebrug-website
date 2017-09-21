@@ -23,9 +23,9 @@ ENV JAVA_VERSION 8
 ENV JAVA_HOME /usr/java/jre1.8.0_144
 ENV PATH $JAVA_HOME/bin:$PATH
 
-RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jre1.8.0_144/bin/java" 1 \
- && update-alternatives --set java /usr/java/jre1.8.0_144/bin/java \
- && update-alternatives --display java
+#RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/jre1.8.0_144/bin/java" 1 \
+ #&& update-alternatives --set java /usr/java/jre1.8.0_144/bin/java \
+# && update-alternatives --display java
 
 # Copy dropwizard content en start script to the correct location
 COPY dropwizard /opt/skdebrug/
