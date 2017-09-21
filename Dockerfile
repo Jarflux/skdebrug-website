@@ -5,6 +5,7 @@ RUN apk update \
  && apk upgrade \
  && apk --no-cache add ca-certificates openssl tar wget \
  && update-ca-certificates \
+ && apk add --allow-untrusted glibc-2.21-r2.apk \
  && apk --no-cache add tzdata \
  && rm -rf /var/cache/apk/* \
 
@@ -38,7 +39,7 @@ RUN wget --no-cookies --no-check-certificate --header "Cookie:oraclelicense=acce
 
 ENV JAVA_VERSION 8
 ENV JAVA_HOME /usr/java
-ENV PATH $JAVA_HOME/bin:$PATH
+ENV PATH $PATH:${JAVA_HOME}/bin:
 
 #RUN update-alternatives --install "/usr/bin/java" "java" "/usr/java/bin/java" 1 \
 # && update-alternatives --set java /usr/java/bin/java \
