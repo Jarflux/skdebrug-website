@@ -4,12 +4,13 @@ MAINTAINER jarflux
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apk update \
-      &&   apk add ca-certificates wget \
-      &&   update-ca-certificates
+ && apk upgrade \
+ && apk add ca-certificates && update-ca-certificates \
+ && apk add --update tzdata \
+ && rm -rf /var/cache/apk/* \
 
-# Set correct timezone and time
-RUN echo "Europe/Brussels" > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
+# Change TimeZone
+ENV TZ=Europe/Brussels
 
 # Install oracle java
 WORKDIR /usr/java
