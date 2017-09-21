@@ -3,7 +3,7 @@ MAINTAINER jarflux
 
 RUN apk update \
  && apk upgrade \
- && apk add ca-certificates openssl \
+ && apk add ca-certificates openssl tar \
  && update-ca-certificates \
  && apk add --update tzdata \
  && rm -rf /var/cache/apk/* \
@@ -15,9 +15,9 @@ ENV TZ=Europe/Brussels
 WORKDIR /usr/java
 
 #RUN wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
-RUN wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz \
- && tar zxvf jre-8u144-linux-x64.tar.gz \
- && rm jre-8u144-linux-x64.tar.gz
+RUN wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz
+RUN tar zxvf jre-8u144-linux-x64.tar.gz
+RUN rm jre-8u144-linux-x64.tar.gz
 
 ENV JAVA_VERSION 8
 ENV JAVA_HOME /usr/java/jre1.8.0_144
