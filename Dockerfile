@@ -5,9 +5,9 @@ RUN apk update \
  && apk upgrade \
  && apk --no-cache add ca-certificates openssl tar wget tzdata \
  && update-ca-certificates \
- && apk --no-cache add glibc-2.25-r0.apk \
  && wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
  && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk \
+ && apk --no-cache add glibc-2.25-r0.apk \
  && rm -rf /var/cache/apk/*
 
 # Change TimeZone
