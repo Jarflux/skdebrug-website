@@ -17,7 +17,6 @@ RUN wget --quiet --no-cookies --no-check-certificate --header "Cookie:oraclelice
  && rm jre-8u144-linux-x64.tar.gz
 
 ENV JAVA_VERSION=8 JAVA_HOME=/opt/java PATH=$PATH:$JAVA_HOME/bin TZ=Europe/Brussels
-RUN java -version
 
 #RUN update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1 \
 # && update-alternatives --set java /opt/java/bin/java \
@@ -34,5 +33,5 @@ COPY .htpasswd /etc/nginx/.htpasswd
 COPY html /var/www/html
 
 WORKDIR /opt/skdebrug
-ENTRYPOINT ["sh", "start.sh"]
+#ENTRYPOINT ["sh", "start.sh"]
 
