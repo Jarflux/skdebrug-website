@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:alpine
 MAINTAINER jarflux
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -37,6 +37,8 @@ COPY .htpasswd /etc/nginx/.htpasswd
 
 # Place static content in correct location
 COPY html /var/www/html
+
+#
 
 WORKDIR /opt/skdebrug
 ENTRYPOINT ["sh", "start.sh"]
