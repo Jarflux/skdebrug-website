@@ -3,11 +3,9 @@ MAINTAINER jarflux
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -yqq update && \
-	apt-get -y upgrade && \
-	apt-get install -y wget && \
-	apt-get clean && \
-	apt-get purge
+RUN apk update \
+      &&   apk add ca-certificates wget \
+      &&   update-ca-certificates
 
 # Set correct timezone and time
 RUN echo "Europe/Brussels" > /etc/timezone
