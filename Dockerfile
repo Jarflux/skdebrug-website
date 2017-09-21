@@ -38,8 +38,6 @@ COPY .htpasswd /etc/nginx/.htpasswd
 # Place static content in correct location
 COPY html /var/www/html
 
-#
-
 WORKDIR /opt/skdebrug
 ENTRYPOINT ["sh", "start.sh"]
 
