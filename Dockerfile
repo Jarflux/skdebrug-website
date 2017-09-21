@@ -3,16 +3,15 @@ MAINTAINER jarflux
 
 RUN apk update \
  && apk upgrade \
- && apk add ca-certificates && update-ca-certificates \
- && apk add tar \
- && apk add --update tzdata \
+ && apk add --update ca-certificates openssl tzdata
+ && update-ca-certificates \
  && rm -rf /var/cache/apk/* \
 
 # Change TimeZone
 ENV TZ=Europe/Brussels
 
 # Install oracle java
-WORKDIR /usr/javak
+WORKDIR /usr/java
 
 RUN wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz
 RUN wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
@@ -39,6 +38,4 @@ COPY html /var/www/html
 
 WORKDIR /opt/skdebrug
 ENTRYPOINT ["sh", "start.sh"]
-
-
 
