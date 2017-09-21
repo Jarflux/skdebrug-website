@@ -16,7 +16,7 @@ WORKDIR /usr/java
 
 #RUN wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz
 RUN wget --no-cookies --no-check-certificate --header "Cookie:oraclelicense=accept-securebackup-cookie"  http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jre-8u144-linux-x64.tar.gz \
- && tar xvf jre-8u144-linux-x64.tar.gz
+ && tar xvf jre-8u144-linux-x64.tar.gz \
  && rm jre-8u144-linux-x64.tar.gz
 
 ENV JAVA_VERSION 8
