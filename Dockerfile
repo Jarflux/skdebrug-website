@@ -3,7 +3,7 @@ MAINTAINER jarflux
 
 RUN apk update \
  && apk upgrade \
- && apk add ca-certificates openssl tar \
+ && apk add ca-certificates openssl tar wget \
  && update-ca-certificates \
  && apk add --update tzdata \
  && rm -rf /var/cache/apk/* \
