@@ -5,7 +5,6 @@ RUN apk update \
  && apk upgrade \
  && apk --no-cache add ca-certificates openssl tar wget \
  && update-ca-certificates \
- && apk add --allow-untrusted glibc-2.21-r2.apk \
  && apk --no-cache add tzdata \
  && rm -rf /var/cache/apk/* \
 
