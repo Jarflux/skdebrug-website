@@ -38,7 +38,9 @@ RUN wget --quiet --no-cookies --no-check-certificate --header "Cookie:oraclelice
 
 ENV JAVA_VERSION 8
 ENV JAVA_HOME /opt/java
-ENV PATH $PATH:${JAVA_HOME}/bin:
+ENV PATH $PATH:${JAVA_HOME}/bin
+RUN which java
+RUN java -version
 
 #RUN update-alternatives --install "/usr/bin/java" "java" "/opt/java/bin/java" 1 \
 # && update-alternatives --set java /opt/java/bin/java \
