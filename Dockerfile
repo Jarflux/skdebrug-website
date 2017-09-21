@@ -1,8 +1,6 @@
 FROM nginx:alpine
 MAINTAINER jarflux
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apk update \
  && apk upgrade \
  && apk add ca-certificates && update-ca-certificates \
