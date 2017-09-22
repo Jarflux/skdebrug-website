@@ -4,5 +4,6 @@ angular.module('skdebrug.admin', [
     'skdebrug.admin.team',
     'skdebrug.admin.player',
     'skdebrug.admin.news',
-    'skdebrug.admin.game'
+    'skdebrug.admin.game',
+    'skdebrug.admin.overview'
 ]);
