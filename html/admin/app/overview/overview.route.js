@@ -4,7 +4,7 @@
     app.config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-                when('/index', {
+                when('/', {
                     templateUrl: 'app/overview/overview.partial.html',
                     controller: 'overviewController',
                     controllerAs: 'vm'
