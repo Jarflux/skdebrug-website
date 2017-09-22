@@ -5,5 +5,4 @@ angular.module('skdebrug.admin', [
     'skdebrug.admin.player',
     'skdebrug.admin.news',
     'skdebrug.admin.game',
-    'skdebrug.admin.overview'
 ]);
