@@ -12,11 +12,11 @@ RUN apk update \
 
 # Install oracle java
 RUN wget --quiet --continue --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jre-9.0.1_linux-x64_bin.tar.gz
-RUN mkdir -p /opt/java \
-RUN tar zxf jre-9.0.1_linux-x64_bin.tar -C /opt/java \
-RUN ln -s /opt/java/jre-9.0.1/bin/java /usr/bin/java \
-RUN rm jre-9.0.1_linux-x64_bin.tar.gz \
-RUN rm -rf /opt/java/jre-9.0.1/*src.zip \
+ && mkdir -p /opt/java \
+ && tar zxf jre-9.0.1_linux-x64_bin.tar.gz -C /opt/java \
+ && ln -s /opt/java/jre-9.0.1/bin/java /usr/bin/java \
+ && rm jre-9.0.1_linux-x64_bin.tar.gz \
+ && rm -rf /opt/java/jre-9.0.1/*src.zip \
             /opt/java/jre-9.0.1/lib/missioncontrol \
             /opt/java/jre-9.0.1/lib/visualvm \
             /opt/java/jre-9.0.1/lib/*javafx* \
@@ -36,7 +36,7 @@ RUN rm -rf /opt/java/jre-9.0.1/*src.zip \
             /opt/java/jre-9.0.1/jre/lib/amd64/libgstreamer-lite.so \
             /opt/java/jre-9.0.1/jre/lib/amd64/libjavafx*.so \
             /opt/java/jre-9.0.1/jre/lib/amd64/libjfx*.so \
-RUN java -version
+  && java -version
 
 ENV JAVA_VERSION=8 JAVA_HOME=/opt/java/jre-9.0.1 PATH=$PATH:$JAVA_HOME/bin TZ=Europe/Brussels
 
