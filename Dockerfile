@@ -5,14 +5,10 @@ RUN apk update \
  && apk upgrade \
  && apk --no-cache add ca-certificates openssl tar wget tzdata certbot \
  && update-ca-certificates \
- && wget --quiet -q -O /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub \
- && wget --quiet https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk \
- && apk --no-cache add glibc-2.25-r0.apk \
  && rm -rf /var/cache/apk/*
 
 # Install OpenJDK java
 RUN apk --update add openjdk7-jre
-CMD ["/usr/bin/java", "-version"]
 
 # Copy dropwizard content en start script to the correct location
 COPY dropwizard /opt/skdebrug/
