@@ -11,7 +11,7 @@ RUN apk update \
  && rm -rf /var/cache/apk/*
 
 # Install oracle java
-RUN wget --quiet --continue --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jre-9.0.1_linux-x64_bin.tar.gz
+RUN wget --quiet --continue --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jre-9.0.1_linux-x64_bin.tar.gz \
  && mkdir -p /opt/java \
  && tar zxf jre-9.0.1_linux-x64_bin.tar.gz -C /opt/java \
  && ln -s /opt/java/jre-9.0.1/bin/java /usr/bin/java \
