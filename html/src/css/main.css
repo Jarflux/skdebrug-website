@@ -38,6 +38,7 @@ a {
     box-shadow: 0 0 25px black;
     background-color: white;
     padding-bottom: 30px;
+    min-height: 810px;
 }
 
 .navbar {
@@ -380,8 +381,7 @@ table.table-skdebrug th a:hover {
     color: rgba(255, 255, 255, 0.56);
 }
 
-
-@media only screen and (min-width: 568px){
+@media only screen and (min-width: 568px) {
     .only-show-portrait-mobile {
         display: none;
     }
@@ -404,6 +404,18 @@ footer {
     padding: 15px 0 10px 0;
 }
 
+footer a:link, a:active, a:visited {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
 footer img {
     padding-top: 25px;
     width: 120px;
@@ -415,13 +427,13 @@ footer h3 {
     letter-spacing: 1px;
 }
 
-footer .col-lg-3{
-    padding-left:20px;
+footer .col-lg-3 {
+    padding-left: 20px;
 }
 
-.copyright{
+.copyright {
     padding-left: 16px;
-    font-size:12px;
+    font-size: 12px;
 }
 
 h2.page-header {
@@ -530,18 +542,18 @@ h2.page-header {
     text-transform: uppercase;
 }
 
-.flyer{
+.flyer {
     width: 100%;
 }
 
-.pasta{
+.pasta {
     width: 100%;
     border: 0;
 }
 
-.pasta td:not(:first-child){
+.pasta td:not(:first-child) {
     text-align: right;
-    width:18%;
+    width: 18%;
 }
 
 .italy {
@@ -551,6 +563,6 @@ h2.page-header {
     background-size: 100% 100%;
 }
 
-.card{
+.card {
     background-color: #DDDDDD;
 }
