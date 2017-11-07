@@ -35,6 +35,11 @@
         <changefreq>yearly</changefreq>
     </url>
     <url>
+        <loc>http://skdebrug.be/quiz.html</loc>
+        <lastmod>2016-10-25T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+    <url>
         <loc>http://skdebrug.be/spelers.html</loc>
         <lastmod>2016-09-28T19:08:31+00:00</lastmod>
         <changefreq>yearly</changefreq>
