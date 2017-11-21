@@ -38,7 +38,7 @@ a {
     box-shadow: 0 0 25px black;
     background-color: white;
     padding-bottom: 30px;
-    min-height: 810px;
+    min-height: calc(100vh - 268px);
 }
 
 .navbar {
@@ -402,6 +402,7 @@ footer {
     color: #fff;
     background-color: #0089d0;
     padding: 15px 0 10px 0;
+    height: 218px;
 }
 
 footer a:link, footer a:active, footer a:visited {
