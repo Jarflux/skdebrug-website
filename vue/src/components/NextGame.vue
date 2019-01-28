@@ -1,10 +1,10 @@
 <template>
-    <md-card>
+    <div>
         <div class="panel-heading">
             <h4>Volgende Wedstrijd</h4>
         </div>
         <div class="panel-body">
-            <h4 class="text-center capitalize-first-letter">{{game.date | longToDate }}</h4>
+            <h4 class="text-center">{{game.date | longToDate }}</h4>
             <div class="panel-body-next-match">
                 <div class="in">
                     <!--<img src="{{game.awayTeam.name}}">-->
@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-    </md-card>
+    </div>
 </template>
 
 <script>

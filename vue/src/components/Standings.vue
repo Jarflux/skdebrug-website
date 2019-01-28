@@ -1,4 +1,5 @@
 <script>
+
     const axios = require('axios');
     export default {
         data: function () {
@@ -14,12 +15,36 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    .standings {
 
+        .md-table-head{
+            border-bottom: 1px solid #ddd;
+        }
+
+        .md-table-cell {
+            text-align: left;
+            border:1px solid #ddd;
+        }
+
+        .md-table-row {
+            &--even {
+                background-color: white;
+            }
+            &--odd {
+                background-color: #f5f5f5;
+            }
+            &--bridge {
+                font-weight: 700;
+                color: #000304;
+                background-color: #d0efff;
+            }
+        }
+    }
 </style>
 
 <template>
-    <md-table md-card>
+    <md-table md-card class="standings">
         <md-table-row>
             <md-table-head>
                 #
@@ -27,41 +52,42 @@
             <md-table-head title="ploeg">
                 Ploeg
             </md-table-head>
-            <md-table-head title="aantal wedstrijden" class="hide-portrait-mobile">
+            <md-table-head title="aantal wedstrijden" class="md-small-hide">
                 M
             </md-table-head>
-            <md-table-head title="gewonnen">
+            <md-table-head title="gewonnen" class="md-xsmall-hide">
                 G
             </md-table-head>
-            <md-table-head title="verloren">
+            <md-table-head title="verloren" class="md-xsmall-hide">
                 V
             </md-table-head>
-            <md-table-head title="gelijkspel">
+            <md-table-head title="gelijkspel" class="md-xsmall-hide">
                 G
             </md-table-head>
-            <md-table-head title="doelpunten gescoord" class="hide-portrait-mobile">
+            <md-table-head title="doelpunten gescoord" class="md-small-hide">
                 DV
             </md-table-head>
-            <md-table-head title="doelpunten tegen" class="hide-portrait-mobile">
+            <md-table-head title="doelpunten tegen" class="md-small-hide">
                 DT
             </md-table-head>
-            <md-table-head title="doelsaldo" class="hide-portrait-mobile">
+            <md-table-head title="doelsaldo" class="md-small-hide">
                 DS
             </md-table-head>
             <md-table-head title="punten">
                 P
             </md-table-head>
         </md-table-row>
-        <md-table-row v-for="(standing, index) in standings" :key="index" class="standing">
+        <md-table-row v-for="(standing, index) in standings" :key="index"
+                      :class="{'md-table-row--even': index % 2 === 0, 'md-table-row--odd': index % 2 !== 0, 'md-table-row--bridge': standing.team.name === 'SK De Brug' }">
             <md-table-cell>{{index+1}}</md-table-cell>
             <md-table-cell>{{standing.team.name}}</md-table-cell>
-            <md-table-cell class="md-xsmall-hide">{{standing.games}}</md-table-cell>
-            <md-table-cell>{{standing.wins}}</md-table-cell>
-            <md-table-cell>{{standing.losses}}</md-table-cell>
-            <md-table-cell>{{standing.ties}}</md-table-cell>
-            <md-table-cell class="md-xsmall-hide">{{standing.goalsFor}}</md-table-cell>
-            <md-table-cell class="md-xsmall-hide">{{standing.goalsAgainst}}</md-table-cell>
-            <md-table-cell class="md-xsmall-hide">{{standing.goalDifference}}</md-table-cell>
+            <md-table-cell class="md-small-hide">{{standing.games}}</md-table-cell>
+            <md-table-cell class="md-xsmall-hide">{{standing.wins}}</md-table-cell>
+            <md-table-cell class="md-xsmall-hide">{{standing.losses}}</md-table-cell>
+            <md-table-cell class="md-xsmall-hide">{{standing.ties}}</md-table-cell>
+            <md-table-cell class="md-small-hide">{{standing.goalsFor}}</md-table-cell>
+            <md-table-cell class="md-small-hide">{{standing.goalsAgainst}}</md-table-cell>
+            <md-table-cell class="md-small-hide">{{standing.goalDifference}}</md-table-cell>
             <md-table-cell>{{standing.points}}</md-table-cell>
         </md-table-row>
     </md-table>
