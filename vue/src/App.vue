@@ -14,6 +14,7 @@
     import Vue from 'vue'
     import VueMaterial from 'vue-material'
     import 'vue-material/dist/vue-material.min.css'
+
     import Standings from './components/Standings.vue'
     import NextGame from './components/NextGame.vue'
     import PrevGame from './components/PrevGame.vue'
@@ -24,18 +25,8 @@
         name: 'app',
         components: {
             Standings, NextGame, PrevGame
-
         }
     }
-
-    // import moment from 'moment'
-    //
-    // Vue.filter('formatDate', function(value) {
-    //         if (value) {
-    //             return moment(String(value)).format('MM/DD/YYYY hh:mm')
-    //         }
-    //     }
-    //     <span>{{yourDateString | formatDate}}</span>
 
 </script>
 

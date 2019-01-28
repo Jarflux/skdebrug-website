@@ -4,7 +4,7 @@
             <h4>Volgende Wedstrijd</h4>
         </div>
         <div class="panel-body">
-            <h4 class="text-center capitalize-first-letter">{{game.date}}</h4>
+            <h4 class="text-center capitalize-first-letter">{{game.date | longToDate }}</h4>
             <div class="panel-body-next-match">
                 <div class="in">
                     <!--<img src="{{game.awayTeam.name}}">-->

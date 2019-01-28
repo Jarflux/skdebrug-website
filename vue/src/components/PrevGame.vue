@@ -6,11 +6,11 @@
 
         <div class="panel-body" v-for="game in games" :key="game">
             <div class="panel-body-match-date capitalize-first-letter">
-                {{game.date}}
+                {{game.date | longToDate }}
             </div>
 
-            <div>{{game.homeTeam.name}} - {{game.awayTeam.name}}<span class="score-right">{{game.homeScore}} - {{game.awayScore}}</span>
-            </div>
+            <div>{{game.homeTeam.name}} - {{game.awayTeam.name}}</div>
+            <div>{{game.homeScore}} - {{game.awayScore}}</div>
         </div>
         <div class="panel-body">
             <a href="kalender.html">Meer wedstrijden</a>
