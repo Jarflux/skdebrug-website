@@ -32,7 +32,7 @@
                 time: {
                     selected: "",
                     options: ["18u - 19u", "19u - 20u", "20u - 21u"],
-                    full: ["18u - 19u"]
+                    full: []
                 },
                 pasta: {
                     amount: 0,
