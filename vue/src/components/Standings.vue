@@ -19,12 +19,22 @@
     .standings {
 
         .md-table-head{
+            text-align: left;
             border-bottom: 1px solid #ddd;
+            &-container{
+                height:30px;
+                padding: 5px 1px;
+            }
         }
 
         .md-table-cell {
             text-align: left;
             border:1px solid #ddd;
+
+            &-container{
+                padding: auto;
+            }
+
         }
 
         .md-table-row {
@@ -64,13 +74,13 @@
             <md-table-head title="gelijkspel" class="md-xsmall-hide">
                 G
             </md-table-head>
-            <md-table-head title="doelpunten gescoord" class="md-small-hide">
+            <md-table-head title="doelpunten gescoord" class="md-medium-hide">
                 DV
             </md-table-head>
-            <md-table-head title="doelpunten tegen" class="md-small-hide">
+            <md-table-head title="doelpunten tegen" class="md-medium-hide">
                 DT
             </md-table-head>
-            <md-table-head title="doelsaldo" class="md-small-hide">
+            <md-table-head title="doelsaldo" class="md-medium-hide">
                 DS
             </md-table-head>
             <md-table-head title="punten">
@@ -85,9 +95,9 @@
             <md-table-cell class="md-xsmall-hide">{{standing.wins}}</md-table-cell>
             <md-table-cell class="md-xsmall-hide">{{standing.losses}}</md-table-cell>
             <md-table-cell class="md-xsmall-hide">{{standing.ties}}</md-table-cell>
-            <md-table-cell class="md-small-hide">{{standing.goalsFor}}</md-table-cell>
-            <md-table-cell class="md-small-hide">{{standing.goalsAgainst}}</md-table-cell>
-            <md-table-cell class="md-small-hide">{{standing.goalDifference}}</md-table-cell>
+            <md-table-cell class="md-medium-hide">{{standing.goalsFor}}</md-table-cell>
+            <md-table-cell class="md-medium-hide">{{standing.goalsAgainst}}</md-table-cell>
+            <md-table-cell class="md-medium-hide">{{standing.goalDifference}}</md-table-cell>
             <md-table-cell>{{standing.points}}</md-table-cell>
         </md-table-row>
     </md-table>
