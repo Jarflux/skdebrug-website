@@ -31,7 +31,7 @@
                 email: "",
                 time: {
                     selected: "",
-                    options: ["18u - 19u", "19u - 20u", "20u - 21u"],
+                    options: ["18u00 - 19u30", "19u30 - 21u00"],
                     full: []
                 },
                 pasta: {
@@ -75,7 +75,6 @@
                 }
             });
         };
-
 
         vm.sendMail = function () {
             vm.isSending = true;

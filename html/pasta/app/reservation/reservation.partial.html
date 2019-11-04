@@ -33,11 +33,11 @@
 <div class="form-group">
     <label>Uur </label><br/>
     <div ng-repeat="option in vm.reservation.time.options">
-        <input type="radio" ng-model="vm.reservation.time.selected" name="time" ng-if="vm.reservation.time.full.indexOf(option) === -1"
+        <input type="radio" ng-model="vm.reservation.time.selected" name="time" ng-if="vm.reservation.time.full.indexOf(option) !== 0"
                value="{{option}}"/>
-        <input type="radio" ng-model="vm.reservation.time.selected" name="time" ng-if="vm.reservation.time.full.indexOf(option) !== -1" disabled
+        <input type="radio" ng-model="vm.reservation.time.selected" name="time" ng-if="vm.reservation.time.full.indexOf(option) === 0" disabled
                value="{{option}}"/>
-        <label>{{option}} <span ng-if="vm.reservation.time.full.indexOf(option) !== -1">Volzet</span></label>
+        <label>{{option}} <span ng-if="vm.reservation.time.full.indexOf(option) === 0 ">Volzet</span></label>
     </div>
 </div>
 
